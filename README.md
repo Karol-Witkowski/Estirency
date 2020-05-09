@@ -1,4 +1,5 @@
 # estirency
+A simple page that tracks exchange currency and calculates transaction rate
 
 ## Project setup
 ```
