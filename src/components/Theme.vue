@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'theme',
+  name: 'Theme',
 };
 </script>
 
