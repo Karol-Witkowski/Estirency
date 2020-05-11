@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,500,600,700&display=swap');
+
+$primary: #1ebffa;
+
+.navbar {
+  height: 38px;
+  border-bottom: 1px solid $primary;
+  box-shadow: (0px 5px 7px -6px $primary);
+
+    .routerBtn {
+      background-color: transparent;
+      border: 1.5px solid $primary;
+      font-size: 0.65em;
+      line-height: 1;
+      margin: 0.4em;
+      padding: 0.6em 1.1em;
+
+        .routerText {
+            position: relative;
+            color: $primary;
+            display: inline;
+            text-decoration: none;
+            font-weight: 550;
+        }
+    }
+
+}

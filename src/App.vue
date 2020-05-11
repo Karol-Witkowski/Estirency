@@ -1,14 +1,20 @@
 <template>
   <div class="app">
+    <Theme />
     <Navbar />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
+import Navbar from './components/navbar/Navbar.vue';
+import Theme from './components/Theme.vue';
+
 
 export default {
-  components: { Navbar },
+  components: {
+    Navbar,
+    Theme,
+  },
   name: 'App',
   data() {
     return {
@@ -16,3 +22,5 @@ export default {
   },
 };
 </script>
+
+<style src="./App.scss" lang="scss" />
