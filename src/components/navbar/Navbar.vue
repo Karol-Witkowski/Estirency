@@ -1,13 +1,15 @@
 <template>
   <div class="navbar">
-    <button class="routerBtn">
-      <router-link class="routerText" to="/" style="padding-right: 1%;">HOME
-      </router-link>
-    </button>
-    <button class="routerBtn">
-      <router-link class="routerText" to="/about">ABOUT
-      </router-link>
-    </button>
+    <router-link to="/" style="padding-right: 1%;">
+      <button class="routerBtn">
+        <span class="routerText">HOME</span>
+      </button>
+    </router-link>
+    <router-link to="/about">
+      <button class="routerBtn">
+        <span class="routerText">ABOUT</span>
+      </button>
+    </router-link>
   </div>
 </template>
 
