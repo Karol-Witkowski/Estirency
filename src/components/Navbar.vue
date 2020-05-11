@@ -1,14 +1,14 @@
 <template>
     <nav>
         <v-toolbar>
-         <v-btn text route :to="'/'"
-       @click="changeBackgroundColor = !changeBackgroundColor"
-       :style="{
-           backgroundColor : changeBackgroundColor ? 'white !important' : '',
+          <v-btn text class="pl-0" route :to="'/'"
+          @click="changeBackgroundColor = !changeBackgroundColor"
+          :style="{
+          backgroundColor : changeBackgroundColor ? 'white !important' : '',
            color: changeBackgroundColor ? 'white !important' : 'white'
-           }">
+          }">
             <v-toolbar-title class="text-uppercase deep-purple--text">
-                <v-icon left size="26" color="deep-purple lighten-2" class="mb-2 mx-1">
+                <v-icon left size="26" color="deep-purple lighten-2" class="mb-2 mx-2">
                   mdi-chart-bell-curve</v-icon>
                 <span class="font-weight-light">esti</span>
                 <span class="">rency</span>
@@ -20,7 +20,7 @@
                  :key="link.text" router :to="link.route">
                     <span>{{ link.text }}</span>
                     <v-icon right class="mr-0">{{ link.icon }}</v-icon>
-                </v-btn>
+            </v-btn>
         </v-toolbar>
     </nav>
 </template>
