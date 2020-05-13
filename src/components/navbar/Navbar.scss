@@ -60,3 +60,30 @@ $primary: #1ebffa;
       font-weight: 550;
     }
 }
+
+.effectBtn {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  text-decoration: none;
+} 
+
+.effectBtn:hover {
+  border: 1px solid $primary;
+  box-shadow: inset 0 0 8px $primary, 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: $primary;
+  outline-offset: 2px;
+  text-shadow: 1px 1px 2px #427388;
+}
+
+.router-link-active {
+  border: 1px solid;
+  box-shadow: inset 0 0 8px $primary, 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: $primary;
+  outline-offset: 2px;
+  text-shadow: 1px 1px 2px #427388; 
+}

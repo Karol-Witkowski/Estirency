@@ -5,15 +5,11 @@
       <span class="namePart1">ESTI</span>
       <span class="namePart2">RENCY</span>
     </div>
-    <router-link to="/about">
-      <button class="routerAboutBtn">
-        <span class="routerText">ABOUT</span>
-      </button>
+    <router-link class="routerAboutBtn effectBtn" to="/about">
+      <span class="routerText">ABOUT</span>
     </router-link>
-    <router-link to="/">
-      <button class="routerHomeBtn">
-        <span class="routerText">HOME</span>
-      </button>
+    <router-link class="routerHomeBtn effectBtn" to="/home">
+      <span class="routerText">HOME</span>
     </router-link>
   </div>
 </template>
