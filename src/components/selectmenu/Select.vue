@@ -1,9 +1,7 @@
 <template>
     <div class="select">
+      <p class="menu">MENU</p>
       <p class="base">SELECT BASE CURRENCY</p>
-      <v-select id="base" :options="currencyList[quote]"
-        :clearable="false" v-model="baseCurrency" placeholder="Select Token">
-      </v-select>
     </div>
 </template>
 

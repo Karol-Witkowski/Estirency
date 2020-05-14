@@ -1,5 +1,26 @@
+$primary: #1ebffa;
+
 .select {
-    width: 20%;
-    float: right;
-    background-color: blue;
+  border: solid 1px $primary;
+  border-radius: 10px;
+  margin-top: 3.5%;
+  margin-left: 1.4%;
+  width: 20%;
+  min-width: 250px;
+  height: 580px;
+  background-color: rgb(39, 39, 39);
+  box-shadow: (2px 8px 30px -15px $primary);
+
+  .menu {
+    font-size: 1.5em;
+    color: $primary;
+    text-align: center;
+    margin-top: 7.5%;
+  }
+
+  .base {
+    font-size: 1.11em;
+    color: $primary;
+    text-align: center;
+  }
 }

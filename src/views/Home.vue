@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Select />
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   </div>
 </template>
 

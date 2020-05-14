@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
   </div>
 </template>
 
