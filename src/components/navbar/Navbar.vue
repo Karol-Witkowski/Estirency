@@ -1,10 +1,12 @@
 <template>
   <div class="navbar">
-    <div class="logo">
-      <img src="@/assets/chart-bell-curve.png" alt="bell curve chart icon" class="logoIcon">
-      <span class="namePart1">ESTI</span>
-      <span class="namePart2">RENCY</span>
-    </div>
+    <router-link to="/home" class="" active-class="">
+      <div class="logo">
+        <img src="@/assets/chart-bell-curve.png" alt="bell curve chart icon" class="logoIcon">
+        <span class="namePart1">ESTI</span>
+        <span class="namePart2">RENCY</span>
+      </div>
+    </router-link>
     <router-link class="routerAboutBtn effectBtn" to="/about">
       <span class="routerText">ABOUT</span>
     </router-link>
@@ -16,6 +18,7 @@
 
 <script>
 export default {
+  name: 'Navbar',
 };
 </script>
 
