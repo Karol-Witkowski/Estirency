@@ -1,0 +1,116 @@
+$primary: #1ebffa;
+
+.select {
+  border: solid 1px $primary;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 1.4%;
+  width: 20%;
+  min-width: 250px;
+  height: 580px;
+  background-color: rgb(39, 39, 39);
+  box-shadow: (2px 8px 30px -15px $primary);
+
+  .menu {
+    font-size: 1.5em;
+    color: $primary;
+    text-align: center;
+    margin-top: 7.5%;
+  }
+
+  .instruction {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #199ac9;
+    text-align: center;
+    padding: 0% 3%;
+  }
+
+  .base {
+    font-size: 1.11em;
+    color: $primary;
+    text-align: center;
+    margin-top: 14%;
+  }
+
+  .swapIcon {
+    width: 50px;
+    display: block;
+    margin: 10% auto;
+    
+  }
+
+  .currency {
+    font-size: 1.11em;
+    color: $primary;
+    text-align: center;
+    margin-top: -1.8%;
+  }
+
+  .amount {
+    font-size: 1.11em;
+    color: $primary;
+    text-align: center;
+    margin-top: 14%;
+  }
+
+  .v-select {
+    border: 1px solid $primary;
+    box-shadow: (2px 8px 15px -10px $primary);
+    width: 80%;
+    margin: auto 9.5% auto;
+    color: #31748d;
+    text-transform: lowercase;
+    font-variant: small-caps;
+
+    ::placeholder {
+      color: $primary;
+      text-align: center;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      font-weight: 700;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  }
+  
+  .amountInput {
+    border: 1px solid $primary;
+    box-shadow: (2px 8px 15px -10px $primary);
+    width: 79%;
+    margin: -0.9% 9.5% auto;
+    height: 2.2em;
+    background-color: transparent;
+    color: #31748d;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-weight: 700;
+    font-size: 0.88em;
+    text-align: center;
+  }
+  .amountInput::placeholder {
+    font-size: 1.1em;
+    color:#32b9eb;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+}
+
+.vs--searchable .vs__dropdown-toggle,
+.v-select .vs__clear,
+.v-select .vs__open-indicator,
+.v-select .vs__dropdown-menu
+.vs__search, .vs__search:focus  {
+  fill: #31748d;
+  cursor: pointer;
+  color: #31748d;
+  font-weight: 700;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  text-align: center;
+  padding-left: 8%;
+}
+
+
+.v-select .vs__dropdown-menu { 
+  background-color: rgb(39, 39, 39);
+  border: 1px solid $primary;
+}

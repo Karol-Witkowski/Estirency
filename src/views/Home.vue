@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <Select />
+    <Selectmenu />
   </div>
 </template>
 
 <script>
-import Select from '../components/selectmenu/Select.vue';
+import Selectmenu from '../components/selectmenu/Selectmenu.vue';
 
 export default {
   name: 'Home',
   components: {
-    Select,
+    Selectmenu,
   },
 };
 </script>
