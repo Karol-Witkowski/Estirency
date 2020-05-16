@@ -1,0 +1,13 @@
+$primary: #1ebffa;
+
+.results {
+    border: solid 1px $primary;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 4%;
+    width: 71.4%;
+    min-width: 250px;
+    height: 580px;
+    background-color: rgb(39, 39, 39);
+    box-shadow: (2px 8px 30px -15px $primary);
+}
