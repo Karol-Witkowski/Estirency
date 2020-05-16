@@ -2,8 +2,7 @@
     <div class="select">
       <p class="menu">MENU</p>
       <p class="base">SELECT BASE CURRENCY</p>
-      <v-select :options="options" placeholder="select base currency"
-       class="style-chooser"></v-select>
+      <v-select :options="options" placeholder="select base currency"></v-select>
     </div>
 </template>
 
@@ -15,4 +14,4 @@ export default {
 };
 </script>
 
-<style src="./Select.scss" lang="scss" scoped></style>
+<style src="./Select.scss" lang="scss"></style>

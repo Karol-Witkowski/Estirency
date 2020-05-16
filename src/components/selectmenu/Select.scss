@@ -45,9 +45,16 @@ $primary: #1ebffa;
   }
 }
 
-.v-search .vs__open-indicator {
-  fill: $primary !important;
+.v-select .vs__clear,
+.v-select .vs__open-indicator {
+  fill: #31748d;
 }
-.v-search .vs--searchable .vs__dropdown-toggle {
+
+.vs--searchable .vs__dropdown-toggle {
   cursor: pointer;
+}
+
+.v-select .vs__dropdown-menu { 
+  background-color: rgb(39, 39, 39);
+  border: 1px solid $primary;
 }
