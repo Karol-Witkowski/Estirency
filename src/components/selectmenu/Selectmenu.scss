@@ -30,13 +30,13 @@ $primary: #1ebffa;
     font-size: 1.11em;
     color: $primary;
     text-align: center;
-    margin-top: 14%;
+    margin-top: 10%;
   }
 
   .swapIcon {
     width: 50px;
     display: block;
-    margin: 10% auto;
+    margin: 8% auto;
     
   }
 
@@ -51,7 +51,28 @@ $primary: #1ebffa;
     font-size: 1.11em;
     color: $primary;
     text-align: center;
-    margin-top: 14%;
+    margin-top: 12%;
+  }
+
+  button {
+    color: #1ea1d1;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    border: 1px solid $primary;
+    box-shadow: (2px 8px 15px -10px $primary);
+    background-color: transparent;
+    padding: 2%;
+    margin: 9% auto;
+    display: block;
+  }
+
+  button:active {
+    border: 1px solid;
+    box-shadow: inset 0 0 5px $primary, (2px 8px 15px -10px $primary);
+    text-shadow: 1px 1px 2px #427388; 
   }
 
   .v-select {

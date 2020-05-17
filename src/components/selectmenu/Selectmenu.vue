@@ -12,6 +12,7 @@
       <p class="amount">TYPE AMOUNT</p>
       <input class="amountInput" placeholder="amount of currency" v-model="amount"
        @keypress="restrictions"/>
+       <button>Calculate</button>
     </div>
 </template>
 
