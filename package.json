@@ -10,6 +10,7 @@
     "ui": "vue ui"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.9.22",
     "axios": "^0.19.2",
     "chalk": "^4.0.0",
     "core-js": "^3.6.4",
