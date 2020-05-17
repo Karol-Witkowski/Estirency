@@ -5,19 +5,40 @@
         Select currencies and fill input to show data
       </p>
       <p class="base">SELECT BASE CURRENCY</p>
-      <v-select :options="options" placeholder="base currency"></v-select>
+      <v-select :options="options" placeholder="base currency">
+        <template #search="{attributes, events}">
+          <input
+            class="vs__search"
+            :required="!selected"
+            v-bind="attributes"
+            v-on="events"
+            @keypress="currencyRestrictions"
+          />
+        </template>
+      </v-select>
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
       <p class="currency">SELECT WANTED CURRENCY</p>
-      <v-select :options="options" placeholder="wanted currency"></v-select>
+      <v-select :options="options" placeholder="wanted currency">
+        <template #search="{attributes, events}">
+          <input
+            class="vs__search"
+            :required="!selected"
+            v-bind="attributes"
+            v-on="events"
+            @keypress="currencyRestrictions"
+          />
+        </template>
+      </v-select>
       <p class="amount">TYPE AMOUNT</p>
       <input class="amountInput" placeholder="amount of currency" v-model="amount"
-       @keypress="restrictions"/>
-       <button>Calculate</button>
+        @keypress="amountRestrictions" />
+      <button>Calculate</button>
     </div>
 </template>
 
 <script>
 
+const keyCode = (this.$event.keyCode ? this.$event.keyCode : this.$event.which);
 
 export default {
   name: 'Selectmenu',
@@ -27,8 +48,13 @@ export default {
     };
   },
   methods: {
-    restrictions($event) {
-      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
+    currencyRestrictions($event) {
+      if (keyCode > 47 && keyCode < 58) {
+        $event.preventDefault();
+      }
+    },
+
+    amountRestrictions($event) {
       if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
         $event.preventDefault();
       }

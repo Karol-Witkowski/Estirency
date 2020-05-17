@@ -81,8 +81,6 @@ $primary: #1ebffa;
     width: 80%;
     margin: auto 9.5% auto;
     color: #31748d;
-    text-transform: lowercase;
-    font-variant: small-caps;
 
     ::placeholder {
       color: $primary;
@@ -119,19 +117,20 @@ $primary: #1ebffa;
 .v-select .vs__clear,
 .v-select .vs__open-indicator,
 .v-select .vs__dropdown-menu
-.vs__search, .vs__search:focus  {
+.vs__search, .vs__search:focus {
   fill: #31748d;
   cursor: pointer;
   color: #31748d;
   font-weight: 700;
-  text-transform: lowercase;
-  font-variant: small-caps;
+  text-transform: unset;
   text-align: center;
   padding-left: 8%;
 }
 
-
 .v-select .vs__dropdown-menu { 
   background-color: rgb(39, 39, 39);
   border: 1px solid $primary;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
 }
