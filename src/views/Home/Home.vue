@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Selectmenu from '../components/selectmenu/Selectmenu.vue';
-import Results from '../components/results/Results.vue';
+import Selectmenu from '@/components/selectmenu/Selectmenu.vue';
+import Results from '@/components/results/Results.vue';
 
 export default {
   name: 'Home',

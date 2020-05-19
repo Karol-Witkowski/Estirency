@@ -38,8 +38,6 @@
 
 <script>
 
-const keyCode = (this.$event.keyCode ? this.$event.keyCode : this.$event.which);
-
 export default {
   name: 'Selectmenu',
   data() {
@@ -49,12 +47,13 @@ export default {
   },
   methods: {
     currencyRestrictions($event) {
+      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
       if (keyCode > 47 && keyCode < 58) {
         $event.preventDefault();
       }
     },
-
     amountRestrictions($event) {
+      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
       if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
         $event.preventDefault();
       }

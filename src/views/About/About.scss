@@ -1,0 +1,42 @@
+$primary: #1ebffa;
+
+#about {
+  color: $primary;
+  font-weight: 700;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 10.3%;
+  text-transform: uppercase;
+    
+  .text {
+      padding-bottom: 2%;
+      font-size: 1.3em;
+  }
+
+  .description {
+    margin: 0.6%;
+  }
+    
+  hr {
+    width: 70%;
+    margin-top: 1.5%;
+    margin-bottom: 1.6%;
+    color: transparent;
+    border-bottom: 1px solid $primary;
+    box-shadow: (2px 1px 10px 0px $primary);
+    @media only screen and (max-width: 670px) {
+      width: 450px;
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+  }
+    
+  .gitLogo {
+    left: 0.5%;
+    margin-top: 0.5%;
+  }
+}
