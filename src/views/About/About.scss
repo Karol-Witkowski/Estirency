@@ -13,12 +13,22 @@ $primary: #1ebffa;
   text-transform: uppercase;
     
   .text {
-      padding-bottom: 2%;
-      font-size: 1.3em;
+    padding-bottom: 2%;
+    font-size: 1.3em;
+    @media only screen and (max-width: 550px) {
+      font-size: 1em;
+      margin-top: 4%;
+      margin-bottom: 2%;
+      }
   }
 
   .description {
     margin: 0.6%;
+    @media only screen and (max-width: 550px) {
+      font-size: 0.77em;
+      padding-bottom: 1%;
+
+    }
   }
     
   hr {
@@ -32,11 +42,21 @@ $primary: #1ebffa;
       width: 450px;
       padding-left: 2%;
       padding-right: 2%;
+      margin-top: 4%;
+    }
+  }
+
+  .invite {
+    @media only screen and (max-width: 550px) {
+      font-size: 1em;
     }
   }
     
   .gitLogo {
     left: 0.5%;
     margin-top: 0.5%;
+    @media only screen and (max-width: 550px) {
+      transform: scale(0.75, 0.75);
+    }
   }
 }

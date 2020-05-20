@@ -8,7 +8,7 @@
         To add some functionalities, the app also shows the currency exchange rate history chart
       </p>
       <hr>
-      <p>Fell free to check my Github repository</p>
+      <p class="invite">Fell free to check my Github repository</p>
       <a class="gitLogo" href="https://github.com/Karol-Witkowski">
         <img src="@/assets/github.png" alt="Github link" width="320px">
       </a>
