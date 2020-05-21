@@ -4,12 +4,15 @@ $primary: #1ebffa;
   border: solid 1px $primary;
   border-radius: 10px;
   margin-top: 50px;
-  margin-left: 1.5%;
+  margin-left: 30px;
   width: 20%;
   min-width: 250px;
   height: 580px;
   background-color: rgb(35, 35, 35);
   box-shadow: (2px 8px 30px -15px $primary);
+  @media only screen and (max-width: 950px) {
+    width: auto;
+}
 
   .menu {
     font-size: 1.5em;
