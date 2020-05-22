@@ -32,7 +32,7 @@
       <p class="amount">type amount</p>
       <input class="amountInput" placeholder="amount of currency" v-model="amount"
         @keypress="amountRestrictions" />
-      <button>Calculate</button>
+      <button @click="getData">Calculate</button>
     </div>
 </template>
 
