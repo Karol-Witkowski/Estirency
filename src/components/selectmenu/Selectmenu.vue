@@ -5,7 +5,7 @@
         Select currencies and fill input to show data
       </p>
       <p class="base">select base currency</p>
-      <v-select :options="options" placeholder="base currency">
+      <v-select :options="$store.state.currency" label="name" placeholder="base currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
@@ -18,7 +18,7 @@
       </v-select>
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
       <p class="currency">select wanted currency</p>
-      <v-select :options="options" placeholder="wanted currency">
+      <v-select :options="$store.state.currency" label="name" placeholder="wanted currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
