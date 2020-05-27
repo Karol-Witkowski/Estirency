@@ -65,7 +65,7 @@ $primary: #1ebffa;
     text-transform: uppercase;
   }
 
-  button {
+  .getData {
     color: #1ea1d1;
     text-transform: lowercase;
     font-variant: small-caps;
@@ -92,6 +92,9 @@ $primary: #1ebffa;
     width: 80%;
     margin: auto 9.5% auto;
     color: #31748d;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    padding-left: 8%;
 
     ::placeholder {
       color: $primary;
@@ -135,7 +138,6 @@ $primary: #1ebffa;
   font-weight: 700;
   text-transform: unset;
   text-align: center;
-  padding-left: 8%;
 }
 
 .v-select .vs__dropdown-menu { 
@@ -143,5 +145,21 @@ $primary: #1ebffa;
   border: 1px solid $primary;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.v-select .vs__dropdown-option { 
+  color: $primary !important;
+}
+
+.v-select .vs__selected {
+  color:#31748d;
+  font-size: 0.74em;
+  margin-left: -7%;
+}
+
+.v-select .vs__clear {
+  transform: scale(1.15);
+  padding-bottom: 10%;
 }
