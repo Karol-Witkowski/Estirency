@@ -90,6 +90,7 @@ $primary: #1ebffa;
     border: 1px solid $primary;
     box-shadow: (2px 8px 15px -10px $primary);
     width: 80%;
+    height: 6%;
     margin: auto 9.5% auto;
     color: #31748d;
     text-transform: uppercase;
@@ -111,7 +112,7 @@ $primary: #1ebffa;
     box-shadow: (2px 8px 15px -10px $primary);
     width: 79%;
     margin: -0.9% 9.5% auto;
-    height: 2.2em;
+    height: 5.4%;
     background-color: transparent;
     color: #31748d;
     text-transform: lowercase;
@@ -125,13 +126,17 @@ $primary: #1ebffa;
     color:#32b9eb;
     font-family: 'Josefin Sans', sans-serif;
   }
+  .amountInput:focus {
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+    font-size: 0.71em;
+  }
 }
 
 .vs--searchable .vs__dropdown-toggle,
 .v-select .vs__clear,
 .v-select .vs__open-indicator,
-.v-select .vs__dropdown-menu
-.vs__search, .vs__search:focus {
+.v-select .vs__dropdown-menu .vs__search,
+.vs__search:focus {
   fill: #31748d;
   cursor: pointer;
   color: #31748d;
@@ -150,16 +155,37 @@ $primary: #1ebffa;
 }
 
 .v-select .vs__dropdown-option { 
-  color: $primary !important;
+  color: $primary;
 }
 
 .v-select .vs__selected {
   color:#31748d;
   font-size: 0.74em;
-  margin-left: -7%;
+  margin-left: -11%;
+}
+
+.select .v-select {
+  font-size: 1em;
 }
 
 .v-select .vs__clear {
   transform: scale(1.15);
   padding-bottom: 10%;
+}
+
+.v-select .vs__dropdown-menu {
+  max-height: 700%;
+  min-height: auto;
+
+  @media only screen and (max-width: 780px) {
+    max-height: 500%;
+    min-height: auto;
+  }
+}
+
+.vs__search:focus {
+  font-weight: 700;
+  font-size: 0.75em;
+  padding-top: 0.9%;
+  transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
 }
