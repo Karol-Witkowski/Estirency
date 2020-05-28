@@ -10,6 +10,11 @@ export default new Vuex.Store({
     currency: currencies,
   },
   mutations: {
+    getData(state, baseCurrency, wantedCurrency, amountValue) {
+      state.obj.baseCurreny = baseCurrency;
+      state.obj.wantedCurrency = wantedCurrency;
+      state.obj.amountValue = amountValue;
+    },
   },
   actions: {
   },
