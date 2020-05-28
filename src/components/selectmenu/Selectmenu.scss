@@ -1,4 +1,5 @@
 $primary: #1ebffa;
+$secondary: #31748d;
 
 .select {
   border: solid 1px $primary;
@@ -92,7 +93,7 @@ $primary: #1ebffa;
     width: 80%;
     height: 6%;
     margin: auto 9.5% auto;
-    color: #31748d;
+    color: $secondary;
     text-transform: uppercase;
     font-variant: small-caps;
     padding-left: 8%;
@@ -114,7 +115,7 @@ $primary: #1ebffa;
     margin: -0.9% 9.5% auto;
     height: 5.4%;
     background-color: transparent;
-    color: #31748d;
+    color: $secondary;
     text-transform: lowercase;
     font-variant: small-caps;
     font-weight: 700;
@@ -137,12 +138,13 @@ $primary: #1ebffa;
 .v-select .vs__open-indicator,
 .v-select .vs__dropdown-menu .vs__search,
 .vs__search:focus {
-  fill: #31748d;
+  fill: $secondary;
   cursor: pointer;
-  color: #31748d;
+  color: $secondary;
   font-weight: 700;
   text-transform: unset;
   text-align: center;
+  border: 0px;
 }
 
 .v-select .vs__dropdown-menu { 
@@ -159,7 +161,7 @@ $primary: #1ebffa;
 }
 
 .v-select .vs__selected {
-  color:#31748d;
+  color:$secondary;
   font-size: 0.74em;
   margin-left: -11%;
 }
@@ -183,9 +185,18 @@ $primary: #1ebffa;
   }
 }
 
+.vs-search {
+  color: $secondary;
+}
+
 .vs__search:focus {
   font-weight: 700;
   font-size: 0.75em;
   padding-top: 0.9%;
   transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+}
+
+
+.v-select .vs__dropdown-menu .vs__dropdown-option--highlight {
+    background: rgb(32, 32, 32);
 }
