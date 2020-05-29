@@ -6,7 +6,7 @@
       </p>
       <p class="base">select base currency</p>
       <v-select :options="$store.state.currency" label="name"
-      :value="baseCurrency" @input="base" placeholder="base currency">
+      :value="$store.state.baseCurrency" @input="setBaseCurrency" placeholder="base currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
@@ -20,7 +20,7 @@
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
       <p class="currency">select wanted currency</p>
       <v-select :options="$store.state.currency" label="name"
-      :value="wantedCurrency" @input="wanted" placeholder="wanted currency">
+      :value="wantedCurrency" @input="getData" placeholder="wanted currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
@@ -33,13 +33,12 @@
       </v-select>
       <p class="amount">type amount</p>
       <input class="amountInput" @keypress="amountRestrictions"
-       :value="amountValue" @input="amount" placeholder="amount of currency" />
+       :value="amountValue" @input="getData" placeholder="amount of currency" />
       <button class="getData" @click="getData">Calculate</button>
     </div>
 </template>
 
 <script>
-// import { mapState } from 'vuex';
 
 export default {
   name: 'Selectmenu',
@@ -47,14 +46,6 @@ export default {
     return {
     };
   },
-  /* computed: {
-    ...mapState({
-      baseCurrency: (state) => state.obj.baseCurrency,
-      wantedCurrency: (state) => state.obj.wantedCurrency,
-      amountValue: (state) => state.obj.amountValue,
-
-    }),
-  }, */
   methods: {
     currencyRestrictions($event) {
       const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
@@ -72,10 +63,8 @@ export default {
         $event.preventDefault();
       }
     },
-    getData(e) {
-      this.$store.commit('baseCurrency', e.target.value);
-      this.$store.commit('wantedCurrency', e.target.value);
-      this.$store.commit('amountValue', e.target.value);
+    setBaseCurrency(val) {
+      this.$store.commit('setBaseCurrency', val);
     },
   },
 };

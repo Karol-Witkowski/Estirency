@@ -1,6 +1,7 @@
 $primary: #1ebffa;
 
 .rate {
+    color: $primary;
     border-left: 1px solid $primary;
     box-shadow: -14px 6px 5px -16px $primary, inset 12px 0px 10px -16px $primary;
     float: right;

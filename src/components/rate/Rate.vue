@@ -1,6 +1,6 @@
 <template>
   <div class="rate">
-    <p>{{amountValue}}</p>
+    <p>{{ $store.state.baseCurrency.name }} {{ $store.state.baseCurrency.symbol }}</p>
   </div>
 </template>
 
@@ -8,7 +8,9 @@
 export default {
   name: 'Rate',
   computed: {
-    data() { return this.$store.state.amountValue.cc; },
+    store() {
+      return this.$store.state;
+    },
   },
 };
 </script>
