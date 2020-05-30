@@ -20,7 +20,7 @@
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
       <p class="currency">select wanted currency</p>
       <v-select :options="$store.state.currency" label="name"
-      :value="wantedCurrency" @input="getData" placeholder="wanted currency">
+      :value="$store.state.wantedCurrency" @input="setWantedCurrency" placeholder="wanted currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
@@ -33,8 +33,7 @@
       </v-select>
       <p class="amount">type amount</p>
       <input class="amountInput" @keypress="amountRestrictions"
-       :value="amountValue" @input="getData" placeholder="amount of currency" />
-      <button class="getData" @click="getData">Calculate</button>
+       :value="amount" @input="setAmountValue" placeholder="amount of currency" />
     </div>
 </template>
 
@@ -44,6 +43,7 @@ export default {
   name: 'Selectmenu',
   data() {
     return {
+      amount: null,
     };
   },
   methods: {
@@ -65,6 +65,12 @@ export default {
     },
     setBaseCurrency(val) {
       this.$store.commit('setBaseCurrency', val);
+    },
+    setWantedCurrency(val) {
+      this.$store.commit('setWantedCurrency', val);
+    },
+    setAmountValue(val) {
+      this.$store.commit('setAmountValue', val);
     },
   },
 };

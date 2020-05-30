@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import currencies from '@/data/Currencies.json';
-// import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -12,6 +11,12 @@ export default new Vuex.Store({
   mutations: {
     setBaseCurrency(state, base) {
       state.baseCurrency = base;
+    },
+    setWantedCurrency(state, wanted) {
+      state.wantedCurrency = wanted;
+    },
+    setAmountValue(state, amount) {
+      state.amountValue = amount;
     },
   },
   actions: {

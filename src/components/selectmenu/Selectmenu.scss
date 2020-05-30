@@ -20,7 +20,8 @@ $secondary: #31748d;
     font-size: 1.5em;
     color: $primary;
     text-align: center;
-    margin-top: 7.5%;
+    margin-top: 11%;
+    margin-bottom: 7%;
     text-transform: uppercase;
   }
 
@@ -37,14 +38,14 @@ $secondary: #31748d;
     font-weight: 500;
     color: $primary;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 11%;
     text-transform: uppercase;
   }
 
   .swapIcon {
     width: 50px;
     display: block;
-    margin: 8% auto;
+    margin: 8.3% auto;
     
   }
 
@@ -62,29 +63,8 @@ $secondary: #31748d;
     font-weight: 500;
     color: $primary;
     text-align: center;
-    margin-top: 12%;
+    margin-top: 16%;
     text-transform: uppercase;
-  }
-
-  .getData {
-    color: #1ea1d1;
-    text-transform: lowercase;
-    font-variant: small-caps;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.3em;
-    font-weight: 600;
-    border: 1px solid $primary;
-    box-shadow: (2px 8px 15px -10px $primary);
-    background-color: transparent;
-    padding: 2%;
-    margin: 9% auto;
-    display: block;
-  }
-
-  button:active {
-    border: 1px solid;
-    box-shadow: inset 0 0 5px $primary, (2px 8px 15px -10px $primary);
-    text-shadow: 1px 1px 2px #427388; 
   }
 
   .v-select {

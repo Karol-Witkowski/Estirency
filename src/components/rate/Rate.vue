@@ -1,6 +1,8 @@
 <template>
   <div class="rate">
-    <p>{{ $store.state.baseCurrency.name }} {{ $store.state.baseCurrency.symbol }}</p>
+    <p>{{ $store.state.baseCurrency.name }}</p>
+    <p>{{ $store.state.wantedCurrency.name }}</p>
+    <p>{{ $store.state.amountValue }}</p>
   </div>
 </template>
 
