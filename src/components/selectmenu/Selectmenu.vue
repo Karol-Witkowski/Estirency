@@ -33,7 +33,7 @@
       </v-select>
       <p class="amount">type amount</p>
       <input class="amountInput" @keypress="amountRestrictions"
-      :value="amountValute" @input="setAmountValue" placeholder="amount of currency" />
+      :value="$store.state.amountValue" @input="setAmountValue" placeholder="amount of currency" />
     </div>
 </template>
 
@@ -60,7 +60,8 @@ export default {
         $event.preventDefault();
       }
       // allow only two decimal places
-      if (this.amountValue != null && this.amountValue.indexOf('.') > -1 && (this.amountValue.split('.')[1].length > 1)) {
+      if (this.$store.state.amountValue != null && this.$store.state.amountValue.indexOf('.')
+       > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
         $event.preventDefault();
       }
     },
