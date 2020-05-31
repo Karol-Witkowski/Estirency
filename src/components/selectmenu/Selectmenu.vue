@@ -33,7 +33,7 @@
       </v-select>
       <p class="amount">type amount</p>
       <input class="amountInput" @keypress="amountRestrictions"
-       :value="amount" @input="setAmountValue" placeholder="amount of currency" />
+      :value="amountValute" @input="setAmountValue" placeholder="amount of currency" />
     </div>
 </template>
 
@@ -43,8 +43,9 @@ export default {
   name: 'Selectmenu',
   data() {
     return {
-      amount: null,
     };
+  },
+  computed: {
   },
   methods: {
     currencyRestrictions($event) {
@@ -59,7 +60,7 @@ export default {
         $event.preventDefault();
       }
       // allow only two decimal places
-      if (this.amount != null && this.amount.indexOf('.') > -1 && (this.amount.split('.')[1].length > 1)) {
+      if (this.amountValue != null && this.amountValue.indexOf('.') > -1 && (this.amountValue.split('.')[1].length > 1)) {
         $event.preventDefault();
       }
     },
@@ -69,8 +70,8 @@ export default {
     setWantedCurrency(val) {
       this.$store.commit('setWantedCurrency', val);
     },
-    setAmountValue(val) {
-      this.$store.commit('setAmountValue', val);
+    setAmountValue(e) {
+      this.$store.commit('setAmountValue', e.target.value);
     },
   },
 };
