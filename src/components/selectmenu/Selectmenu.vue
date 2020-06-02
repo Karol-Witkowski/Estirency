@@ -5,12 +5,15 @@
         Select currencies and fill input to show data
       </p>
       <p class="base">select base currency</p>
-      <v-select :options="$store.state.currency" label="name"
-      :value="$store.state.baseCurrency" @input="setBaseCurrency" placeholder="base currency">
+      <v-select
+      :options="$store.state.currency"
+      label="name"
+      :value="$store.state.baseCurrency"
+      @input="setBaseCurrency"
+      placeholder="base currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
-            :required="!selected"
             v-bind="attributes"
             v-on="events"
             @keypress="currencyRestrictions"
@@ -19,12 +22,15 @@
       </v-select>
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
       <p class="currency">select wanted currency</p>
-      <v-select :options="$store.state.currency" label="name"
-      :value="$store.state.wantedCurrency" @input="setWantedCurrency" placeholder="wanted currency">
+      <v-select
+      :options="$store.state.currency"
+      label="name"
+      :value="$store.state.wantedCurrency"
+      @input="setWantedCurrency"
+      placeholder="wanted currency">
         <template #search="{attributes, events}">
           <input
             class="vs__search"
-            :required="!selected"
             v-bind="attributes"
             v-on="events"
             @keypress="currencyRestrictions"
@@ -32,8 +38,11 @@
         </template>
       </v-select>
       <p class="amount">type amount</p>
-      <input class="amountInput" @keypress="amountRestrictions"
-      :value="$store.state.amountValue" @input="setAmountValue" placeholder="amount of currency" />
+      <input class="amountInput"
+      @keypress="amountRestrictions"
+      :value="$store.state.amountValue"
+      @input="setAmountValue"
+      placeholder="amount of currency" />
     </div>
 </template>
 
@@ -43,6 +52,7 @@ export default {
   name: 'Selectmenu',
   data() {
     return {
+      selected: this.$store.state.currency[8],
     };
   },
   computed: {
