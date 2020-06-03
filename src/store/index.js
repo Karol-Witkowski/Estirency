@@ -7,9 +7,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     currency: currencies,
-    baseCurrency: '',
-    wantedCurrency: '',
-    amountValue: '',
+    baseCurrency: currencies[21],
+    wantedCurrency: currencies[9],
+    amountValue: 100,
   },
   mutations: {
     setBaseCurrency(state, base) {
