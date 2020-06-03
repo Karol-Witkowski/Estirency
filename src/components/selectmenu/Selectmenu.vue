@@ -10,7 +10,8 @@
       label="name"
       :value="$store.state.baseCurrency"
       @input="setBaseCurrency"
-      placeholder="base currency">
+      placeholder="base currency"
+      >
         <template #search="{attributes, events}">
           <input
             class="vs__search"
@@ -50,9 +51,10 @@
 
 export default {
   name: 'Selectmenu',
+  props: {
+  },
   data() {
     return {
-      selected: this.$store.state.currency[8],
     };
   },
   computed: {

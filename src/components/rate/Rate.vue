@@ -9,10 +9,7 @@
 <script>
 export default {
   name: 'Rate',
-  computed: {
-    store() {
-      return this.$store.state;
-    },
+  methods: {
   },
 };
 </script>
