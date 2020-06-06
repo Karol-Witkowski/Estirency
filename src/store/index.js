@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import currencies from '@/data/Currencies.json';
+import currencies from '@/data/currencies.json';
 
 Vue.use(Vuex);
 

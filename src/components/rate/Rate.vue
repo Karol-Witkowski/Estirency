@@ -8,13 +8,14 @@
       XXX {{ $store.state.wantedCurrency.cc }}
     </div>
     <div>
-     The rate of transaction is {{ss}}
+     The rate of transaction is {{ rate }}
     </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import currencies from '@/data/currencies.json';
 
 const currencyRate = 'https://api.exchangeratesapi.io/latest?base=';
 
@@ -22,16 +23,27 @@ export default {
   name: 'Rate',
   data() {
     return {
-      response: [],
-      getBaseCurrency: this.$store.state.baseCurrency.cc,
+      rate: null,
+      store: this.$store.state,
+      currencies,
     };
+  },
+  computed: {
+    setBaseCurrency() {
+      return this.$store.state.baseCurrency;
+    },
   },
   methods: {
   },
   mounted() {
-    axios.get(`${currencyRate}${this.getBaseCurrency}`)
+    const self = this;
+    axios.get(`${currencyRate}${self.setBaseCurrency.cc}`)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
+        this.rate = response.data.rates.PLN;
+      })
+      .catch((error) => {
+        console.log(error);
       });
   },
 };

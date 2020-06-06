@@ -23,7 +23,6 @@
     {"cc":"PLN","symbol":"z\u0142","name":"Polish zloty"},
     {"cc":"RON","symbol":"L","name":"Romanian leu"},
     {"cc":"RUB","symbol":"R","name":"Russian ruble"},
-    {"cc":"RSD","symbol":"din.","name":"Serbian dinar"},
     {"cc":"SGD","symbol":"S$","name":"Singapore dollar"},
     {"cc":"ZAR","symbol":"R","name":"South African rand"},
     {"cc":"KRW","symbol":"W","name":"South Korean won"},
