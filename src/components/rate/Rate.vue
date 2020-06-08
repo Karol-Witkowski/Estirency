@@ -34,10 +34,21 @@ export default {
     },
   },
   methods: {
+    reRender() {
+      this.index = +1;
+    },
   },
-  mounted() {
-    const self = this;
-    axios.get(`${currencyRate}${self.setBaseCurrency.cc}`)
+  created() {
+    axios.get(`${currencyRate}${this.setBaseCurrency.cc}`)
+      .then((response) => {
+        this.rate = response.data.rates.PLN;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  updated() {
+    axios.get(`${currencyRate}${this.setBaseCurrency.cc}`)
       .then((response) => {
         console.log(response.data);
         this.rate = response.data.rates.PLN;
