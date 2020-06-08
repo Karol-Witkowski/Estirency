@@ -1,9 +1,11 @@
 <template>
   <div class="rate">
     <div>
-      <span>{{ $store.state.amountValue }}</span> {{ $store.state.baseCurrency.cc }}
-      ({{ $store.state.baseCurrency.name }}) is
-      </div>
+      <span>
+        {{ $store.state.amountValue }}
+      </span>
+         {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is
+    </div>
     <div>
       XXX {{ $store.state.wantedCurrency.cc }}
     </div>
@@ -15,7 +17,6 @@
 
 <script>
 import axios from 'axios';
-import currencies from '@/data/currencies.json';
 
 const currencyRate = 'https://api.exchangeratesapi.io/latest?base=';
 
@@ -23,35 +24,32 @@ export default {
   name: 'Rate',
   data() {
     return {
-      rate: null,
-      store: this.$store.state,
-      currencies,
+      rate: Number,
     };
   },
   computed: {
     setBaseCurrency() {
-      return this.$store.state.baseCurrency;
+      return this.$store.state.baseCurrency.cc;
+    },
+    setWantedCurrency() {
+      return this.$store.state.wantedCurrency.cc;
     },
   },
   methods: {
-    reRender() {
-      this.index = +1;
-    },
   },
-  created() {
-    axios.get(`${currencyRate}${this.setBaseCurrency.cc}`)
+  mounted() {
+    axios.get(`${currencyRate}${this.setBaseCurrency}`)
       .then((response) => {
-        this.rate = response.data.rates.PLN;
+        this.rate = response.data.rates;
       })
       .catch((error) => {
         console.log(error);
       });
   },
   updated() {
-    axios.get(`${currencyRate}${this.setBaseCurrency.cc}`)
+    axios.get(`${currencyRate}${this.setBaseCurrency}`)
       .then((response) => {
-        console.log(response.data);
-        this.rate = response.data.rates.PLN;
+        this.rate = response.data.rates;
       })
       .catch((error) => {
         console.log(error);

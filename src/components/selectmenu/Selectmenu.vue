@@ -1,10 +1,14 @@
 <template>
     <div class="select">
-      <p class="menu">menu</p>
+      <p class="menu">
+        menu
+      </p>
       <p class="instruction">
         Select currencies and fill input to show data
       </p>
-      <p class="base">select base currency</p>
+      <p class="base">
+        select base currency
+      </p>
       <v-select
       :options="$store.state.currency"
       label="name"
@@ -22,7 +26,9 @@
         </template>
       </v-select>
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
-      <p class="currency">select wanted currency</p>
+      <p class="currency">
+        select wanted currency
+      </p>
       <v-select
       :options="$store.state.currency"
       label="name"
@@ -38,7 +44,9 @@
           />
         </template>
       </v-select>
-      <p class="amount">type amount</p>
+      <p class="amount">
+        type amount
+      </p>
       <input class="amountInput"
       @keypress="amountRestrictions"
       :value="$store.state.amountValue"
