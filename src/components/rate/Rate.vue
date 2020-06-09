@@ -40,7 +40,7 @@ export default {
   mounted() {
     axios.get(`${currencyRate}${this.setBaseCurrency}`)
       .then((response) => {
-        this.rate = response.data.rates;
+        this.rate = response.data.rates[this.setWantedCurrency];
       })
       .catch((error) => {
         console.log(error);
@@ -49,7 +49,7 @@ export default {
   updated() {
     axios.get(`${currencyRate}${this.setBaseCurrency}`)
       .then((response) => {
-        this.rate = response.data.rates;
+        this.rate = response.data.rates[this.setWantedCurrency];
       })
       .catch((error) => {
         console.log(error);
