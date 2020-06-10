@@ -1,16 +1,21 @@
 <template>
   <div class="rate">
-    <div>
-     The rate of transaction is {{ setRate }}
+    <div class="transactionRate">
+     The rate of transaction is
+     <span class="calculated">
+        {{ setRate }}
+     </span>
     </div>
-    <div>
-      <span>
+    <div class="transactionRate">
+      <span class="calculated">
         {{ $store.state.amountValue }}
       </span>
          {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is
-    </div>
-    <div>
-      {{ setAmount }} {{ $store.state.wantedCurrency.cc }} ({{ $store.state.wantedCurrency.name }})
+      <span class="calculated">
+        {{ setAmount }}
+      </span>
+      {{ $store.state.wantedCurrency.cc }}
+      ({{ $store.state.wantedCurrency.name }})
     </div>
     </div>
 </template>
