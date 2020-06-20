@@ -46,7 +46,8 @@ $secondary: #31748d;
     width: 50px;
     display: block;
     margin: 8.3% auto;
-    
+    cursor: pointer;
+
   }
 
   .currency {
@@ -87,7 +88,7 @@ $secondary: #31748d;
       font-family: 'Josefin Sans', sans-serif;
     }
   }
-  
+
   .amountInput {
     border: 1px solid $primary;
     box-shadow: (2px 8px 15px -10px $primary);
@@ -127,7 +128,7 @@ $secondary: #31748d;
   border: 0px;
 }
 
-.v-select .vs__dropdown-menu { 
+.v-select .vs__dropdown-menu {
   background-color: rgb(39, 39, 39);
   border: 1px solid $primary;
   font-family: 'Josefin Sans', sans-serif;
@@ -136,7 +137,7 @@ $secondary: #31748d;
   text-align: center;
 }
 
-.v-select .vs__dropdown-option { 
+.v-select .vs__dropdown-option {
   color: $primary;
 }
 

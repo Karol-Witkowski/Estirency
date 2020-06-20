@@ -18,14 +18,19 @@
       >
         <template #search="{attributes, events}">
           <input
-            class="vs__search"
-            v-bind="attributes"
-            v-on="events"
-            @keypress="currencyRestrictions"
+          class="vs__search"
+          v-bind="attributes"
+          v-on="events"
+          @keypress="currencyRestrictions"
           />
         </template>
       </v-select>
-      <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon">
+      <img
+      src="@/assets/swap-vertical.png"
+      alt="swap currency icon"
+      class="swapIcon"
+      v-on:click="swapValues"
+      >
       <p class="currency">
         select wanted currency
       </p>
@@ -37,10 +42,10 @@
       placeholder="wanted currency">
         <template #search="{attributes, events}">
           <input
-            class="vs__search"
-            v-bind="attributes"
-            v-on="events"
-            @keypress="currencyRestrictions"
+          class="vs__search"
+          v-bind="attributes"
+          v-on="events"
+          @keypress="currencyRestrictions"
           />
         </template>
       </v-select>
@@ -74,6 +79,7 @@ export default {
         $event.preventDefault();
       }
     },
+
     amountRestrictions($event) {
       const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
       if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
@@ -85,12 +91,15 @@ export default {
         $event.preventDefault();
       }
     },
+
     setBaseCurrency(val) {
       this.$store.commit('setBaseCurrency', val);
     },
+
     setWantedCurrency(val) {
       this.$store.commit('setWantedCurrency', val);
     },
+
     setAmountValue(e) {
       this.$store.commit('setAmountValue', e.target.value);
     },
