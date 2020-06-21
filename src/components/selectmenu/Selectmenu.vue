@@ -92,6 +92,11 @@ export default {
       }
     },
 
+    swapValues() {
+      this.$store.state.baseCurrency = this.$store.state.wantedCurrency;
+      this.$store.state.wantedCurrency = this.$store.state.baseCurrency;
+    },
+
     setBaseCurrency(val) {
       this.$store.commit('setBaseCurrency', val);
     },

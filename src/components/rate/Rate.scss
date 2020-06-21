@@ -1,26 +1,26 @@
 $primary: #1ebffa;
 
 .rate {
-    font-size: 0.95em;
-    color: #1cace0;
-    text-transform: uppercase;
-    text-align: center;
-    border-left: 1px solid $primary;
-    box-shadow: -14px 6px 7px -16px $primary, inset 12px 0px 11px -16px $primary;
-    float: right;
-    width: 30%;
-    height: 33%;
-    margin-top: 14%;
-    padding-left: 0.5em;
+  font-size: 0.95em;
+  color: #1cace0;
+  text-transform: uppercase;
+  text-align: center;
+  border-left: 1px solid $primary;
+  box-shadow: -14px 6px 7px -16px $primary, inset 12px 0px 11px -16px $primary;
+  float: right;
+  width: 30%;
+  height: 33%;
+  margin-top: 14%;
+  padding-left: 0.5em;
 
-    .transactionRate {
-        padding-top: 10%;
-        padding-bottom: 7%;
-        margin-right: 1.2em;
-    }
+  .transactionRate {
+    padding-top: 10%;
+    padding-bottom: 7%;
+    margin-right: 1.2em;
+  }
 
-    .calculated {
-        font-size: 1.16em;
-        color: $primary;
-    }
+  .calculated {
+    font-size: 1.16em;
+    color: $primary;
+  }
 }
