@@ -14,8 +14,7 @@
       label="name"
       :value="$store.state.baseCurrency"
       @input="setBaseCurrency"
-      placeholder="base currency"
-      >
+      placeholder="base currency">
         <template #search="{attributes, events}">
           <input
           class="vs__search"
@@ -68,6 +67,8 @@ export default {
   },
   data() {
     return {
+      cur1: 'PLN',
+      cur2: 'EUR',
     };
   },
   computed: {
@@ -93,8 +94,8 @@ export default {
     },
 
     swapValues() {
-      this.$store.state.baseCurrency = this.$store.state.wantedCurrency;
-      this.$store.state.wantedCurrency = this.$store.state.baseCurrency;
+      [this.$store.state.baseCurrency, this.$store.state.wantedCurrency] = [
+        this.$store.state.wantedCurrency, this.$store.state.baseCurrency];
     },
 
     setBaseCurrency(val) {
