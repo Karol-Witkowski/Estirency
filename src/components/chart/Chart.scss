@@ -1,0 +1,18 @@
+$primary: #1ebffa;
+$secondary: #31748d;
+
+.chart {
+  float: left;
+
+  .chartDescription {
+    font-size: 1.1em;
+    color: $primary;
+    margin: 13% -100% 5% 52%;
+    text-transform: uppercase;
+    overflow-wrap: nowrap;
+
+    .year {
+      font-size: 1.1em;
+    }
+  }
+}
