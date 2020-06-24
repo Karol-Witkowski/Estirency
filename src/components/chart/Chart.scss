@@ -7,12 +7,16 @@ $secondary: #31748d;
   .chartDescription {
     font-size: 1.1em;
     color: $primary;
-    margin: 13% -100% 5% 52%;
+    margin: 5% -100% 5% 30%;
     text-transform: uppercase;
     overflow-wrap: nowrap;
 
     .year {
       font-size: 1.1em;
     }
+  }
+
+  .dataChart {
+    margin: 4em 4em 10px 4em;
   }
 }
