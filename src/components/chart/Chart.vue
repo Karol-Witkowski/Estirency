@@ -1,12 +1,25 @@
 <template>
     <div class="chart">
-      <p class="chartDescription">historical exchange rates from <span class="year">1990</span></p>
-      <VueApexCharts class="dataChart" width="600" type="line" :options="options" :series="series"/>
+      <p class="chartDescription">
+        historical exchange rates from <span class="year">
+          1999
+        </span>
+      </p>
+      <VueApexCharts
+      class="dataChart"
+      width="625"
+      type="line"
+      :options="options"
+      :series="series"
+      />
     </div>
 </template>
 
 <script>
 import VueApexCharts from 'vue-apexcharts';
+import axios from 'axios';
+
+const chartDataApi = 'https://api.exchangeratesapi.io/history?start_at=1990-01-01&end_at=2018-09-01&base=';
 
 export default {
   name: 'Rate',
@@ -17,17 +30,24 @@ export default {
     return {
       options: {
         chart: {
-          id: 'vuechart-example',
+          id: 'dataChart',
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+          categories: [],
         },
       },
       series: [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91],
+        name: 'series',
+        data: [],
       }],
     };
+  },
+  mounted() {
+    axios.get(`${chartDataApi}${this.setBaseCurrency}`)
+      .then((response) => {
+        this.data = response;
+        console.log(this.data);
+      });
   },
 };
 </script>
