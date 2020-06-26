@@ -1,9 +1,7 @@
 <template>
     <div class="chart">
       <p class="chartDescription">
-        historical exchange rates from <span class="year">
-          1999
-        </span>
+        historical exchange rates
       </p>
       <VueApexCharts
       class="dataChart"
@@ -19,8 +17,6 @@
 import VueApexCharts from 'vue-apexcharts';
 import axios from 'axios';
 
-const chartDataApi = 'https://api.exchangeratesapi.io/history?start_at=1990-01-01&end_at=2018-09-01&base=';
-
 export default {
   name: 'Rate',
   components: {
@@ -31,6 +27,7 @@ export default {
       options: {
         chart: {
           id: 'dataChart',
+          type: 'line',
         },
         xaxis: {
           categories: [],
@@ -42,12 +39,22 @@ export default {
       }],
     };
   },
-  mounted() {
-    axios.get(`${chartDataApi}${this.setBaseCurrency}`)
+  mounted(value) {
+    let actualDate;
+    let pastDate;
+
+    axios
+      .get(
+        `https://api.nbp.pl/api/exchangerates/rates/a/${value}/${pastDate}/${actualDate}/`,
+      )
       .then((response) => {
-        this.data = response;
-        console.log(this.data);
-      });
+        this.results = response.data.rates;
+        console.log(this.results);
+        this.isLoaded = true;
+      })
+      .catch((error) => error);
+  },
+  computed: {
   },
 };
 </script>

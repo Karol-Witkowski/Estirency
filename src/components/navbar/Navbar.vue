@@ -3,12 +3,8 @@
     <router-link to="/home" class="" active-class="">
       <div class="logo">
         <img src="@/assets/chart-bell-curve.png" alt="bell curve chart icon" class="logoIcon">
-        <span class="namePart1">
-          esti
-        </span>
-        <span class="namePart2">
-          rency
-        </span>
+        <span class="namePart1">esti</span>
+        <span class="namePart2">rency</span>
       </div>
     </router-link>
     <div class="buttons">

@@ -46,17 +46,20 @@ export default {
       return Math.round((this.$store.state.amountValue * this.setRate) * 100) / 100;
     },
   },
-  mounted() {
-    axios.get(`${currencyRate}${this.setBaseCurrency}`)
-      .then((response) => {
-        this.rate = response.data.rates[this.setWantedCurrency];
-      });
+  methods: {
+    getRates() {
+      axios.get(`${currencyRate}${this.setBaseCurrency}`)
+        .then((response) => {
+          this.rate = response.data.rates[this.setWantedCurrency];
+          this.isLoaded = true;
+        });
+    },
   },
   updated() {
-    axios.get(`${currencyRate}${this.setBaseCurrency}`)
-      .then((response) => {
-        this.rate = response.data.rates[this.setWantedCurrency];
-      });
+    this.getRates();
+  },
+  mounted() {
+    this.getRates();
   },
 };
 </script>
