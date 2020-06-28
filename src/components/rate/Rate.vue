@@ -51,8 +51,8 @@ export default {
       axios.get(`${currencyRate}${this.setBaseCurrency}`)
         .then((response) => {
           this.rate = response.data.rates[this.setWantedCurrency];
-          this.isLoaded = true;
-        });
+        })
+        .catch((error) => error);
     },
   },
   updated() {
