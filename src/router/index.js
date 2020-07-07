@@ -20,3 +20,4 @@ const router = new VueRouter({
   routes,
 });
 export default router;
+router.replace({ path: '/home', redirect: '/home' });

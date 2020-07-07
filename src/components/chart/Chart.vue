@@ -30,12 +30,12 @@ export default {
           type: 'line',
         },
         xaxis: {
-          categories: [this.years],
+          categories: [2020, 2202, 2021],
         },
       },
       series: [{
         name: 'series',
-        data: [this.years],
+        data: [1, 6, 2],
       }],
     };
   },
