@@ -17,6 +17,27 @@
 import VueApexCharts from 'vue-apexcharts';
 import axios from 'axios';
 
+let actualDate;
+let pastDate;
+
+const year = new Date().getFullYear();
+const month = new Date().getMonth() + 1;
+const day = new Date().getDate();
+
+if (month < 10 && day < 10) {
+  actualDate = `${year}-0${month}-0${day}`;
+  pastDate = `${year - 5}-0${month}-0${day}`;
+} else if (month > 9 && day < 10) {
+  actualDate = `${year}-${month}-0${day}`;
+  pastDate = `${year - 5}-${month}-0${day}`;
+} else if (month < 10 && day > 9) {
+  actualDate = `${year}-0${month}-${day}`;
+  pastDate = `${year - 5}-0${month}-${day}`;
+} else {
+  actualDate = `${year}-${month}-${day}`;
+  pastDate = `${year - 5}-${month}-${day}`;
+}
+
 export default {
   name: 'Rate',
   components: {
@@ -24,18 +45,19 @@ export default {
   },
   data() {
     return {
+      historyData: String,
       options: {
         chart: {
           id: 'dataChart',
           type: 'line',
         },
         xaxis: {
-          categories: [2020, 2202, 2021],
+          categories: [],
         },
       },
       series: [{
         name: 'series',
-        data: [1, 6, 2],
+        data: [],
       }],
     };
   },
@@ -43,37 +65,15 @@ export default {
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },
+    setWantedCurrency() {
+      return this.$store.state.wantedCurrency.cc;
+    },
   },
   methods: {
     getData() {
-      let actualDate;
-      let pastDate;
-
-      const year = new Date().getFullYear();
-      const month = new Date().getMonth() + 1;
-      const day = new Date().getDate();
-
-      if (month < 10 && day < 10) {
-        actualDate = `${year}-0${month}-0${day}`;
-        pastDate = `${year - 1}-0${month}-0${day}`;
-      } else if (month > 9 && day < 10) {
-        actualDate = `${year}-${month}-0${day}`;
-        pastDate = `${year - 1}-${month}-0${day}`;
-      } else if (month < 10 && day > 9) {
-        actualDate = `${year}-0${month}-${day}`;
-        pastDate = `${year - 1}-0${month}-${day}`;
-      } else {
-        actualDate = `${year}-${month}-${day}`;
-        pastDate = `${year - 1}-${month}-${day}`;
-      }
-      axios
-        .get(
-          `https://api.exchangeratesapi.io/history?start_at=${pastDate}&end_at=${actualDate}&base=${this.setBaseCurrency}`,
-        )
+      axios.get(`https://marketdata.tradermade.com/api/v1/timeseries?api_key=QU1NfjOWWJ5WHhSaHLKG&currency=${this.setBaseCurrency}${this.setWantedCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
         .then((response) => {
-          this.years = response.rates;
-          this.rate = response.rates;
-          this.isLoaded = true;
+          this.historyData = response.quotes;
         })
         .catch((error) => error);
     },
