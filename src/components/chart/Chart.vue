@@ -20,6 +20,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
+const historicalRate = 'https://marketdata.tradermade.com/api/v1/timeseries?api_key=QU1NfjOWWJ5WHhSaHLKG&currency=';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate();
@@ -45,7 +46,7 @@ export default {
   },
   data() {
     return {
-      historyData: String,
+      base: this.$store.state.baseCurrency.cc,
       options: {
         chart: {
           id: 'dataChart',
@@ -71,7 +72,7 @@ export default {
   },
   methods: {
     getData() {
-      axios.get(`https://marketdata.tradermade.com/api/v1/timeseries?api_key=QU1NfjOWWJ5WHhSaHLKG&currency=${this.setBaseCurrency}${this.setWantedCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
+      axios.get(`${historicalRate}${this.setBaseCurrency}${this.setWantedCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
         .then((response) => {
           this.historyData = response.quotes;
         })
