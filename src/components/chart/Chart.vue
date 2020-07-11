@@ -1,7 +1,7 @@
 <template>
     <div class="chart">
       <p class="chartDescription">
-        historical exchange rates
+        historical exchange rates {{ this.historyData }}
       </p>
       <VueApexCharts
       class="dataChart"
@@ -47,6 +47,7 @@ export default {
   data() {
     return {
       base: this.$store.state.baseCurrency.cc,
+      historyData: '',
       options: {
         chart: {
           id: 'dataChart',
@@ -74,7 +75,8 @@ export default {
     getData() {
       axios.get(`${historicalRate}${this.setBaseCurrency}${this.setWantedCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
         .then((response) => {
-          this.historyData = response.quotes;
+          this.historyData = response[0].close;
+          console.log(this.historyData);
         })
         .catch((error) => error);
     },
