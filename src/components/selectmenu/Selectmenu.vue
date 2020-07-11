@@ -31,14 +31,14 @@
       v-on:click="swapValues"
       >
       <p class="currency">
-        select wanted currency
+        select target currency
       </p>
       <v-select
       :options="$store.state.currency"
       label="name"
-      :value="$store.state.wantedCurrency"
-      @input="setWantedCurrency"
-      placeholder="wanted currency">
+      :value="$store.state.targetCurrency"
+      @input="setTargetCurrency"
+      placeholder="target currency">
         <template #search="{attributes, events}">
           <input
           class="vs__search"
@@ -94,16 +94,16 @@ export default {
     },
 
     swapValues() {
-      [this.$store.state.baseCurrency, this.$store.state.wantedCurrency] = [
-        this.$store.state.wantedCurrency, this.$store.state.baseCurrency];
+      [this.$store.state.baseCurrency, this.$store.state.targetCurrency] = [
+        this.$store.state.targetCurrency, this.$store.state.baseCurrency];
     },
 
     setBaseCurrency(val) {
       this.$store.commit('setBaseCurrency', val);
     },
 
-    setWantedCurrency(val) {
-      this.$store.commit('setWantedCurrency', val);
+    setTargetCurrency(val) {
+      this.$store.commit('setTargetCurrency', val);
     },
 
     setAmountValue(e) {

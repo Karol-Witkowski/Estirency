@@ -68,12 +68,12 @@ export default {
       return this.$store.state.baseCurrency.cc;
     },
     setWantedCurrency() {
-      return this.$store.state.wantedCurrency.cc;
+      return this.$store.state.targetCurrency.cc;
     },
   },
   methods: {
     getData() {
-      axios.get(`${historicalRate}${this.setBaseCurrency}${this.setWantedCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
+      axios.get(`${historicalRate}${this.setBaseCurrency}${this.setTargetCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
         .then((response) => {
           this.historyData = response[0].close;
           console.log(this.historyData);

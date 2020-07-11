@@ -14,8 +14,8 @@
       <span class="calculated">
         {{ setAmount }}
       </span>
-      {{ $store.state.wantedCurrency.cc }}
-      ({{ $store.state.wantedCurrency.name }})
+      {{ $store.state.targetCurrency.cc }}
+      ({{ $store.state.targetCurrency.name }})
     </div>
     </div>
 </template>
@@ -36,8 +36,8 @@ export default {
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },
-    setWantedCurrency() {
-      return this.$store.state.wantedCurrency.cc;
+    setTargetCurrency() {
+      return this.$store.state.targetCurrency.cc;
     },
     setRate() {
       return Math.round(this.rate * 1000) / 1000;
@@ -50,7 +50,7 @@ export default {
     getRates() {
       axios.get(`${currencyRate}${this.setBaseCurrency}`)
         .then((response) => {
-          this.rate = response.data.rates[this.setWantedCurrency];
+          this.rate = response.data.rates[this.setTargetCurrency];
         })
         .catch((error) => error);
     },
