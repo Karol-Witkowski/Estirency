@@ -1,7 +1,7 @@
 <template>
     <div class="chart">
       <p class="chartDescription">
-        historical exchange rates {{ this.historyData }}
+        historical exchange rates {{ this.historyDate }} {{ this.historyRate }}
       </p>
       <VueApexCharts
       class="dataChart"
@@ -17,10 +17,11 @@
 import VueApexCharts from 'vue-apexcharts';
 import axios from 'axios';
 
+// eslint-disable-next-line no-unused-vars
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://marketdata.tradermade.com/api/v1/timeseries?api_key=QU1NfjOWWJ5WHhSaHLKG&currency=';
+const historicalRate = 'https://marketdata.tradermade.com/api/v1/timeseries?api_key=xTIe4VLZK52rEVtREY3P&currency=';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate();
@@ -44,10 +45,12 @@ export default {
   components: {
     VueApexCharts,
   },
+
   data() {
     return {
       base: this.$store.state.baseCurrency.cc,
-      historyData: '',
+      historyDate: '',
+      historyRate: '',
       options: {
         chart: {
           id: 'dataChart',
@@ -63,27 +66,34 @@ export default {
       }],
     };
   },
+
   computed: {
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },
-    setWantedCurrency() {
+    setTargetCurrency() {
       return this.$store.state.targetCurrency.cc;
     },
   },
+  // CHANGE END DATE TO {actualDate}
   methods: {
     getData() {
-      axios.get(`${historicalRate}${this.setBaseCurrency}${this.setTargetCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
+      axios.get(`${historicalRate}${this.setBaseCurrency}${this.setTargetCurrency}&start_date=${pastDate}&end_date=2020-07-12&format=records`)
         .then((response) => {
-          this.historyData = response[0].close;
-          console.log(this.historyData);
+          // for (let i = 0; i < response.length; i += 1) {
+          this.historyRate = response.data.quotes[1].close;
+          this.historyDate = response.data.quotes[1].date;
+          console.log(this.historyDate);
+          // }
         })
         .catch((error) => error);
     },
   },
+
   updated() {
     this.getData();
   },
+
   mounted() {
     this.getData();
   },
