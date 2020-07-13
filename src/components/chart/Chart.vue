@@ -77,14 +77,13 @@ export default {
   },
   // CHANGE END DATE TO {actualDate}
   methods: {
-    getData() {
+    async getData() {
       axios.get(`${historicalRate}${this.setBaseCurrency}${this.setTargetCurrency}&start_date=${pastDate}&end_date=2020-07-12&format=records`)
         .then((response) => {
-          // for (let i = 0; i < response.length; i += 1) {
-          this.historyRate = response.data.quotes[1].close;
-          this.historyDate = response.data.quotes[1].date;
-          console.log(this.historyDate);
-          // }
+          for (let i = 0; i < response.data.quotes.length; i += 1) {
+            this.historyRate = response.data.quotes[i].close;
+            this.historyDate = response.data.quotes[i].date;
+          }
         })
         .catch((error) => error);
     },
