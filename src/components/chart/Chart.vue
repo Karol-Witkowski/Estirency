@@ -1,7 +1,8 @@
 <template>
     <div class="chart">
       <p class="chartDescription">
-        historical exchange rates {{ this.historyDate }} {{ this.historyRate }}
+        {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
+        timeseries from last year
       </p>
       <VueApexCharts
       class="dataChart"
@@ -20,7 +21,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://marketdata.tradermade.com/api/v1/timeseries?api_key=ErILqOMX-rT9NVdqUS1f&currency=';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= ZABLOKOWANE ';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -47,22 +48,23 @@ export default {
 
   data() {
     return {
-      base: this.$store.state.baseCurrency.cc,
+      actualDate: '',
+      pastDate: '',
       history: '',
-      historyDate: '',
-      historyRate: '',
+      historyDate: Number,
+      historyRate: Number,
       options: {
         chart: {
           id: 'dataChart',
           type: 'line',
         },
         xaxis: {
-          categories: [],
+          categories: [this.historyDate],
         },
       },
       series: [{
         name: 'series',
-        data: [],
+        data: [this.historyRate],
       }],
     };
   },
@@ -78,9 +80,9 @@ export default {
 
   methods: {
     getData() {
-      axios.get(`${historicalRate}${this.setBaseCurrency}${this.setTargetCurrency}&start_date=${pastDate}&end_date=${actualDate}&format=records`)
+      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`)
         .then((response) => {
-          this.history = response.data.quotes;
+          this.history = response.data.response;
           this.dataLoop();
         })
         .catch((error) => error);
@@ -88,8 +90,8 @@ export default {
 
     dataLoop() {
       for (let i = 0; i < this.history.length; i += 1) {
-        this.historyRate = this.history[i].close;
-        this.historyDate = this.history[i].date;
+        this.historyRate = this.history[i].c;
+        this.historyDate = this.history[i].tm;
       }
     },
   },
