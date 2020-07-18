@@ -56,15 +56,33 @@ export default {
       options: {
         chart: {
           id: 'dataChart',
-          type: 'line',
+          type: 'area',
         },
         xaxis: {
-          categories: [this.historyDate],
+          categories: [2020, 2021],
+        },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            gradientToColors: ['#7affb8'],
+            shadeIntensity: 1,
+            type: 'horizontal',
+            stops: [0, 80, 100, 100],
+          },
+        },
+        markers: {
+          size: 4,
+          colors: ['#1ebffa'],
+          strokeColors: '#fff',
+          strokeWidth: 2,
+          hover: {
+            size: 5,
+          },
         },
       },
       series: [{
         name: 'series',
-        data: [this.historyRate],
+        data: [3, 6],
       }],
     };
   },
@@ -75,6 +93,9 @@ export default {
     },
     setTargetCurrency() {
       return this.$store.state.targetCurrency.cc;
+    },
+    setHistoryRate() {
+      return this.historyRate;
     },
   },
 
