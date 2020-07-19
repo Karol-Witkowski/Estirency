@@ -21,7 +21,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= blocked';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -93,6 +93,15 @@ export default {
             stops: [0, 80, 100, 100],
           },
         },
+        markers: {
+          size: 4,
+          colors: ['#1ebffa'],
+          strokeColors: '#fff',
+          strokeWidth: 2,
+          hover: {
+            size: 5,
+          },
+        },
       },
       series: [{
         name: 'Rate',
@@ -115,12 +124,14 @@ export default {
 
   created() {
     axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`).then((response) => {
-      // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < response.data.response.length; i++) {
-        const c = [];
-        // eslint-disable-next-line max-len
-        c.push((response[i].tm), response[i].c);
-        this.series[0].data.push(c);
+      this.history = response.data.response;
+
+      for (let i = 0; i < this.history.length; i += 1) {
+        // eslint-disable-next-line prefer-const
+        let c = [];
+        c.push(Date.parse(this.history[i].tm),
+          this.history[i].c);
+        this.series.data.push(c);
       }
     }).catch((error) => error);
   },
