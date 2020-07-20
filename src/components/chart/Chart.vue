@@ -51,38 +51,15 @@ export default {
       actualDate: '',
       pastDate: '',
       history: '',
-      historyDate: Number,
-      historyRate: Number,
+      historyDate: String,
+      historyRate: String,
       options: {
         chart: {
-          fontFamily: 'Poppins, Helvetica, sans-serif',
-          height: '100%',
-          width: '100%',
+          id: 'dataChart',
           type: 'area',
-          animations: {
-            initialAnimation: {
-              enabled: false,
-            },
-          },
-          toolbar: {
-            show: true,
-            tools: {
-              download: false,
-              selection: false,
-              zoom: true,
-              zoomin: false,
-              zoomout: false,
-              pan: false,
-              reset: true,
-            },
-            autoSelected: 'zoom',
-          },
-        },
-        dataLabels: {
-          enabled: false,
         },
         xaxis: {
-          type: 'datetime',
+          categories: [],
         },
         fill: {
           type: 'gradient',
@@ -104,7 +81,7 @@ export default {
         },
       },
       series: [{
-        name: 'Rate',
+        name: 'series',
         data: [],
       }],
     };
@@ -122,18 +99,32 @@ export default {
     },
   },
 
-  created() {
-    axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`).then((response) => {
-      this.history = response.data.response;
+  methods: {
+    getData() {
+      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`)
+        .then((response) => {
+          this.history = response.data.response;
+          this.dataLoop();
+        })
+        .catch((error) => error);
+    },
 
+    dataLoop() {
       for (let i = 0; i < this.history.length; i += 1) {
-        // eslint-disable-next-line prefer-const
-        let c = [];
-        c.push(Date.parse(this.history[i].tm),
-          this.history[i].c);
-        this.series.data.push(c);
+        this.options.xaxis.categories.push(this.history[i].tm);
+        this.series[0].data.push(this.history[i].c);
       }
-    }).catch((error) => error);
+    },
+  },
+
+  updated() {
+    this.getData();
+    this.dataLoop();
+  },
+
+  mounted() {
+    this.getData();
+    this.dataLoop();
   },
 };
 </script>
