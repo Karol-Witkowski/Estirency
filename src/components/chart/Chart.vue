@@ -6,7 +6,8 @@
       </p>
       <VueApexCharts
       class="dataChart"
-      width="625"
+      width="680px"
+      height="400px"
       type="line"
       :options="options"
       :series="series"
@@ -50,7 +51,7 @@ export default {
     return {
       actualDate: '',
       pastDate: '',
-      history: '',
+      history: [],
       historyDate: String,
       historyRate: String,
       options: {
@@ -70,13 +71,45 @@ export default {
             stops: [0, 80, 100, 100],
           },
         },
+        stroke: {
+          show: true,
+          curve: 'smooth',
+          lineCap: 'string',
+          width: 2,
+          dashArray: 0,
+        },
+        toolbar: {
+          show: true,
+          tools: {
+            download: true,
+            selection: false,
+            zoom: true,
+            zoomin: false,
+            zoomout: false,
+            pan: false,
+            reset: false,
+          },
+          autoSelected: 'zoom',
+        },
         markers: {
-          size: 4,
-          colors: ['#1ebffa'],
+          size: 0,
+          colors: 'teal',
           strokeColors: '#fff',
-          strokeWidth: 2,
+          strokeWidth: 0,
+          strokeOpacity: 0,
+          strokeDashArray: 0,
+          fillOpacity: 1,
+          discrete: [],
+          shape: 'circle',
+          radius: 2,
+          offsetX: 0,
+          offsetY: 0,
+          onClick: undefined,
+          onDblClick: undefined,
+          showNullDataPoints: true,
           hover: {
-            size: 5,
+            size: 4.4,
+            sizeOffset: 1,
           },
         },
       },
