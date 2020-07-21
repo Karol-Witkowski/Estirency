@@ -10,7 +10,6 @@
 import Navbar from './components/navbar/Navbar.vue';
 import Theme from './components/Theme.vue';
 
-
 export default {
   components: {
     Navbar,

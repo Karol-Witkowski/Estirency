@@ -60,15 +60,32 @@ export default {
           type: 'area',
         },
         xaxis: {
+          type: 'datetime',
           categories: [],
+          labels: {
+            show: true,
+            rotate: -45,
+            rotateAlways: false,
+            hideOverlappingLabels: true,
+            showDuplicates: false,
+            trim: true,
+            minHeight: undefined,
+            maxHeight: 120,
+            datetimeFormatter: {
+              year: '.yy',
+              month: "MMM 'yy",
+              day: 'dd MMM',
+              hour: '',
+            },
+          },
         },
         fill: {
           type: 'gradient',
           gradient: {
-            gradientToColors: ['#7affb8'],
+            gradientToColors: ['#31748d'],
             shadeIntensity: 1,
             type: 'horizontal',
-            stops: [0, 80, 100, 100],
+            stops: [0, 40, 100, 100],
           },
         },
         stroke: {
@@ -78,22 +95,9 @@ export default {
           width: 2,
           dashArray: 0,
         },
-        toolbar: {
-          show: true,
-          tools: {
-            download: true,
-            selection: false,
-            zoom: true,
-            zoomin: false,
-            zoomout: false,
-            pan: false,
-            reset: false,
-          },
-          autoSelected: 'zoom',
-        },
         markers: {
           size: 0,
-          colors: 'teal',
+          colors: '#1ebffa',
           strokeColors: '#fff',
           strokeWidth: 0,
           strokeOpacity: 0,
@@ -108,7 +112,7 @@ export default {
           onDblClick: undefined,
           showNullDataPoints: true,
           hover: {
-            size: 4.4,
+            size: 3.7,
             sizeOffset: 1,
           },
         },
