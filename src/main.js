@@ -8,7 +8,6 @@ import store from './store';
 Vue.component('v-select', vSelect);
 Vue.config.productionTip = false;
 
-
 new Vue({
   router,
   store,

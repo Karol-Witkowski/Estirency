@@ -22,7 +22,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= BLOCKED';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -69,7 +69,6 @@ export default {
             hideOverlappingLabels: true,
             showDuplicates: false,
             trim: true,
-            minHeight: undefined,
             maxHeight: 120,
             datetimeFormatter: {
               year: '.yy',
@@ -85,7 +84,7 @@ export default {
             gradientToColors: ['#31748d'],
             shadeIntensity: 1,
             type: 'horizontal',
-            stops: [0, 40, 100, 100],
+            stops: [0, 50, 100, 100],
           },
         },
         stroke: {
@@ -123,7 +122,6 @@ export default {
       }],
     };
   },
-
   computed: {
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
@@ -138,6 +136,8 @@ export default {
 
   methods: {
     getData() {
+      // The API key should be in a .env file, and never in the open repo.
+      // I left that free version key here to provide full experience on launch.
       axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`)
         .then((response) => {
           this.history = response.data.response;
