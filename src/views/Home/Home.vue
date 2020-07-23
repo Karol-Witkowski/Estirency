@@ -1,19 +1,22 @@
 <template>
   <div class="home">
     <Selectmenu />
-    <Results />
+    <Rate />
+    <Chart />
   </div>
 </template>
 
 <script>
 import Selectmenu from '@/components/selectmenu/Selectmenu.vue';
-import Results from '@/components/results/Results.vue';
+import Rate from '@/components/rate/Rate.vue';
+import Chart from '@/components/chart/Chart.vue';
 
 export default {
   name: 'Home',
   components: {
     Selectmenu,
-    Results,
+    Rate,
+    Chart,
   },
 };
 </script>
