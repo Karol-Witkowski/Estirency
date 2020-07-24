@@ -5,18 +5,45 @@ $primary: #1ebffa;
   color: #1cace0;
   text-transform: uppercase;
   text-align: center;
-  border-left: 1px solid $primary;
-  box-shadow: -14px 6px 7px -16px $primary, inset 12px 0px 11px -16px $primary;
   float: right;
-  width: 28%;
+  width: 20%;
   height: 21.6%;
   margin-top: 22%;
   padding-left: 1.5em;
+  float: left;
+  display: block;
+  background-color: rgb(35, 35, 35);
+  box-shadow: (2px 8px 30px -15px $primary);
+  height: 580px;
+  border: solid 1px $primary;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 30px;
 
   .transactionRate {
     padding-top: 7.5%;
     margin-right: 1.6em;
     margin-left: -2%;
+  }
+
+  .dataInfo {
+    font-weight: 600;
+    font-size: 0.8em;
+    text-align: justify;
+    margin: 30px 30px 20px 0px;
+  }
+
+  .apiInfo {
+    text-align: center;
+    margin: 30px 30px 10px 0px;
+    font-weight: 600;
+    font-size: 0.8em;
+
+    .apiIcon {
+      margin-top: 30px;
+      display: block;
+      align-self: center;
+    }
   }
 
   .calculated {

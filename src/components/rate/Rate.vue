@@ -17,7 +17,19 @@
       {{ $store.state.targetCurrency.cc }}
       ({{ $store.state.targetCurrency.name }})
     </div>
+    <div  class="dataInfo">
+      The data is provided by the European Central Bank placed in Frankfurt am Main and
+      base on The reference rates that are usually updated around
+      <span class="calculated">
+        16:00
+      </span>
+         CET on every working day.
     </div>
+    <div class="apiInfo">
+      This app was created thanks to the API service provided by:
+      <img src="@/assets/api.svg" alt="api provider logo" class="apiIcon">
+    </div>
+  </div>
 </template>
 
 <script>
