@@ -1,33 +1,40 @@
 <template>
   <div class="rate">
-    <div class="transactionRate">
-     The rate of transaction is
-     <span class="calculated">
-        {{ setRate }}
-     </span>
-    </div>
-    <div class="transactionRate">
+    <div class="main">
+      <p class="header">
+        Description
+      </p>
+      <div class="transactionRate">
+      The rate of transaction is
       <span class="calculated">
-        {{ $store.state.amountValue }}
+          {{ setRate }}
       </span>
-         {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is
-      <span class="calculated">
-        {{ setAmount }}
-      </span>
-      {{ $store.state.targetCurrency.cc }}
-      ({{ $store.state.targetCurrency.name }})
+      </div>
+      <div class="transactionRate">
+        <span class="calculated">
+          {{ $store.state.amountValue }}
+        </span>
+          {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is
+        <span class="calculated">
+          {{ setAmount }}
+        </span>
+        {{ $store.state.targetCurrency.cc }}
+        ({{ $store.state.targetCurrency.name }})
+      </div>
     </div>
     <div  class="dataInfo">
       The data is provided by the European Central Bank placed in Frankfurt am Main and
-      base on The reference rates that are usually updated around
-      <span class="calculated">
+      base on The reference rates that are updated usually around
+      <span class="time">
         16:00
       </span>
          CET on every working day.
     </div>
     <div class="apiInfo">
       This app was created thanks to the API service provided by:
-      <img src="@/assets/api.svg" alt="api provider logo" class="apiIcon">
+    </div>
+    <div class="apiIcon">
+      <img src="@/assets/api.svg" alt="api provider logo">
     </div>
   </div>
 </template>

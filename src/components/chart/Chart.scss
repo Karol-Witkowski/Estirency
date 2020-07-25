@@ -3,7 +3,7 @@ $secondary: #31748d;
 
 .chart {
   float: left;
-  display: block;
+  display: flexbox;
   background-color: rgb(35, 35, 35);
   box-shadow: (2px 8px 30px -15px $primary);
   height: 580px;
