@@ -6,8 +6,8 @@
       </p>
       <VueApexCharts
       class="dataChart"
-      width="680px"
-      height="400px"
+      width="700px"
+      height="440px"
       type="line"
       :options="options"
       :series="series"

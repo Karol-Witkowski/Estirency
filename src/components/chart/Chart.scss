@@ -7,18 +7,21 @@ $secondary: #31748d;
   background-color: rgb(35, 35, 35);
   box-shadow: (2px 8px 30px -15px $primary);
   height: 580px;
-  width: 750px;
+  width: 765px;
   border: solid 1px $primary;
   border-radius: 10px;
   margin-top: 50px;
   margin-left: 30px;
+  @media only screen and (max-width: 1520px) {
+  }
 
   .chartDescription {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: $primary;
-    margin: 10% 0% 0% 30.2%;
+    margin-top: 4.5%;
     text-transform: uppercase;
     overflow-wrap: nowrap;
+    text-align: center;
 
     .year {
       font-size: 1.1em;
@@ -26,6 +29,6 @@ $secondary: #31748d;
   }
 
   .dataChart {
-    margin: 4% 1% 9% 3%;
+    margin: 6% 1% 9% 3%;
   }
 }
