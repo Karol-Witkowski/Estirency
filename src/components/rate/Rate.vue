@@ -34,7 +34,9 @@
       This app was created thanks to the API service provided by:
     </div>
     <div class="apiIcon">
-      <img src="@/assets/api.svg" alt="api provider logo">
+       <a target="_blank" href="https://exchangeratesapi.io/">
+        <img src="@/assets/api.svg" alt="api provider logo">
+      </a>
     </div>
   </div>
 </template>

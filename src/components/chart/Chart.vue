@@ -22,7 +22,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= BLOCKED';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= block';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -153,14 +153,14 @@ export default {
       }
     },
   },
-
-  updated() {
+  mounted() {
     this.getData();
+    this.VueApexCharts.render();
     this.dataLoop();
   },
 
-  mounted() {
-    this.getData();
+  beforeUpdate() {
+    this.VueApexCharts.render();
     this.dataLoop();
   },
 };
