@@ -5,7 +5,7 @@
         timeseries from last year
       </p>
       <VueApexCharts
-      class="dataChart"
+      id="dataChart"
       width="700px"
       height="440px"
       type="line"
@@ -22,7 +22,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= block';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -42,7 +42,7 @@ if (month < 10 && day < 10) {
 }
 
 export default {
-  name: 'Rate',
+  name: 'Chart',
   components: {
     VueApexCharts,
   },
@@ -153,14 +153,17 @@ export default {
       }
     },
   },
-  mounted() {
+  beforeMount() {
     this.getData();
-    this.VueApexCharts.render();
+  },
+
+  mounted() {
+    VueApexCharts.render();
     this.dataLoop();
   },
 
   beforeUpdate() {
-    this.VueApexCharts.render();
+    VueApexCharts.render();
     this.dataLoop();
   },
 };
