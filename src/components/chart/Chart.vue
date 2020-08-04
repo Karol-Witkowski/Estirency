@@ -6,7 +6,7 @@
       </p>
       <VueApexCharts
       id="dataChart"
-      width="700px"
+      width="97.5%"
       height="440px"
       type="line"
       :options="options"
@@ -22,7 +22,7 @@ import axios from 'axios';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= BLOCKED';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;

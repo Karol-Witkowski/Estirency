@@ -1,7 +1,44 @@
 .home {
   display: flex;
   box-sizing: border-box;
-  @media only screen and (max-width: 950px) {
+  @media only screen and (max-width: 1520px) {
     flex-wrap: wrap;
+    display: flexbox;
+  }
+
+  .selectMenu {
+    @media only screen and (max-width: 1520px) {
+      margin-left: auto;
+      margin-right: 4%;
+    }
+
+    @media only screen and (max-width: 740px) {
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 40px;
+    }
+  }
+
+  .rate {
+    @media only screen and (max-width: 1520px) {
+      margin-left: 4%;
+      margin-right: auto;
+      display: block;
+    }
+
+    @media only screen and (max-width: 740px) {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 40px;
+    }
+  }
+
+  .chart {
+    @media only screen and (max-width: 1520px) {
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   }
 }
