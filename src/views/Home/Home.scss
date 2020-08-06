@@ -11,36 +11,26 @@ $primary: #1ebffa;
   .selectMenu {
 
     @media only screen and (max-width: 1520px) {
+      min-width: 340px;
       float: right;
       margin-left: auto;
-      margin-right: 4%;
+      margin-right: 3%;
     }
 
-    @media only screen and (max-width: 780px) {
-      margin-left: 3%;
-    }
-
-    @media only screen and (max-width: 710px) {
-      min-width: 340px;
-      margin-left: auto;
-      margin-right: auto;
+    @media only screen and (max-width: 800px) {
+      padding-left: 5.5%;
     }
   }
 
   .rate {
 
     @media only screen and (max-width: 1520px) {
-      margin-left: 2%;
+      margin-left: 3%;
       margin-right: auto;
     }
 
-    @media only screen and (max-width: 780px) {
-      margin-right: 3%;
-    }
-
-    @media only screen and (max-width: 710px) {
-      margin-left: auto;
-      margin-right: auto;
+    @media only screen and (max-width: 800px) {
+      padding-right: 5.5%;
     }
   }
 
