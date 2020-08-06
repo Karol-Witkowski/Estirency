@@ -7,7 +7,7 @@
       <VueApexCharts
       id="dataChart"
       width="97.5%"
-      height="440px"
+      height="77%"
       type="line"
       :options="options"
       :series="series"

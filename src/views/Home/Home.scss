@@ -51,9 +51,24 @@
   .chart {
     @media only screen and (max-width: 1520px) {
       width: 93%;
-      margin-top: 5%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @media only screen and (max-width: 750px) {
+      margin-top: 50px;
+    }
+
+    @media only screen and (max-width: 750px) {
+      height: 500px;
+    }
+
+    @media only screen and (max-width: 550px) {
+      height: 400px;
+    }
+
+    @media only screen and (max-width: 430px) {
+      height: 330px;
     }
   }
 }
