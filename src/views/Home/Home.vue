@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <div class="selectrateContainer">
-      <Selectmenu class="selectMenu"/>
-      <Rate class="rate" />
-    </div>
+    <Selectmenu class="selectMenu"/>
+    <Rate class="rate" />
     <Chart class="chart" />
   </div>
 </template>
