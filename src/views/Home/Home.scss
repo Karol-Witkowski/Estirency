@@ -3,13 +3,13 @@ $primary: #1ebffa;
 .home {
   display: flex;
   box-sizing: border-box;
+
   @media only screen and (max-width: 1520px) {
     flex-wrap: wrap;
     display: flexbox;
   }
 
   .selectMenu {
-
     @media only screen and (max-width: 1520px) {
       min-width: 340px;
       float: right;
@@ -17,20 +17,27 @@ $primary: #1ebffa;
       margin-right: 3%;
     }
 
-    @media only screen and (max-width: 800px) {
-      padding-left: 5.5%;
+    @media only screen and (max-width: 810px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .whiteSpace {
+    @media only screen and (max-width: 810px) {
+      margin-left: 100%;
     }
   }
 
   .rate {
-
     @media only screen and (max-width: 1520px) {
       margin-left: 3%;
       margin-right: auto;
     }
 
-    @media only screen and (max-width: 800px) {
-      padding-right: 5.5%;
+    @media only screen and (max-width: 810px) {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

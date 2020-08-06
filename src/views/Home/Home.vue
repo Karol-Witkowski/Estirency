@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Selectmenu class="selectMenu"/>
+    <span class="whiteSpace"></span>
     <Rate class="rate" />
     <Chart class="chart" />
   </div>
