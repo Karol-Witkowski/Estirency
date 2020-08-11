@@ -9,9 +9,8 @@
 <p align="center"><code><img height="400" src="src\assets\appexample.gif" alt="usage example"></code></p>
 
 ## Project setup
-```
 To install project type:
-
+```
 npm install
 ```
 
