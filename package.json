@@ -2,9 +2,12 @@
   "name": "Estirency",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://karol-witkowski.github.io/Estirency/",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "ui": "vue ui"
@@ -35,6 +38,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
