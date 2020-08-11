@@ -4,12 +4,7 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
-      <VueApexCharts
-      id="dataChart"
-      width="97.5%"
-      height="77%"
-      type="line"
-      :options="options"
+      <VueApexCharts id="dataChart" width="97.5%" height="77%" type="line" :options="options"
       :series="series"
       />
     </div>
@@ -59,6 +54,7 @@ export default {
           id: 'dataChart',
           type: 'area',
         },
+
         xaxis: {
           type: 'datetime',
           categories: [],
@@ -78,6 +74,7 @@ export default {
             },
           },
         },
+
         fill: {
           type: 'gradient',
           gradient: {
@@ -87,6 +84,7 @@ export default {
             stops: [0, 50, 100, 100],
           },
         },
+
         stroke: {
           show: true,
           curve: 'smooth',
@@ -94,6 +92,7 @@ export default {
           width: 2,
           dashArray: 0,
         },
+
         markers: {
           size: 0,
           colors: '#1ebffa',
@@ -115,13 +114,16 @@ export default {
             sizeOffset: 1,
           },
         },
+
       },
+
       series: [{
         name: 'series',
         data: [],
       }],
     };
   },
+
   computed: {
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
@@ -145,7 +147,6 @@ export default {
         })
         .catch((error) => error);
     },
-
     dataLoop() {
       for (let i = 0; i < this.history.length; i += 1) {
         this.options.xaxis.categories.push(this.history[i].tm);
@@ -153,6 +154,7 @@ export default {
       }
     },
   },
+
   beforeMount() {
     this.getData();
   },

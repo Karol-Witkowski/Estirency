@@ -9,14 +9,10 @@
     </router-link>
     <div class="buttons">
       <router-link class="routerAboutBtn effectBtn" to="/about">
-        <span class="routerText">
-          about
-        </span>
+        <span class="routerText">about</span>
       </router-link>
       <router-link class="routerHomeBtn effectBtn" to="/home">
-        <span class="routerText">
-          home
-        </span>
+        <span class="routerText">home</span>
       </router-link>
     </div>
   </div>

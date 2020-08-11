@@ -9,53 +9,30 @@
       <p class="base">
         select base currency
       </p>
-      <v-select
-      :options="$store.state.currency"
-      label="name"
-      :value="$store.state.baseCurrency"
-      @input="setBaseCurrency"
-      placeholder="base currency">
+      <v-select :options="$store.state.currency" label="name" :value="$store.state.baseCurrency"
+      @input="setBaseCurrency" placeholder="base currency">
         <template #search="{attributes, events}">
-          <input
-          class="vs__search"
-          v-bind="attributes"
-          v-on="events"
-          @keypress="currencyRestrictions"
-          />
+          <input class="vs__search" v-bind="attributes" v-on="events"
+          @keypress="currencyRestrictions"/>
         </template>
       </v-select>
-      <img
-      src="@/assets/swap-vertical.png"
-      alt="swap currency icon"
-      class="swapIcon"
-      v-on:click="swapValues"
-      >
+      <img src="@/assets/swap-vertical.png" alt="swap currency icon" class="swapIcon"
+      v-on:click="swapValues">
       <p class="currency">
         select target currency
       </p>
-      <v-select
-      :options="$store.state.currency"
-      label="name"
-      :value="$store.state.targetCurrency"
-      @input="setTargetCurrency"
-      placeholder="target currency">
+      <v-select :options="$store.state.currency" label="name" :value="$store.state.targetCurrency"
+      @input="setTargetCurrency" placeholder="target currency">
         <template #search="{attributes, events}">
-          <input
-          class="vs__search"
-          v-bind="attributes"
-          v-on="events"
-          @keypress="currencyRestrictions"
-          />
+          <input class="vs__search" v-bind="attributes" v-on="events"
+          @keypress="currencyRestrictions"/>
         </template>
       </v-select>
       <p class="amount">
         type amount
       </p>
-      <input class="amountInput"
-      @keypress="amountRestrictions"
-      :value="$store.state.amountValue"
-      @input="setAmountValue"
-      placeholder="amount of currency" />
+      <input class="amountInput" @keypress="amountRestrictions" :value="$store.state.amountValue"
+      @input="setAmountValue" placeholder="amount of currency"/>
     </div>
 </template>
 
@@ -65,14 +42,14 @@ export default {
   name: 'Selectmenu',
   props: {
   },
+
   data() {
     return {
       cur1: 'PLN',
       cur2: 'EUR',
     };
   },
-  computed: {
-  },
+
   methods: {
     currencyRestrictions($event) {
       const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
@@ -86,6 +63,7 @@ export default {
       if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
         $event.preventDefault();
       }
+
       // allow only two decimal places
       if (this.$store.state.amountValue != null && this.$store.state.amountValue.indexOf('.')
        > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {

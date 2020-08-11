@@ -9,6 +9,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .theme {
   position: fixed;
   top: 0;
@@ -18,6 +19,7 @@ export default {
   height: 100vh;
   background-color: rgb(34, 34, 34);
 }
+
 .theme::after {
   content: "";
   background: rgba(0, 0, 0, .1);
