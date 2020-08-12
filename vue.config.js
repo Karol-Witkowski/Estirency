@@ -2,6 +2,6 @@ module.exports = {
   transpileDependencies: [
   ],
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/Estirency/'
-    : '/',
+    ? '/https://karol-witkowski.github.io'
+    : '/Estirency',
 };
