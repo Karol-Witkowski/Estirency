@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 
-git push -f git@github.com:Karol-Witkowski/Estirency.git master:gh-pages
+git push -f git@github.com:karol-witkowski/Estirency.git Deployment
 
 cd -
