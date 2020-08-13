@@ -6,10 +6,10 @@
 
 ## Website
 
-<p align="center">You can try Estirency by yourself. Here is a link to the website hosted by GitHub.</p>
+<p align="center">You can try <a href="https://karol-witkowski.github.io/Estirency/#/home">Estirency</a> by yourself. Here is a link to the website hosted by GitHub.</p>
 
 <p align="center"><b>:broken_heart: UNDER DEVELOPMENT :broken_heart:</b></p>
-<p align="center" font-size="20px"><a href="https://karol-witkowski.github.io/Estirency/#/home">:milky_way: <b>Estirency</b> :milky_way:</a></p>
+<p align="center" font-size="20px">:herb: <a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a> :herb:</p>
 
 ## Usage example
 <br/>
