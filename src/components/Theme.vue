@@ -1,5 +1,5 @@
 <template>
-  <div class="theme"/>
+  <div/>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.theme {
+div {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@ export default {
   background-color: rgb(34, 34, 34);
 }
 
-.theme::after {
+div::after {
   content: "";
   background: rgba(0, 0, 0, .1);
   position: absolute;

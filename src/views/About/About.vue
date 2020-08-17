@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div class="text">
+    <div>
       created by karol witkowski
     </div>
       <p class="description">
@@ -13,8 +13,8 @@
       <p class="invite">
         Fell free to check my Github repository
       </p>
-      <a class="gitLogo" href="https://github.com/Karol-Witkowski">
-        <img src="@/assets/github.png" alt="Github link" width="320px">
+      <a href="https://github.com/Karol-Witkowski">
+        <img src="@/assets/github.png" width="320px">
       </a>
   </div>
 </template>
@@ -27,4 +27,4 @@ export default {
 };
 </script>
 
-<style src="./About.scss" lang="scss"></style>
+<style src="./About.scss" lang="scss"/>

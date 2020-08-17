@@ -2,7 +2,6 @@ $primary: #1ebffa;
 $secondary: #31748d;
 
 .select {
-  color: $primary;
   border: solid 1px $primary;
   border-radius: 10px;
   margin-top: 50px;
@@ -38,7 +37,7 @@ $secondary: #31748d;
     text-transform: uppercase;
   }
 
-  .swapIcon {
+  img {
     width: 50px;
     display: block;
     margin: 8.3% auto;

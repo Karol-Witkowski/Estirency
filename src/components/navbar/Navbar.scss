@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,500,600,700&display=swap');
-
 $primary: #1ebffa;
 
 .navbar {
@@ -19,7 +17,7 @@ $primary: #1ebffa;
      padding-top: 4.7%;
     }
 
-    .logoIcon {
+    img {
       width: 1.2em;
       margin: 3% 0% -1.5% 0%;
     }
@@ -63,7 +61,7 @@ $primary: #1ebffa;
     float: right;
   }
 
-    .routerText {
+    span {
       position: relative;
       color: $primary;
       display: flex;

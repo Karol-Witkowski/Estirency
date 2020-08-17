@@ -2,8 +2,8 @@
   <div class="home">
     <Selectmenu class="selectMenu"/>
     <span class="whiteSpace"></span>
-    <Rate class="rate" />
-    <Chart class="chart" />
+    <Rate class="rate"/>
+    <Chart class="chart"/>
   </div>
 </template>
 
@@ -22,4 +22,4 @@ export default {
 };
 </script>
 
-<style src="./Home.scss" lang="scss"></style>
+<style src="./Home.scss" lang="scss"/>

@@ -2,17 +2,17 @@
   <div class="navbar">
     <router-link to="/home" class="" active-class="">
       <div class="logo">
-        <img src="@/assets/chart-bell-curve.png" alt="bell curve chart icon" class="logoIcon">
+        <img src="@/assets/chart-bell-curve.png" alt="bell curve chart icon">
         <span class="namePart1">esti</span>
         <span class="namePart2">rency</span>
       </div>
     </router-link>
     <div class="buttons">
       <router-link class="routerAboutBtn effectBtn" to="/about">
-        <span class="routerText">about</span>
+        <span>about</span>
       </router-link>
       <router-link class="routerHomeBtn effectBtn" to="/home">
-        <span class="routerText">home</span>
+        <span>home</span>
       </router-link>
     </div>
   </div>
@@ -24,4 +24,4 @@ export default {
 };
 </script>
 
-<style src="./Navbar.scss" lang="scss" scoped></style>
+<style src="./Navbar.scss" lang="scss" scoped/>

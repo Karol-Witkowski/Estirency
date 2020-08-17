@@ -1,7 +1,6 @@
 $primary: #1ebffa;
 
 #about {
-  color: $primary;
   font-weight: 700;
   align-items: center;
   text-align: center;
@@ -12,7 +11,7 @@ $primary: #1ebffa;
   padding-top: 10.6%;
   text-transform: uppercase;
 
-  .text {
+  div {
     padding-bottom: 2%;
     font-size: 1.3em;
     @media only screen and (max-width: 550px) {
@@ -51,7 +50,7 @@ $primary: #1ebffa;
     }
   }
 
-  .gitLogo {
+  a {
     left: 0.5%;
     margin-top: 0.5%;
     @media only screen and (max-width: 550px) {

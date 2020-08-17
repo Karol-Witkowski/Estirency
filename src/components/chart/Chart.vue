@@ -1,6 +1,6 @@
 <template>
     <div class="chart">
-      <p class="chartDescription">
+      <p>
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
@@ -171,4 +171,4 @@ export default {
 };
 </script>
 
-<style src="./Chart.scss" lang="scss"></style>
+<style src="./Chart.scss" lang="scss"/>
