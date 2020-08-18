@@ -1,5 +1,4 @@
-$primary: #1ebffa;
-$secondary: #31748d;
+@import 'src/styles/var/_colors.scss';
 
 .select {
   border: solid 1px $primary;
@@ -10,7 +9,7 @@ $secondary: #31748d;
   min-width: 320px;
   height: 580px;
   float: left;
-  background-color: rgb(35, 35, 35);
+  background-color: $backgrundColor;
   box-shadow: (2px 8px 30px -15px $primary);
   font-size: 1.1em;
 

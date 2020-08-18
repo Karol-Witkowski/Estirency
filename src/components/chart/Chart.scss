@@ -1,10 +1,9 @@
-$primary: #1ebffa;
-$secondary: #31748d;
+@import 'src/styles/var/_colors.scss';
 
 .chart {
   float: left;
   display: flexbox;
-  background-color: rgb(35, 35, 35);
+  background-color: $backgrundColor;
   box-shadow: (2px 8px 30px -15px $primary);
   height: 580px;
   width: 735px;

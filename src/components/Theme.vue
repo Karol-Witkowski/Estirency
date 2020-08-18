@@ -9,6 +9,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'src/styles/var/_colors.scss';
 
 div {
   position: fixed;
@@ -17,6 +18,6 @@ div {
   z-index: -1;
   width: 100%;
   height: 100vh;
-  background-color: rgb(34, 34, 34);
+  background-color: $backgrundColor;
 }
 </style>

@@ -1,4 +1,4 @@
-$primary: #1ebffa;
+@import 'src/styles/var/_colors.scss';
 
 .navbar {
   height: 57px;
@@ -78,12 +78,12 @@ $primary: #1ebffa;
 
 .effectBtn:hover {
   border: 1px solid $primary;
-  box-shadow: inset 0 0 10px $primary, 0 0 20px rgba(255, 255, 255, .2);
+  box-shadow: inset 0 0 10px $primary, 0 0 20px $hoverBtn;
   text-shadow: 1px 1px 2px #427388;
 }
 
 .router-link-active {
   border: 1px solid;
-  box-shadow: inset 0 0 8px $primary, 0 0 20px rgba(255, 255, 255, .2);
+  box-shadow: inset 0 0 8px $primary, 0 0 20px $hoverBtn;
   text-shadow: 1px 1px 2px #427388;
 }
