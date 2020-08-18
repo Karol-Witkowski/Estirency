@@ -11,14 +11,10 @@ import Navbar from './components/navbar/Navbar.vue';
 import Theme from './components/Theme.vue';
 
 export default {
+  name: 'App',
   components: {
     Navbar,
     Theme,
-  },
-  name: 'App',
-  data() {
-    return {
-    };
   },
 };
 </script>

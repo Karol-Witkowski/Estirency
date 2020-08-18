@@ -106,8 +106,6 @@ export default {
           radius: 2,
           offsetX: 0,
           offsetY: 0,
-          onClick: undefined,
-          onDblClick: undefined,
           showNullDataPoints: true,
           hover: {
             size: 3.7,
@@ -138,7 +136,7 @@ export default {
 
   methods: {
     getData() {
-      // The API key should be in a .env file, and never in the open repo.
+      // The API key should be in a .env file.
       // I left that free version key here to provide full experience on launch.
       axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`)
         .then((response) => {

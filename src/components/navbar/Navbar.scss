@@ -34,31 +34,25 @@ $primary: #1ebffa;
   }
 
   .buttons {
+
     @media only screen and (max-width: 550px) {
       font-size: 0.8em;
       padding-top: 1.8%;
+
     }
 
-  .routerAboutBtn {
+  .routerBtn {
     background-color: transparent;
     border: 1.5px solid $primary;
     font-size: 1em;
     line-height: 1;
     margin: 0.3em;
     padding: 0.9em 1em 0.6em;
-    cursor: pointer;
     float: right;
   }
 
   .routerHomeBtn {
-    background-color: transparent;
-    border: 1.5px solid $primary;
-    font-size: 1em;
-    line-height: 1;
-    margin: 0.3em;
     padding: 0.9em 1.2em 0.6em;
-    cursor: pointer;
-    float: right;
   }
 
     span {

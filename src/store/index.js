@@ -22,8 +22,4 @@ export default new Vuex.Store({
       state.amountValue = amount;
     },
   },
-  actions: {
-  },
-  modules: {
-  },
 });

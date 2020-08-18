@@ -8,10 +8,10 @@
       </div>
     </router-link>
     <div class="buttons">
-      <router-link class="routerAboutBtn effectBtn" to="/about">
+      <router-link class="routerBtn effectBtn" to="/about">
         <span>about</span>
       </router-link>
-      <router-link class="routerHomeBtn effectBtn" to="/home">
+      <router-link class="routerHomeBtn routerBtn effectBtn" to="/home">
         <span>home</span>
       </router-link>
     </div>
