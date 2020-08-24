@@ -46,6 +46,11 @@ export default {
   },
 
   computed: {
+
+    setAmount() {
+      return Math.round((this.$store.state.amountValue * this.setRate) * 100) / 100;
+    },
+
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },
@@ -57,13 +62,10 @@ export default {
     setRate() {
       return Math.round(this.rate * 1000) / 1000;
     },
-
-    setAmount() {
-      return Math.round((this.$store.state.amountValue * this.setRate) * 100) / 100;
-    },
   },
 
   methods: {
+
     getRates() {
       axios.get(`${currencyRate}${this.setBaseCurrency}`)
         .then((response) => {
@@ -72,12 +74,11 @@ export default {
         .catch((error) => error);
     },
   },
-
-  updated() {
+  mounted() {
     this.getRates();
   },
 
-  mounted() {
+  updated() {
     this.getRates();
   },
 };

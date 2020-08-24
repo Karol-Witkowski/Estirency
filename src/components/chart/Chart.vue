@@ -59,13 +59,6 @@ export default {
           type: 'datetime',
           categories: [],
           labels: {
-            show: true,
-            rotate: -45,
-            rotateAlways: false,
-            hideOverlappingLabels: true,
-            showDuplicates: false,
-            trim: true,
-            maxHeight: 120,
             datetimeFormatter: {
               year: '.yy',
               month: "MMM 'yy",
@@ -97,15 +90,9 @@ export default {
           size: 0,
           colors: '#1ebffa',
           strokeColors: '#fff',
-          strokeWidth: 0,
-          strokeOpacity: 0,
-          strokeDashArray: 0,
-          fillOpacity: 1,
           discrete: [],
           shape: 'circle',
           radius: 2,
-          offsetX: 0,
-          offsetY: 0,
           showNullDataPoints: true,
           hover: {
             size: 3.7,
@@ -123,18 +110,22 @@ export default {
   },
 
   computed: {
+
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },
+
     setTargetCurrency() {
       return this.$store.state.targetCurrency.cc;
     },
+
     setHistoryRate() {
       return this.historyRate;
     },
   },
 
   methods: {
+
     getData() {
       // The API key should be in a .env file.
       // I left that free version key here to provide full experience on launch.
@@ -145,6 +136,7 @@ export default {
         })
         .catch((error) => error);
     },
+
     dataLoop() {
       for (let i = 0; i < this.history.length; i += 1) {
         this.options.xaxis.categories.push(this.history[i].tm);
@@ -157,12 +149,12 @@ export default {
     this.getData();
   },
 
-  mounted() {
+  beforeUpdate() {
     VueApexCharts.render();
     this.dataLoop();
   },
 
-  beforeUpdate() {
+  mounted() {
     VueApexCharts.render();
     this.dataLoop();
   },

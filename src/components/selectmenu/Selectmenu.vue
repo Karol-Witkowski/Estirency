@@ -39,8 +39,6 @@
 
 export default {
   name: 'Selectmenu',
-  props: {
-  },
 
   data() {
     return {
@@ -50,12 +48,6 @@ export default {
   },
 
   methods: {
-    currencyRestrictions($event) {
-      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
-      if (keyCode > 47 && keyCode < 58) {
-        $event.preventDefault();
-      }
-    },
 
     amountRestrictions($event) {
       const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
@@ -70,9 +62,20 @@ export default {
       }
     },
 
+    currencyRestrictions($event) {
+      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
+      if (keyCode > 47 && keyCode < 58) {
+        $event.preventDefault();
+      }
+    },
+
     swapValues() {
       [this.$store.state.baseCurrency, this.$store.state.targetCurrency] = [
         this.$store.state.targetCurrency, this.$store.state.baseCurrency];
+    },
+
+    setAmountValue(e) {
+      this.$store.commit('setAmountValue', e.target.value);
     },
 
     setBaseCurrency(val) {
@@ -81,10 +84,6 @@ export default {
 
     setTargetCurrency(val) {
       this.$store.commit('setTargetCurrency', val);
-    },
-
-    setAmountValue(e) {
-      this.$store.commit('setAmountValue', e.target.value);
     },
   },
 };
