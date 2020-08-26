@@ -15,7 +15,6 @@
     "apexcharts": "^3.20.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.19.2",
-    "chalk": "^4.1.0",
     "core-js": "^3.6.4",
     "serialize-javascript": "^4.0.0",
     "vue": "^2.6.12",

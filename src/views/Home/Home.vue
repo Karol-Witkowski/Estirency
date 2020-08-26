@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import Selectmenu from '@/components/selectmenu/Selectmenu.vue';
 import Rate from '@/components/rate/Rate.vue';
 import Chart from '@/components/chart/Chart.vue';
+import Selectmenu from '@/components/selectmenu/Selectmenu.vue';
 
 export default {
   name: 'Home',
