@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <router-link to="/home" class="" active-class="">
+    <router-link to="/home" active-class="">
       <div class="logo">
         <img src="@/assets/chart-bell-curve.png" alt="bell curve chart icon">
         <span class="namePart1">esti</span>

@@ -84,4 +84,4 @@ export default {
 };
 </script>
 
-<style src="./Rate.scss" lang="scss"></style>
+<style src="./Rate.scss" lang="scss"/>

@@ -4,7 +4,7 @@
         menu
       </p>
       <p class="instruction">
-        select currencies and fill input to show data
+        Select currencies and fill input to show data
       </p>
       <p class="base">
         select base currency
