@@ -10,8 +10,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/var/_colors.scss';
-
 div {
   position: fixed;
   top: 0;
