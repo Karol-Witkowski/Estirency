@@ -15,8 +15,8 @@ describe('home.vue test', () => {
 
   it('Check the name of home view and that 3 child components are rendered', () => {
     expect(wrapper.name()).to.match(/Home/);
-    expect(wrapper.findAll('.decsription').exists());
-    expect(wrapper.findAll('.search').exists());
-    expect(wrapper.findAll('.theme').exists());
+    expect(wrapper.findAll('.Selectmenu').exists());
+    expect(wrapper.findAll('.Rate').exists());
+    // expect(wrapper.findAll('.Chart').exists());
   });
 });

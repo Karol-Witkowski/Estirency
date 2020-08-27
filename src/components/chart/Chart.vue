@@ -99,7 +99,6 @@ export default {
             sizeOffset: 1,
           },
         },
-
       },
 
       series: [{
@@ -125,6 +124,10 @@ export default {
   },
 
   methods: {
+
+    renderSvg() {
+      this.$refs.dataChart.updateOptions();
+    },
 
     getData() {
       // The API key should be in a .env file.

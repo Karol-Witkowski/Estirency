@@ -1,10 +1,20 @@
 module.exports = {
   publicPath: '/Estirency/',
-  css: {
-    loaderOptions: {
-      sass: {
-        additionalData: '@import "@/assets/styles/var/colors.scss";',
-      },
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: 'src/assets/styles/var/colors.scss',
+              },
+            },
+          ],
+        },
+      ],
     },
   },
 };

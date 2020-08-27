@@ -16,6 +16,8 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "css-loader": "^4.2.2",
+    "sass-resources-loader": "^2.1.0",
     "serialize-javascript": "^4.0.0",
     "vue": "^2.6.12",
     "vue-apexcharts": "^1.6.0",
@@ -29,7 +31,7 @@
     "@vue/cli-plugin-router": "~4.3.0",
     "@vue/cli-plugin-unit-mocha": "^4.5.4",
     "@vue/cli-plugin-vuex": "^4.5.4",
-    "@vue/cli-service": "~4.3.0",
+    "@vue/cli-service": "^4.5.4",
     "@vue/eslint-config-airbnb": "^5.1.0",
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.1.0",
@@ -38,11 +40,11 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
     "execa": "latest",
-    "node-sass": "^4.14.1",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.1",
     "style-loader": "^1.2.1",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1"
   },
   "eslintConfig": {
     "root": true,
