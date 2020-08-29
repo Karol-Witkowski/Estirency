@@ -4,14 +4,10 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
-      <VueApexCharts id="dataChart" width="97.5%" height="77%" type="line" :options="options"
-      :series="series"
-      />
     </div>
 </template>
 
 <script>
-import VueApexCharts from 'vue-apexcharts';
 import axios from 'axios';
 
 let actualDate;
@@ -39,7 +35,6 @@ if (month < 10 && day < 10) {
 export default {
   name: 'Chart',
   components: {
-    VueApexCharts,
   },
 
   data() {
@@ -49,62 +44,6 @@ export default {
       history: [],
       historyDate: String,
       historyRate: String,
-      options: {
-        chart: {
-          id: 'dataChart',
-          type: 'area',
-        },
-
-        xaxis: {
-          type: 'datetime',
-          categories: [],
-          labels: {
-            datetimeFormatter: {
-              year: '.yy',
-              month: "MMM 'yy",
-              day: 'dd MMM',
-              hour: '',
-            },
-          },
-        },
-
-        fill: {
-          type: 'gradient',
-          gradient: {
-            gradientToColors: ['#31748d'],
-            shadeIntensity: 1,
-            type: 'horizontal',
-            stops: [0, 50, 100, 100],
-          },
-        },
-
-        stroke: {
-          show: true,
-          curve: 'smooth',
-          lineCap: 'string',
-          width: 2,
-          dashArray: 0,
-        },
-
-        markers: {
-          size: 0,
-          colors: '#1ebffa',
-          strokeColors: '#fff',
-          discrete: [],
-          shape: 'circle',
-          radius: 2,
-          showNullDataPoints: true,
-          hover: {
-            size: 3.7,
-            sizeOffset: 1,
-          },
-        },
-      },
-
-      series: [{
-        name: 'series',
-        data: [],
-      }],
     };
   },
 
@@ -124,10 +63,6 @@ export default {
   },
 
   methods: {
-
-    renderSvg() {
-      this.$refs.dataChart.updateOptions();
-    },
 
     getData() {
       // The API key should be in a .env file.
@@ -153,13 +88,11 @@ export default {
   },
 
   beforeUpdate() {
-    VueApexCharts.render();
     this.dataLoop();
   },
 
   mounted() {
-    VueApexCharts.render();
-    this.dataLoop();
+    this.dataChart.render();
   },
 };
 </script>
