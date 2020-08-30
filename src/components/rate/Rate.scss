@@ -1,6 +1,6 @@
 .rate {
   font-size: 0.95em;
-  color: #1cace0;
+  color: $primary;
   text-transform: uppercase;
   text-align: center;
   float: left;
@@ -8,7 +8,7 @@
   min-width: 320px;
   margin-top: 22%;
   padding-left: 1.5em;
-  background-color: rgb(35, 35, 35);
+  background-color: $backgrundColor;
   box-shadow: (2px 8px 30px -15px $primary);
   height: 580px;
   border: solid 1px $primary;
@@ -43,7 +43,7 @@
     font-size: 0.85em;
     text-align: justify;
     margin: 60px 30px 20px 0px;
-    color: #31748d;
+    color: $primary;
 
     span {
       font-size: 1.1em;
@@ -55,7 +55,6 @@
     margin: 58px 30px 10px 0px;
     font-weight: 600;
     font-size: 0.85em;
-    color: #31748d;
   }
 
   .apiIcon {

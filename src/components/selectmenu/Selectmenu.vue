@@ -38,7 +38,7 @@
 <script>
 
 export default {
-  name: 'Selectmenu',
+  name: 'SelectMenu',
 
   data() {
     return {
@@ -89,4 +89,4 @@ export default {
 };
 </script>
 
-<style src="./Selectmenu.scss" lang="scss"/>
+<style src="./SelectMenu.scss" lang="scss"/>

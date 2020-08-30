@@ -4,11 +4,13 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
+      <datachart id="dataChart" :chartdata="chartdata" :options="options"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import datachart from '@/components/chartComponent/chart/Chart.vue';
 
 let actualDate;
 let pastDate;
@@ -33,8 +35,9 @@ if (month < 10 && day < 10) {
 }
 
 export default {
-  name: 'Chart',
+  name: 'ChartComponent',
   components: {
+    datachart,
   },
 
   data() {
@@ -44,6 +47,18 @@ export default {
       history: [],
       historyDate: String,
       historyRate: String,
+      chartdata: {
+        labels: ['Dummy1', 'Dummy2', 'Dummy3'],
+        datasets: [{
+          label: 'Rates',
+          backgroundColor: '#c7b6b6',
+          data: [1000, 500, 200],
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
     };
   },
 
@@ -92,9 +107,9 @@ export default {
   },
 
   mounted() {
-    this.dataChart.render();
+    this.renderChart(this.chartdata, this.options);
   },
 };
 </script>
 
-<style src="./Chart.scss" lang="scss"/>
+<style src="./ChartComponent.scss" lang="scss"/>

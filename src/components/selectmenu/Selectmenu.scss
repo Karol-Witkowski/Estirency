@@ -21,7 +21,7 @@
 
   .instruction {
     font-weight: 500;
-    color: #199ac9;
+    color: $primary;
     text-align: center;
     padding: 0% 3%;
   }
@@ -91,7 +91,7 @@
     text-align: center;
   }
   .amountInput::placeholder {
-    color:#32b9eb;
+    color: $primary;
   }
   .amountInput:focus {
     transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
@@ -114,7 +114,7 @@
 }
 
 .v-select .vs__dropdown-menu {
-  background-color: rgb(39, 35, 35);
+  background-color: $backgrundColor;
   border: 1px solid $primary;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
@@ -163,5 +163,5 @@
 
 
 .v-select .vs__dropdown-menu .vs__dropdown-option--highlight {
-    background: rgb(32, 32, 32);
+    background: rgb(51, 51, 51);
 }
