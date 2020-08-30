@@ -1,6 +1,6 @@
 # Estirency
 
-<p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="90" title="AERTEE logo" src="public\logo.png" alt="Estirency logo"></a></code></p>
+<p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="90" title="Estirency logo" src="public\logo.png" alt="Estirency logo"></a></code></p>
 
 <p align="center"><a href="https://karol-witkowski.github.io/Estirency/#/home">Estirency</a> goal is to present actual and historical exchange rates. Select base currency, desired currency and type amount of cash - <a href="https://karol-witkowski.github.io/Estirency/#/home">Estirency</a> will inform you about rates right away. Historical data is displayed on the line chart. Statistics are provided by API that base on the European Central Bank data.</p>
 
