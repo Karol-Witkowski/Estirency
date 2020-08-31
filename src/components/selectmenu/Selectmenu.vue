@@ -36,9 +36,16 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import vSelect from 'vue-select';
+
+Vue.component('v-select', vSelect);
 
 export default {
   name: 'SelectMenu',
+  components: {
+    vSelect,
+  },
 
   data() {
     return {

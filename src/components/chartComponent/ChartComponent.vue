@@ -15,7 +15,7 @@ import datachart from '@/components/chartComponent/chart/Chart.vue';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= BLOCK';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -108,10 +108,6 @@ export default {
 
   beforeUpdate() {
     this.dataLoop();
-  },
-
-  mounted() {
-    this.renderChart(this.chartdata, this.options);
   },
 };
 </script>
