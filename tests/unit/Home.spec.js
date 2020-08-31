@@ -1,10 +1,9 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
 import Home from '@/views/Home/Home.vue';
-import store from '@/store';
 
 describe('Home.vue test', () => {
-  const wrapper = shallowMount(Home, store);
+  const wrapper = shallowMount(Home);
 
   it('Check the name of home view and that 3 child components are rendered', () => {
     expect(wrapper.name()).to.match(/Home/);

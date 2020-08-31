@@ -16,12 +16,12 @@ describe('App', () => {
     const wrapper = shallowMount(App);
 
     expect(wrapper.name()).to.match(/App/);
-    expect(wrapper.findAll('.theme').exists());
-    expect(wrapper.findAll('.navigation').exists());
+    expect(wrapper.findAll('.Theme').exists());
+    expect(wrapper.findAll('.Navbar').exists());
     expect(wrapper.findAll('.router-view').exists());
   });
 
-  it('renders a child component via routing', async () => {
+  it('Renders a child component via routing', async () => {
     const router = new VueRouter({
       routes: [
         { path: '/home', name: 'Home', component: Home },
@@ -40,7 +40,7 @@ describe('App', () => {
     expect(wrapper.find(Home).exists()).to.equal(true);
   });
 
-  it('should have a different route than /home', async () => {
+  it('Should have a different route than /home', async () => {
     const router = new VueRouter({
       routes: [
         { path: '/home', name: 'Home', component: Home },
