@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import ChartComponent from '@/components/chartComponent/ChartComponent.vue';
-import SelectMenu from '@/components/selectMenu/SelectMenu.vue';
+import ChartComponent from '@/components/chartcomponent/ChartComponent.vue';
+import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
 import Rate from '@/components/rate/Rate.vue';
 
 export default {
