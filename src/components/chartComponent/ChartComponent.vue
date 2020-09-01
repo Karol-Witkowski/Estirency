@@ -4,7 +4,7 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
-      <datachart id="dataChart" :chartdata="chartdata" :options="options"/>
+      <datachart id="dataChart" v-if="loaded" :chartdata="chartdata" :options="options"/>
     </div>
 </template>
 
@@ -45,8 +45,7 @@ export default {
       actualDate: '',
       pastDate: '',
       history: [],
-      historyDate: String,
-      historyRate: String,
+      loaded: false,
       chartdata: {
         labels: [],
         datasets: [{
@@ -79,6 +78,13 @@ export default {
 
   methods: {
 
+    dataLoop() {
+      for (let i = 0; i < this.history.length; i += 20) {
+        this.chartdata.labels.push(this.history[i].tm.slice(0, 10));
+        this.chartdata.datasets[0].data.push(this.history[i].c);
+      }
+    },
+
     getData() {
       // The API key should be in a .env file.
       // I left that free version key here to provide full experience on launch.
@@ -86,27 +92,20 @@ export default {
         .then((response) => {
           this.history = response.data.response;
           this.dataLoop();
+          this.loaded = true;
         })
         .catch((error) => error);
-    },
-
-    dataLoop() {
-      for (let i = 0; i < this.history.length; i += 20) {
-        this.chartdata.labels.push(this.history[i].tm.slice(0, 10));
-        this.chartdata.datasets[0].data.push(this.history[i].c);
-      }
     },
   },
 
   mounted() {
     this.getData();
-    this.dataLoop();
-    this.dataChart.render();
+    this.renderChart(this.chartData, this.options);
   },
 
   update() {
-    this.dataLoop();
-    this.dataChart.render();
+    this.getData();
+    this.renderChart(this.chartData, this.options);
   },
 };
 </script>
