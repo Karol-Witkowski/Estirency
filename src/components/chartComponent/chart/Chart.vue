@@ -17,6 +17,10 @@ export default {
   mounted() {
     this.renderChart(this.chartdata, this.options);
   },
+
+  updated() {
+    this.renderChart(this.chartdata, this.options);
+  },
 };
 
 </script>

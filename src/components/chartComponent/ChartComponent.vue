@@ -100,12 +100,10 @@ export default {
 
   mounted() {
     this.getData();
-    this.renderChart(this.chartData, this.options);
   },
 
-  update() {
+  updated() {
     this.getData();
-    this.renderChart(this.chartData, this.options);
   },
 };
 </script>
