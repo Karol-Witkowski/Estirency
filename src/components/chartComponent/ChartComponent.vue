@@ -15,7 +15,7 @@ import datachart from '@/components/chartComponent/chart/Chart.vue';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= BLOCK';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -48,12 +48,12 @@ export default {
       historyDate: String,
       historyRate: String,
       chartdata: {
-        labels: ['Dummy 1', 'Dummy 2', 'Dummy 3', 'Dummy 4', 'Dummy 5', 'Dummy 6', 'Dummy 7', 'Dummy 8', 'Dummy 9', 'Dummy 10', 'Dummy 11', 'Dummy 12', 'Dummy 13'],
+        labels: [],
         datasets: [{
           borderColor: '#c7b6b6',
           pointBackgroundColor: '#a68b8b',
           pointHoverBorderWidth: 3,
-          data: [12, 15, 10, 9, 10, 9, 12, 11, 10, 8, 9, 7, 9],
+          data: [],
         }],
       },
       options: {
@@ -75,10 +75,6 @@ export default {
     setTargetCurrency() {
       return this.$store.state.targetCurrency.cc;
     },
-
-    setHistoryRate() {
-      return this.historyRate;
-    },
   },
 
   methods: {
@@ -95,19 +91,22 @@ export default {
     },
 
     dataLoop() {
-      for (let i = 0; i < this.history.length; i += 1) {
-        this.chartdata.labels.push(this.history[i].tm);
-        this.chartdata.datasets.data.push(this.history[i].c);
+      for (let i = 0; i < this.history.length; i += 20) {
+        this.chartdata.labels.push(this.history[i].tm.slice(0, 10));
+        this.chartdata.datasets[0].data.push(this.history[i].c);
       }
     },
   },
 
-  beforeMount() {
+  mounted() {
     this.getData();
+    this.dataLoop();
+    this.dataChart.render();
   },
 
-  beforeUpdate() {
+  update() {
     this.dataLoop();
+    this.dataChart.render();
   },
 };
 </script>
