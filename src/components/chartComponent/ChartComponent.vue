@@ -4,7 +4,7 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
-      <datachart id="dataChart" v-if="loaded" :chartdata="chartdata" :options="options"/>
+      <datachart id="dataChart" v-if="loaded" :chartdata="chartData" :options="options"/>
     </div>
 </template>
 
@@ -15,7 +15,7 @@ import datachart from '@/components/chartComponent/chart/Chart.vue';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol= d';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -45,8 +45,10 @@ export default {
       actualDate: '',
       pastDate: '',
       history: [],
+      value: Object,
+      label: Object,
       loaded: false,
-      chartdata: {
+      chartData: {
         labels: [],
         datasets: [{
           borderColor: '#c7b6b6',
@@ -80,8 +82,10 @@ export default {
 
     dataLoop() {
       for (let i = 0; i < this.history.length; i += 20) {
-        this.chartdata.labels.push(this.history[i].tm.slice(0, 10));
-        this.chartdata.datasets[0].data.push(this.history[i].c);
+        const label = this.history[i].tm.slice(0, 10);
+        const value = this.history[i].c;
+        this.chartData.labels.push(label);
+        this.chartData.datasets[0].data.push(value);
       }
     },
 
