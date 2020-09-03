@@ -77,10 +77,8 @@ export default {
     },
 
     swapValues() {
-      [this.$store.state.baseCurrency, this.$store.state.targetCurrency,
-        this.$store.state.loaded = false] = [
-        this.$store.state.targetCurrency, this.$store.state.baseCurrency,
-        this.$store.state.loaded = false];
+      [this.$store.state.baseCurrency, this.$store.state.targetCurrency] = [
+        this.$store.state.targetCurrency, this.$store.state.baseCurrency];
     },
 
     setAmountValue(e) {
