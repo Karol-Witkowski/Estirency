@@ -10,6 +10,7 @@ export default new Vuex.Store({
     baseCurrency: currencies[21],
     targetCurrency: currencies[9],
     amountValue: 100,
+    loaded: false,
   },
   mutations: {
     setBaseCurrency(state, base) {

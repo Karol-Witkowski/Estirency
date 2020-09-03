@@ -4,7 +4,8 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
-      <datachart id="dataChart" v-if="loaded" :chartdata="chartData" :options="options"/>
+      <datachart id="dataChart" v-if="this.$store.state.loaded" :chartdata="chartData"
+      :options="options"/>
     </div>
 </template>
 
@@ -45,9 +46,6 @@ export default {
       actualDate: '',
       pastDate: '',
       history: [],
-      value: Object,
-      label: Object,
-      loaded: false,
       chartData: {
         labels: [],
         datasets: [{
@@ -92,11 +90,11 @@ export default {
     getData() {
       // The API key should be in a .env file.
       // I left that free version key here to provide full experience on launch.
-      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3`)
+      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
         .then((response) => {
           this.history = response.data.response;
           this.dataLoop();
-          this.loaded = true;
+          this.$store.state.loaded = true;
         })
         .catch((error) => error);
     },

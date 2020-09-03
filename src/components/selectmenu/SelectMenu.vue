@@ -77,8 +77,10 @@ export default {
     },
 
     swapValues() {
-      [this.$store.state.baseCurrency, this.$store.state.targetCurrency] = [
-        this.$store.state.targetCurrency, this.$store.state.baseCurrency];
+      [this.$store.state.baseCurrency, this.$store.state.targetCurrency,
+        this.$store.state.loaded = false] = [
+        this.$store.state.targetCurrency, this.$store.state.baseCurrency,
+        this.$store.state.loaded = false];
     },
 
     setAmountValue(e) {
@@ -92,6 +94,10 @@ export default {
     setTargetCurrency(val) {
       this.$store.commit('setTargetCurrency', val);
     },
+  },
+
+  updated() {
+    this.$store.state.loaded = false;
   },
 };
 </script>
