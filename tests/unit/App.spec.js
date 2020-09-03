@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { shallowMount, mount, createLocalVue } from '@vue/test-utils';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
