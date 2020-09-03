@@ -11,10 +11,9 @@ localVue.use(VueRouter);
 Vue.use(VueRouter);
 
 describe('App', () => {
-  it('Check the app name and components existence', () => {
+  it('Check that 3 child components are rendered', () => {
     const wrapper = shallowMount(App);
 
-    expect(wrapper.name()).to.match(/App/);
     expect(wrapper.findAll('.Theme').exists());
     expect(wrapper.findAll('.Navbar').exists());
     expect(wrapper.findAll('.router-view').exists());
@@ -36,7 +35,7 @@ describe('App', () => {
     router.push('/home');
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.find(Home).exists()).to.equal(true);
+    expect(wrapper.findComponent(Home).exists()).toEqual(true);
   });
 
   it('Should have a different route than /home', async () => {
@@ -52,6 +51,6 @@ describe('App', () => {
       router,
     });
 
-    expect(wrapper.find(Home).exists()).to.equal(false);
+    expect(wrapper.findComponent(Home).exists()).toEqual(false);
   });
 });

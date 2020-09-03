@@ -18,14 +18,10 @@ const wrapper = shallowMount(Navbar, {
 });
 
 describe('Navbar.vue test', () => {
-  it('Check the name of the component', () => {
-    expect(wrapper.name()).to.match(/Navbar/);
-  });
-
   it('Navigation should render correctly', () => {
     Vue.use(VueRouter);
 
-    expect(wrapper.find(RouterLink).props().to).to.match(/home/);
-    expect(wrapper.find(RouterLink).text()).to.match(/estirency/);
+    expect(wrapper.findComponent(RouterLink).props().to).toMatch('home');
+    expect(wrapper.findComponent(RouterLink).text()).toMatch('esti rency');
   });
 });
