@@ -2,7 +2,7 @@ import { shallowMount, mount, createLocalVue } from '@vue/test-utils';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from '@/App.vue';
-import Home from '@/views/Home/Home.vue';
+import Home from '@/views/home/Home.vue';
 import store from '@/store';
 
 const localVue = createLocalVue();
@@ -11,12 +11,12 @@ localVue.use(VueRouter);
 Vue.use(VueRouter);
 
 describe('App', () => {
-  it('Check that 3 child components are rendered', () => {
+  it('check that 2 of the 3 child components are rendered', () => {
     const wrapper = shallowMount(App);
 
-    expect(wrapper.findAll('.Theme').exists());
-    expect(wrapper.findAll('.Navbar').exists());
-    expect(wrapper.findAll('.router-view').exists());
+    expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBe(true);
+    expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBe(true);
+    expect(wrapper.findComponent({ name: 'Home' }).exists()).toBe(false);
   });
 
   it('Renders a child component via routing', async () => {
