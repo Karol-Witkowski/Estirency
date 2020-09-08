@@ -11,7 +11,7 @@ localVue.use(VueRouter);
 Vue.use(VueRouter);
 
 describe('App', () => {
-  it('check that 2 of the 3 child components are rendered', () => {
+  it('Check that 2 of the 3 child components are rendered', () => {
     const wrapper = shallowMount(App);
 
     expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBe(true);
