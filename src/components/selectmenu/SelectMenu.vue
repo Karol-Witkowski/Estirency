@@ -16,7 +16,7 @@
           @keypress="currencyRestrictions"/>
         </template>
       </v-select>
-      <img src="@/assets/swap-vertical.png" alt="swap currency icon" v-on:click="swapValues">
+      <img src="@/assets/swap-vertical.png" alt="swap currency icon" v-on:click="this.swapValues">
       <p class="currency">
         select target currency
       </p>
