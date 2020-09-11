@@ -66,7 +66,7 @@ export default {
 
   methods: {
 
-    getRates() {
+    async getRates() {
       axios.get(`${currencyRate}${this.setBaseCurrency}`)
         .then((response) => {
           this.rate = response.data.rates[this.setTargetCurrency];

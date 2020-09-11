@@ -1,14 +1,20 @@
 /* eslint-disable no-shadow */
 import { mount } from '@vue/test-utils';
+import Vue from 'vue';
 import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
 
 describe('SelectMenu.vue test', () => {
+  const currencies = [
+    { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
+    { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
+  ];
+
   const wrapper = mount(SelectMenu, {
     mocks: {
       $store: {
         state: {
-          baseCurrency: 'POLISH ZLOTY',
-          targetCurrency: 'EUROPEAN EURO',
+          baseCurrency: currencies[0].cc,
+          targetCurrency: currencies[1].name,
           amountValue: '',
         },
       },
@@ -21,16 +27,17 @@ describe('SelectMenu.vue test', () => {
   });
 
   it('Renders values using a mock getter', () => {
-    expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('POLISH ZLOTY');
-    expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('EUROPEAN EURO');
+    expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('PLN');
+    expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('European Euro');
     expect(wrapper.findAll('input').at(2).text()).toMatch('');
   });
 
   it('Check if swapValues function swap stored values', () => {
-    wrapper.vm.$emit('swapValues');
-
-    expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('EUROPEAN EURO');
-    expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('POLISH ZLOTY');
+    wrapper.find('img').trigger('click');
+    Vue.nextTick(() => {
+      expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('European Euro');
+      expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('PLN');
+    });
   });
 
   it('Check if currencyRestrictions allows only letters', () => {
