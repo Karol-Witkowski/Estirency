@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import { mount } from '@vue/test-utils';
+import { mount, shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
 import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
 
@@ -56,7 +56,7 @@ describe('SelectMenu.vue test', () => {
   });
 
   it('Check if amountRestrictions allows only numbers', () => {
-    const wrapper = mount(SelectMenu, {
+    const wrapper = shallowMount(SelectMenu, {
       mocks: {
         $store: {
           state: {
@@ -65,6 +65,6 @@ describe('SelectMenu.vue test', () => {
         },
       },
     });
-    expect(wrapper.findAll('input').at(2).text()).toMatch('');
+    expect(wrapper.findAll('input').at(0).text()).toMatch('');
   });
 });

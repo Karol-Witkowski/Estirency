@@ -72,6 +72,7 @@ export default {
           this.rate = response.data.rates[this.setTargetCurrency];
         })
         .catch((error) => error);
+      return this.rate;
     },
   },
   mounted() {
