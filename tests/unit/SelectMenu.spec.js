@@ -3,12 +3,12 @@ import { mount, shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
 import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
 
-describe('SelectMenu.vue test', () => {
-  const currencies = [
-    { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
-    { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
-  ];
+const currencies = [
+  { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
+  { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
+];
 
+describe('SelectMenu.vue test', () => {
   const wrapper = mount(SelectMenu, {
     mocks: {
       $store: {

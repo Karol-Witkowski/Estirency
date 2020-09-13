@@ -3,23 +3,22 @@ import Rate from '@/components/rate/Rate.vue';
 import axios from 'axios';
 
 jest.mock('axios', () => ({
-  response: {
+  get: jest.fn(() => Promise.resolve({
     data: {
       rates: {
-        EUR: '2',
-        PLN: '4',
+        EUR: 2.1234,
+        PLN: 4.1234,
       },
     },
-  },
-  get: jest.fn(() => Promise.resolve({ data: this.response })),
+  })),
 }));
 
-describe('SelectMenu.vue test', () => {
-  const currencies = [
-    { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
-    { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
-  ];
+const currencies = [
+  { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
+  { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
+];
 
+describe('Rate.vue test', () => {
   const wrapper = shallowMount(Rate, {
     mocks: {
       $store: {
@@ -44,9 +43,23 @@ describe('SelectMenu.vue test', () => {
     },
   });
 
+  it('Check mocked store', async () => {
+    expect(wrapper.findAll('span').at(1).text()).toMatch('2');
+    expect(wrapper.findAll('div').at(1).text()).toContain('PLN');
+    expect(wrapper.findAll('div').at(1).text()).toContain('Polish zloty');
+    expect(wrapper.findAll('div').at(1).text()).toContain('EUR');
+    expect(wrapper.findAll('div').at(1).text()).toContain('European Euro');
+  });
+
   it('Check axios call', async () => {
     expect(axios.get).toBeCalledWith('https://api.exchangeratesapi.io/latest?base=PLN');
-    expect(wrapper.vm.setRate).toEqual(2);
   });
-  // NEXT TEST SETRATE expect(wrapper.vm.setRate).toEqual(2);
+
+  it('Check setRate computed', async () => {
+    expect(wrapper.vm.setRate).toEqual(2.123);
+  });
+
+  it('Check setAmount computed', async () => {
+    expect(wrapper.vm.setAmount).toEqual(4.25);
+  });
 });
