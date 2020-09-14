@@ -16,7 +16,7 @@ import datachart from '@/components/chartComponent/chart/Chart.vue';
 let actualDate;
 let pastDate;
 
-const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=<deletethis!>';
+const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const day = new Date().getDate() - 1;
@@ -90,7 +90,8 @@ export default {
     getData() {
       // The API key should be in a .env file.
       // I left that free version key here to provide full experience on launch.
-      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
+      // Remove <DELETETHSIS> from the URL to activate working call
+      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k<DELETETHIS>`)
         .then((response) => {
           this.history = response.data.response;
           this.dataLoop();
