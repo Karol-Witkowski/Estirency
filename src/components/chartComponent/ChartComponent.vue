@@ -4,8 +4,9 @@
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </p>
-      <datachart id="dataChart" v-if="this.$store.state.loaded" :chartdata="chartData"
-      :options="options"/>
+      <span v-if="this.$store.state.loaded">
+        <datachart id="dataChart" :chartdata="chartData" :options="options"/>
+      </span>
     </div>
 </template>
 
