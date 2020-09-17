@@ -6,6 +6,8 @@ jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({
     data: {
       response: {
+        c: '0.2323',
+        tm: '2019-10-11 00:00:00',
       },
     },
   })),
@@ -44,7 +46,7 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check axios call', async () => {
-    expect(axios.get).toBeCalledWith('https://fcsapi.com/api-v2/forex/history?symbol=PLN/EUR&period=1d&from=2019-09-15T12:00&to=2020-09-15T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k<DELETETHIS>');
+    expect(axios.get).toBeCalledWith('https://fcsapi.com/api-v2/forex/history?symbol=PLN/EUR&period=1d&from=2019-09-16T12:00&to=2020-09-16T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k<DELETETHIS>');
   });
 
   it('Check that datachart exists when state.loaded = true', async () => {
@@ -65,5 +67,9 @@ describe('ChartComponent.vue test', () => {
       },
     });
     expect(chart.find('span').exists()).toBeFalsy();
+  });
+
+  it('Check  dataLoop method', () => {
+    expect(wrapper.props('history')).toBe(Number);
   });
 });
