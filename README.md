@@ -8,7 +8,7 @@
 
 <p align="center">You can try <a href="https://karol-witkowski.github.io/Estirency/#/home">Estirency</a> by yourself. Here is a link to the website hosted by GitHub.</p>
 
-<p align="center"><b>:broken_heart: UNDER DEVELOPMENT :broken_heart:</b></p>
+<p align="center"><b>:broken_heart: CHART USE ARTIFICIAL DATA - READ PROJECT CODE TO USE REAL DATA :broken_heart:</b></p>
 <p align="center" font-size="20px">:herb: <a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a> :herb:</p>
 
 ## Usage example
