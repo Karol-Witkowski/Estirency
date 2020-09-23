@@ -1,1 +1,11 @@
-{}
+{
+  "projectId": "jc7qvw",
+  "screenshotOnRunFailure": false,
+  "integrationFolder": "cypress/tests",
+  "pluginsFile": false,
+  "fixturesFolder": false,
+  "supportFile": false,
+  "video": false,
+  "defaultCommandTimeout": 10000,
+  "baseUrl": "http://localhost:8080/Estirency/"
+}

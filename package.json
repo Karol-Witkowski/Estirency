@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "npx cypress open",
     "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:cypress-run": "cypress run",
+    "test:cypress-open": "cypress open",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js",
-    "ui": "vue ui"
+    "ui": "vue ui",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "autoprefixer": "^9.8.6",
@@ -20,7 +21,7 @@
     "css-loader": "^4.3.0",
     "http-proxy": "^1.18.1",
     "node-forge": "^0.10.0",
-    "sass-resources-loader": "^2.1.0",
+    "sass-resources-loader": "^2.1.1",
     "serialize-javascript": "^4.0.0",
     "vue": "^2.6.12",
     "vue-chartjs": "^3.5.1",
@@ -45,11 +46,11 @@
     "eslint-plugin-vue": "^6.2.2",
     "execa": "latest",
     "jest-mock": "^26.3.0",
-    "sass": "^1.26.10",
+    "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "vue-template-compiler": "^2.6.12",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.2"
   },
   "eslintConfig": {
     "root": true,
