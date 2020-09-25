@@ -1,8 +1,8 @@
 <template>
     <div class="chart">
       <p>
-        {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
-        timeseries from last year
+        <span>{{ this.$store.state.baseCurrency.cc }}/</span>
+        <span>{{ this.$store.state.targetCurrency.cc }} timeseries from last year</span>
       </p>
       <span v-if="this.$store.state.loaded">
         <datachart id="dataChart" :chartdata="chartData" :options="options"/>
