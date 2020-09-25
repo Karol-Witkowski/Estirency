@@ -7,6 +7,7 @@
     "test:unit": "vue-cli-service test:unit",
     "test:cypress-run": "cypress run",
     "test:cypress-open": "cypress open",
+    "test:cypress-record": "cypress run --record --key 0bc11325-c245-4f3c-8e1e-a9735738aead",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js",
     "ui": "vue ui",
     "serve": "vue-cli-service serve",

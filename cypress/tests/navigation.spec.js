@@ -1,6 +1,9 @@
 describe('Navigation test', () => {
-  it('Check that navigation to the base and about page work as expected', () => {
+  beforeEach(() => {
     cy.visit('/');
+  });
+
+  it('Check that navigation to the base and about page work as expected', () => {
     cy.contains('about')
       .click();
     cy.url()
@@ -12,7 +15,6 @@ describe('Navigation test', () => {
   });
 
   it('Check if logo navigate to homepage', () => {
-    cy.visit('/');
     cy.contains('about')
       .click();
     cy.url()

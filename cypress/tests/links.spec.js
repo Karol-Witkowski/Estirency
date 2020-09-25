@@ -1,7 +1,10 @@
 describe('Links test', () => {
   // Work only in chrome - Electron will throw an error due to GitHub policy issues
-  it('Check that link in about navigate to GitHub', () => {
+  beforeEach(() => {
     cy.visit('/');
+  });
+
+  it('Check that link in about navigate to GitHub', () => {
     cy.contains('about')
       .click();
     cy.get('#about')
@@ -12,7 +15,6 @@ describe('Links test', () => {
   });
 
   it('Check if API logo navigate to API provider homepage', () => {
-    cy.visit('/');
     cy.get('a[href="https://exchangeratesapi.io/"]').should('have.attr', 'target', '_blank');
   });
 });

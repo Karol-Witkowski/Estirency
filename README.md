@@ -1,4 +1,5 @@
 # Estirency
+[![ESTIRENCY](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/jc7qvw/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/jc7qvw/runs)
 
 <p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="90" title="Estirency logo" src="public\logo.png" alt="Estirency logo"></a></code></p>
 
