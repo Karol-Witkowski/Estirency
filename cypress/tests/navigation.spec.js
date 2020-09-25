@@ -3,7 +3,7 @@ describe('Navigation test', () => {
     cy.visit('/');
   });
 
-  it('Check that navigation to the base and about page work as expected', () => {
+  it('Check that navigation to the base and about page work', () => {
     cy.contains('about')
       .click();
     cy.url()

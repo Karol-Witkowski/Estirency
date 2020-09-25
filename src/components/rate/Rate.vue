@@ -4,14 +4,13 @@
       <p>Description</p>
       <div>
       The rate of transaction is
-      <span>{{ setRate }}</span>
+      <span class="numbers">{{ setRate }}</span>
       </div>
       <div>
-        <span>{{ $store.state.amountValue }}</span>
-        {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is
-        <span>{{ setAmount }}</span>
-        {{ $store.state.targetCurrency.cc }}
-        ({{ $store.state.targetCurrency.name }})
+        <span class="numbers">{{ $store.state.amountValue }}</span>
+        <span> {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is </span>
+        <span class="numbers">{{ setAmount }}</span>
+        <span> {{ $store.state.targetCurrency.cc }} ({{ $store.state.targetCurrency.name }})</span>
       </div>
     </div>
     <div  class="dataInfo">
