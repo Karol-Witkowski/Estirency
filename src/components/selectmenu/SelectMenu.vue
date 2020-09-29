@@ -1,14 +1,8 @@
 <template>
     <div class="select">
-      <p class="menu">
-        menu
-      </p>
-      <p class="instruction">
-        Select currencies and fill input to show data
-      </p>
-      <p class="base">
-        select base currency
-      </p>
+      <p class="menu">menu</p>
+      <p class="instruction">Select currencies and fill input to show data</p>
+      <p class="base">select base currency</p>
       <v-select :options="$store.state.currency" label="name" :value="$store.state.baseCurrency"
       @input="setBaseCurrency" placeholder="base currency">
         <template #search="{attributes, events}">
@@ -17,9 +11,7 @@
         </template>
       </v-select>
       <img src="@/assets/swap-vertical.png" alt="swap currency icon" v-on:click="this.swapValues">
-      <p class="currency">
-        select target currency
-      </p>
+      <p class="currency">select target currency</p>
       <v-select :options="$store.state.currency" label="name" :value="$store.state.targetCurrency"
       @input="setTargetCurrency" placeholder="target currency">
         <template #search="{attributes, events}">
@@ -27,9 +19,7 @@
           @keypress="currencyRestrictions"/>
         </template>
       </v-select>
-      <p class="amount">
-        type amount
-      </p>
+      <p class="amount">type amount</p>
       <input class="amountInput" @keypress="amountRestrictions" :value="$store.state.amountValue"
       @input="setAmountValue" placeholder="amount of currency"/>
     </div>
@@ -79,6 +69,7 @@ export default {
     swapValues() {
       [this.$store.state.baseCurrency, this.$store.state.targetCurrency] = [
         this.$store.state.targetCurrency, this.$store.state.baseCurrency];
+      this.$store.state.loaded = false;
     },
 
     setAmountValue(e) {
@@ -87,15 +78,13 @@ export default {
 
     setBaseCurrency(val) {
       this.$store.commit('setBaseCurrency', val);
+      this.$store.state.loaded = false;
     },
 
     setTargetCurrency(val) {
       this.$store.commit('setTargetCurrency', val);
+      this.$store.state.loaded = false;
     },
-  },
-
-  updated() {
-    this.$store.state.loaded = false;
   },
 };
 </script>

@@ -80,29 +80,29 @@ export default {
   methods: {
 
     dataLoop() {
-      for (let i = 0; i < this.history.length; i += 20) {
-        const label = this.history[i].tm.slice(0, 10);
-        const value = this.history[i].c;
-        this.chartData.labels.push(label);
-        this.chartData.datasets[0].data.push(value);
-      }
+      // Dummy placeholder for github-pages
+      // Restore previous version from repository
+      this.chartData.labels.push('Dummy1', 'Dummy2', 'Dummy3', 'Dummy4', 'Dummy5', 'Dummy6', 'Dummy7', 'Dummy8', 'Dummy9', 'Dummy10', 'Dummy11', 'Dummy12', 'Dummy13');
+      this.chartData.datasets[0].data.push(12, 15, 10, 9, 10, 9, 12, 11, 10, 8, 9, 7, 9);
+      this.$store.state.loaded = true;
     },
 
     getData() {
-      // The API key should be in a .env file.
-      // I left that free version key here to provide full experience on launch.
       // Remove <DELETETHSIS> from the URL to activate working call
-      axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k<DELETETHIS>`)
-        .then((response) => {
-          this.history = response.data.response;
-          this.dataLoop();
-          this.$store.state.loaded = true;
-        })
-        .catch((error) => error);
+      if (this.$store.state.loaded === false) {
+        axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3<DELETETHIS>`)
+          .then((response) => {
+            this.history = response.data.response;
+            this.dataLoop();
+            this.$store.state.loaded = true;
+          })
+          .catch((error) => error);
+      }
     },
   },
 
   mounted() {
+    this.$store.state.loaded = false;
     this.getData();
   },
 
