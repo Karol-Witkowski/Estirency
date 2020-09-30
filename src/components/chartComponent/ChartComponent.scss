@@ -1,11 +1,10 @@
 .chart {
   float: left;
   display: flexbox;
-  background-color: $backgrundColor;
-  box-shadow: (2px 8px 30px -15px $primary);
+  box-shadow: $primaryShadow;
   height: 580px;
   width: 735px;
-  border: solid 1px $primary;
+  border: $panelStyle;
   border-radius: 10px;
   margin: 50px 30px 30px 30px;
 
@@ -35,7 +34,7 @@
 
   #dataChart {
     height: 81%;
-    margin: 4.3% 1% 3% 2%;
+    margin: 4.3% 1% 3% 1%;
 
     @media only screen and (max-width: 1520px) {
       padding-bottom: -1%;

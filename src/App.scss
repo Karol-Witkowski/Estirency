@@ -2,5 +2,8 @@
 
 .app {
   font-family: 'Josefin Sans', sans-serif;
-  color: $primary;
+  color: $primaryColor;
+  background-color: $backgroundColor;
+  text-align: center;
+  text-transform: uppercase;
 }

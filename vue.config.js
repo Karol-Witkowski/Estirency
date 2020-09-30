@@ -9,7 +9,7 @@ module.exports = {
             {
               loader: 'sass-resources-loader',
               options: {
-                resources: 'src/assets/styles/var/colors.scss',
+                resources: 'src/assets/styles/variables.scss',
               },
             },
           ],

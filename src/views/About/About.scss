@@ -1,13 +1,11 @@
 #about {
   font-weight: 700;
   align-items: center;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
   padding-top: 10.6%;
-  text-transform: uppercase;
 
   div {
     padding-bottom: 2%;
@@ -21,9 +19,14 @@
 
   .description {
     margin: 0.6%;
+
+    @media only screen and (max-width: 800px) {
+      padding-bottom: 2%;
+    }
+
     @media only screen and (max-width: 550px) {
       font-size: 0.77em;
-      padding-bottom: 1%;
+      padding-bottom: 3%;
     }
   }
 
@@ -31,14 +34,21 @@
     width: 70%;
     margin-top: 1.5%;
     margin-bottom: 1.6%;
-    color: transparent;
-    border-bottom: 1px solid $primary;
-    box-shadow: (2px 1px 10px 0px $primary);
+    border-style: groove;
+    background-color: $primaryColor;
+    box-shadow: (2px 1px 10px 0px $primaryColor);
+
+    @media only screen and (max-width: 1300px) {
+      margin-top: 2.3%;
+      margin-top: 2.4%;
+    }
+
     @media only screen and (max-width: 670px) {
       width: 450px;
       padding-left: 2%;
       padding-right: 2%;
       margin-top: 4%;
+      margin-bottom: 4.1%;
     }
   }
 

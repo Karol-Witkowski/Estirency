@@ -1,18 +1,22 @@
 .navbar {
   height: 57px;
-  border-bottom: 1px solid $primary;
-  box-shadow: (-1px 9px 7px -8px $primary);
-  text-transform: uppercase;
+  border-bottom: 1px solid $primaryColor;
+  box-shadow: (-1px 9px 7px -8px $primaryColor);
 
   .logo {
     font-size: 1.3em;
-    padding-top: 1.2%;
+    padding-top: 1%;
     margin-left: 0.66%;
     float: left;
-    color: $primary;
+    color: $primaryColor;
+
+    @media only screen and (max-width: 900px) {
+      padding-top: 1.8%;
+    }
+
     @media only screen and (max-width: 550px) {
      font-size: 1.15em;
-     padding-top: 3%;
+     padding-top: 3.5%;
     }
 
     img {
@@ -39,23 +43,16 @@
 
     }
 
-  .routerBtn {
-    background-color: transparent;
-    border: 1.5px solid $primary;
-    font-size: 1em;
-    line-height: 1;
-    margin: 0.3em;
-    padding: 0.9em 1em 0.6em;
-    float: right;
-  }
-
-  .routerHomeBtn {
-    padding: 0.9em 1.2em 0.6em;
-  }
-
-    span {
+    .routerBtn {
+      background-color: transparent;
+      border: $panelStyle;
+      font-size: 1em;
+      line-height: 1;
+      margin: 0.3em;
+      padding: 0.9em 1em 0.6em;
+      float: right;
       position: relative;
-      color: $primary;
+      color: $primaryColor;
       display: flex;
       text-decoration: none;
       font-weight: 550;
@@ -67,7 +64,7 @@
   border: 0 solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
   outline: 1px solid;
-  outline-color: $primary;
+  outline-color: $primaryColor;
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -75,13 +72,13 @@
 }
 
 .effectBtn:hover {
-  border: 1px solid $primary;
-  box-shadow: inset 0 0 10px $primary, 0 0 20px $hoverBtn;
+  border: 1px solid $primaryColor;
+  box-shadow: inset 0 0 10px $primaryColor, 0 0 20px $hoverBtnColor;
   text-shadow: 1px 1px 2px #427388;
 }
 
 .router-link-active {
   border: 1px solid;
-  box-shadow: inset 0 0 8px $primary, 0 0 20px $hoverBtn;
+  box-shadow: inset 0 0 8px $primaryColor, 0 0 20px $hoverBtnColor;
   text-shadow: 1px 1px 2px #427388;
 }

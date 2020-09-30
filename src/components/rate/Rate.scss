@@ -1,29 +1,21 @@
 .rate {
   font-size: 0.95em;
-  color: $primary;
-  text-transform: uppercase;
-  text-align: center;
   float: left;
   width: 20%;
   min-width: 320px;
   margin-top: 22%;
   padding-left: 1.5em;
-  background-color: $backgrundColor;
-  box-shadow: (2px 8px 30px -15px $primary);
+  box-shadow: $primaryShadow;
   height: 580px;
-  border: solid 1px $primary;
+  border: $panelStyle;
   border-radius: 10px;
   margin-top: 50px;
   margin-left: 30px;
 
   div {
-    color: $primary;
-
     p {
-      text-align: center;
       margin-top: 11%;
       font-size: 1.5em;
-      text-transform: uppercase;
       margin-right: 30px;
     }
 
@@ -43,7 +35,6 @@
     font-size: 0.85em;
     text-align: justify;
     margin: 60px 30px 20px 0px;
-    color: $primary;
 
     span {
       font-size: 1.1em;
@@ -51,16 +42,12 @@
   }
 
   .apiInfo {
-    text-align: center;
     margin: 58px 30px 10px 0px;
     font-weight: 600;
     font-size: 0.85em;
   }
 
   .apiIcon {
-    display: block;
-    position: relative;
-    align-items: center;
     margin-left: -30px;
     margin-top: 33px;
   }

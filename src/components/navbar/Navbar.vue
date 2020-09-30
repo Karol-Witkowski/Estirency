@@ -8,11 +8,8 @@
       </div>
     </router-link>
     <div class="buttons">
-      <router-link class="routerBtn effectBtn" to="/about">
-        <span>about</span>
-      </router-link>
-      <router-link class="routerHomeBtn routerBtn effectBtn" to="/home">
-        <span>home</span>
+      <router-link class="routerBtn effectBtn" to="/about">about</router-link>
+      <router-link class="routerBtn effectBtn" style="padding: 0.9em 1.2em 0.6em;" to="/home">home
       </router-link>
     </div>
   </div>

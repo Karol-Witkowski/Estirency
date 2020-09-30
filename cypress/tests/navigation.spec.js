@@ -19,8 +19,8 @@ describe('Navigation test', () => {
       .click();
     cy.url()
       .should('contain', 'about');
-    cy.contains('esti')
-      .click();
+    cy.contains('estirency')
+      .click({ force: true });
     cy.url()
       .should('contain', 'home');
   });
