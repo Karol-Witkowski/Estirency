@@ -25,18 +25,17 @@
     }
 
     .namePart1 {
-      font-weight: 600;
+      font-weight: $semiBold;
       font-size: 1.2em;
     }
 
     .namePart2 {
-      font-weight: 300;
+      font-weight: $light;
       font-size: 1.2em;
     }
   }
 
   .buttons {
-
     @media only screen and (max-width: 550px) {
       font-size: 0.8em;
       padding-top: 1.8%;
@@ -55,7 +54,7 @@
       color: $primaryColor;
       display: flex;
       text-decoration: none;
-      font-weight: 550;
+      font-weight: $semiBold;
     }
   }
 }

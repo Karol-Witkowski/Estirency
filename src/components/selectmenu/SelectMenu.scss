@@ -17,13 +17,13 @@
   }
 
   .instruction {
-    font-weight: 500;
+    font-weight: $semiBold;
     padding: 0% 3%;
     text-transform: none;
   }
 
   .base {
-    font-weight: 500;
+    font-weight: $semiBold;
     margin-top: 11%;
     text-transform: uppercase;
   }
@@ -36,12 +36,12 @@
   }
 
   .currency {
-    font-weight: 500;
+    font-weight: $semiBold;
     margin-top: -1.8%;
   }
 
   .amount {
-    font-weight: 500;
+    font-weight: $semiBold;
     margin-top: 16%;
   }
 
@@ -59,7 +59,7 @@
       color: $primaryColor;
       text-transform: lowercase;
       font-variant: small-caps;
-      font-weight: 700;
+      font-weight: $bold;
       font-family: 'Josefin Sans', sans-serif;
     }
   }
@@ -74,12 +74,11 @@
     color: $secondaryColor;
     text-transform: lowercase;
     font-variant: small-caps;
-    font-weight: 700;
+    font-weight: $bold;
     font-size: 0.88em;
     text-align: center;
   }
-  .amountInput::placeholder {
-  }
+
   .amountInput:focus {
     transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
     font-size: 0.71em;
@@ -94,7 +93,7 @@
   fill: $secondaryColor;
   cursor: pointer;
   color: $secondaryColor;
-  font-weight: 700;
+  font-weight: $bold;
   text-transform: unset;
   text-align: center;
   border: 0px;
@@ -104,7 +103,7 @@
   background-color: $backgroundColor;
   border: $panelStyle;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
+  font-weight: $semiBold;
   font-size: 0.7em;
   text-align: center;
 }
@@ -142,7 +141,7 @@
 }
 
 .vs__search:focus {
-  font-weight: 700;
+  font-weight: $bold;
   font-size: 0.75em;
   padding-top: 0.9%;
   transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
