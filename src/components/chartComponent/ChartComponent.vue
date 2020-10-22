@@ -5,7 +5,7 @@
         <span>{{ this.$store.state.targetCurrency.cc }} timeseries from last year</span>
       </p>
       <span v-if="this.$store.state.loaded">
-        <datachart id="dataChart" :chartdata="chartData" :options="options"/>
+        <datachart class="dataChart" :chartdata="chartData" :options="options"/>
       </span>
     </div>
 </template>

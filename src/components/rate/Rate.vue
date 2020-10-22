@@ -2,10 +2,7 @@
   <div class="rate">
     <div>
       <p>Description</p>
-      <div>
-      The rate of transaction is
-      <span class="numbers">{{ setRate }}</span>
-      </div>
+      <div>The rate of transaction is <span class="numbers">{{ setRate }}</span></div>
       <div>
         <span class="numbers">{{ $store.state.amountValue }}</span>
         <span> {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is </span>

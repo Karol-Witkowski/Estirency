@@ -1,19 +1,19 @@
 .select {
   border: $panelStyle;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 30px;
-  width: 20%;
-  min-width: 320px;
-  height: 580px;
-  float: left;
   box-shadow: $primaryShadow;
+  float: left;
   font-size: 1.1em;
+  height: 580px;
+  margin-left: 30px;
+  margin-top: 50px;
+  min-width: 320px;
+  width: 20%;
 
   .menu {
     font-size: 1.5em;
-    margin-top: 11%;
     margin-bottom: 7%;
+    margin-top: 11%;
   }
 
   .instruction {
@@ -29,10 +29,10 @@
   }
 
   img {
-    width: 50px;
+    cursor: pointer;
     display: block;
     margin: 8.3% auto;
-    cursor: pointer;
+    width: 50px;
   }
 
   .currency {
@@ -48,40 +48,40 @@
   .v-select {
     border: 1px solid $primaryColor;
     box-shadow: (2px 8px 15px -10px $primaryColor);
-    width: 80%;
-    height: 6%;
-    margin: auto 9.5% auto;
     color: $secondaryColor;
     font-variant: small-caps;
+    height: 6%;
+    margin: auto 9.5% auto;
     padding-left: 8%;
+    width: 80%;
 
     ::placeholder {
       color: $primaryColor;
-      text-transform: lowercase;
+      font-family: 'Josefin Sans', sans-serif;
       font-variant: small-caps;
       font-weight: $bold;
-      font-family: 'Josefin Sans', sans-serif;
+      text-transform: lowercase;
     }
   }
 
   .amountInput {
+    background-color: transparent;
     border: $panelStyle;
     box-shadow: $primaryShadow;
-    width: 79%;
-    margin: -0.9% 9.5% auto;
-    height: 5.4%;
-    background-color: transparent;
     color: $secondaryColor;
-    text-transform: lowercase;
-    font-variant: small-caps;
-    font-weight: $bold;
+    height: 5.4%;
+    margin: -0.9% 9.5% auto;
     font-size: 0.88em;
+    font-weight: $bold;
+    font-variant: small-caps;
     text-align: center;
+    text-transform: lowercase;
+    width: 79%;
   }
 
   .amountInput:focus {
-    transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
     font-size: 0.71em;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
   }
 }
 
@@ -90,22 +90,22 @@
 .v-select .vs__open-indicator,
 .v-select .vs__dropdown-menu .vs__search,
 .vs__search:focus {
-  fill: $secondaryColor;
-  cursor: pointer;
-  color: $secondaryColor;
-  font-weight: $bold;
-  text-transform: unset;
-  text-align: center;
   border: 0px;
+  color: $secondaryColor;
+  cursor: pointer;
+  fill: $secondaryColor;
+  font-weight: $bold;
+  text-align: center;
+  text-transform: unset;
 }
 
 .v-select .vs__dropdown-menu {
   background-color: $backgroundColor;
   border: $panelStyle;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: $semiBold;
-  font-size: 0.7em;
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7em;
+  font-weight: $semiBold;
 }
 
 .v-select .vs__dropdown-option {
@@ -123,8 +123,8 @@
 }
 
 .v-select .vs__clear {
-  transform: scale(1.15);
   padding-bottom: 10%;
+  transform: scale(1.15);
 }
 
 .v-select .vs__dropdown-menu {

@@ -1,14 +1,15 @@
 .navbar {
-  height: 57px;
   border-bottom: 1px solid $primaryColor;
   box-shadow: (-1px 9px 7px -8px $primaryColor);
+  height: 57px;
+
 
   .logo {
-    font-size: 1.3em;
-    padding-top: 1%;
-    margin-left: 0.66%;
-    float: left;
     color: $primaryColor;
+    float: left;
+    font-size: 1.3em;
+    margin-left: 0.66%;
+    padding-top: 1%;
 
     @media only screen and (max-width: 900px) {
       padding-top: 1.8%;
@@ -20,18 +21,18 @@
     }
 
     img {
-      width: 1.2em;
       margin: 3% 0% -1.5% 0%;
+      width: 1.2em;
     }
 
     .namePart1 {
-      font-weight: $semiBold;
       font-size: 1.2em;
+      font-weight: $semiBold;
     }
 
     .namePart2 {
-      font-weight: $light;
       font-size: 1.2em;
+      font-weight: $light;
     }
   }
 
@@ -43,18 +44,18 @@
     }
 
     .routerBtn {
+      color: $primaryColor;
       background-color: transparent;
       border: $panelStyle;
+      display: flex;
+      float: right;
       font-size: 1em;
+      font-weight: $semiBold;
       line-height: 1;
       margin: 0.3em;
       padding: 0.9em 1em 0.6em;
-      float: right;
       position: relative;
-      color: $primaryColor;
-      display: flex;
       text-decoration: none;
-      font-weight: $semiBold;
     }
   }
 }
@@ -65,9 +66,9 @@
   outline: 1px solid;
   outline-color: $primaryColor;
   outline-offset: 0px;
+  text-decoration: none;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-  text-decoration: none;
 }
 
 .effectBtn:hover {

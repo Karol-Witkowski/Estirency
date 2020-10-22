@@ -1,23 +1,21 @@
 .rate {
-  font-size: 0.95em;
-  float: left;
-  width: 20%;
-  min-width: 320px;
-  margin-top: 22%;
-  padding-left: 1.5em;
-  box-shadow: $primaryShadow;
-  height: 580px;
   border: $panelStyle;
   border-radius: 10px;
-  margin-top: 50px;
+  box-shadow: $primaryShadow;
+  float: left;
+  font-size: 0.95em;
+  height: 580px;
+  min-width: 320px;
   margin-left: 30px;
+  margin-top: 50px;
+  padding-left: 1.5em;
+  width: 20%;
 
   div {
-
     p {
-      margin-top: 11%;
       font-size: 1.5em;
       margin-right: 30px;
+      margin-top: 11%;
     }
 
     .numbers {
@@ -25,17 +23,17 @@
     }
 
     div {
-      padding-top: 5%;
       margin-right: 1.6em;
       margin-left: -2%;
+      padding-top: 5%;
     }
   }
 
   .dataInfo {
-    font-weight: $semiBold;
     font-size: 0.85em;
-    text-align: justify;
+    font-weight: $semiBold;
     margin: 60px 30px 20px 0px;
+    text-align: justify;
 
     span {
       font-size: 1.1em;
@@ -43,9 +41,9 @@
   }
 
   .apiInfo {
-    margin: 58px 30px 10px 0px;
-    font-weight: $semiBold;
     font-size: 0.85em;
+    font-weight: $semiBold;
+    margin: 58px 30px 10px 0px;
   }
 
   .apiIcon {

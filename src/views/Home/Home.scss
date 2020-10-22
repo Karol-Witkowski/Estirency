@@ -1,19 +1,18 @@
 .home {
-  display: flex;
   box-sizing: border-box;
+  display: flex;
 
   @media only screen and (max-width: 1520px) {
-    flex-wrap: wrap;
     display: flexbox;
+    flex-wrap: wrap;
   }
 
   .selectMenu {
-
     @media only screen and (max-width: 1520px) {
-      min-width: 340px;
       float: right;
       margin-left: auto;
       margin-right: 3%;
+      min-width: 340px;
     }
 
     @media only screen and (max-width: 810px) {
@@ -39,9 +38,9 @@
     }
 
     @media only screen and (max-width: 810px) {
+      height: 535px;
       margin-left: auto;
       margin-right: auto;
-      height: 535px;
     }
 
     @media only screen and (max-width: 420px) {
@@ -51,9 +50,9 @@
 
   .chart {
     @media only screen and (max-width: 1520px) {
-      width: 93%;
       margin-left: auto;
       margin-right: auto;
+      width: 93%;
     }
 
     @media only screen and (max-width: 750px) {
