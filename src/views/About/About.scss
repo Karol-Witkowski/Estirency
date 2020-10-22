@@ -1,54 +1,43 @@
 .about {
   align-items: center;
-  display: flex;
-  flex-direction: column;
   font-weight: $bold;
   justify-content: center;
-  padding-top: 10.6%;
-  overflow: hidden;
+  padding-top: 7%;
 
   div {
     font-size: 1.3em;
-    padding-bottom: 2%;
+    margin-bottom: 25px;
 
     @media only screen and (max-width: 550px) {
       font-size: 1em;
-      margin-bottom: 2%;
-      margin-top: 4%;
     }
   }
 
   .description {
-    margin: 0.6%;
-
-    @media only screen and (max-width: 800px) {
-      padding-bottom: 2%;
+    @media only screen and (max-width: 950px) {
+      font-size: 0.85em;
     }
 
     @media only screen and (max-width: 550px) {
       font-size: 0.77em;
-      padding-bottom: 3%;
     }
   }
 
   hr {
     background-color: $primaryColor;
-    border-style: groove;
     box-shadow: (2px 1px 10px 0px $primaryColor);
     margin-top: 1.5%;
     margin-bottom: 1.6%;
     width: 70%;
 
-    @media only screen and (max-width: 1300px) {
+    @media only screen and (max-width: 1100px) {
       margin-top: 2.4%;
+      width: 90%;
     }
 
-    @media only screen and (max-width: 670px) {
-      margin-bottom: 4.1%;
-      margin-top: 4%;
-      padding-left: 2%;
-      padding-right: 2%;
-      width: 450px;
+    @media only screen and (max-width: 400px) {
+      margin-bottom: 8%;
+      margin-top: 8%;
     }
   }
 
@@ -62,8 +51,10 @@
     left: 0.5%;
     margin-top: 0.5%;
 
-    @media only screen and (max-width: 550px) {
-      transform: scale(0.75, 0.75);
+    img {
+      @media only screen and (max-width: 950px) {
+        width: 200px;
+      }
     }
   }
 }

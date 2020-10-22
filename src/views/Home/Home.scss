@@ -1,70 +1,11 @@
 .home {
   box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-  @media only screen and (max-width: 1520px) {
-    display: flexbox;
-    flex-wrap: wrap;
-  }
-
-  .selectMenu {
-    @media only screen and (max-width: 1520px) {
-      float: right;
-      margin-left: auto;
-      margin-right: 3%;
-      min-width: 340px;
-    }
-
-    @media only screen and (max-width: 810px) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media only screen and (max-width: 420px) {
-      min-width: 320px;
-    }
-  }
-
-  .whiteSpace {
-    @media only screen and (max-width: 810px) {
-      margin-left: 100%;
-    }
-  }
-
-  .rate {
-    @media only screen and (max-width: 1520px) {
-      margin-left: 3%;
-      margin-right: auto;
-    }
-
-    @media only screen and (max-width: 810px) {
-      height: 535px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media only screen and (max-width: 420px) {
-      min-width: 300px;
-    }
-  }
-
-  .chart {
-    @media only screen and (max-width: 1520px) {
-      margin-left: auto;
-      margin-right: auto;
-      width: 93%;
-    }
-
-    @media only screen and (max-width: 750px) {
-      height: 500px;
-    }
-
-    @media only screen and (max-width: 550px) {
-      height: 400px;
-    }
-
-    @media only screen and (max-width: 430px) {
-      height: 330px;
-    }
+  @media only screen and (max-width: 780px) {
+    align-items: center;
+    flex-direction: column;
   }
 }

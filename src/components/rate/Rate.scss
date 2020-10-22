@@ -2,20 +2,16 @@
   border: $panelStyle;
   border-radius: 10px;
   box-shadow: $primaryShadow;
-  float: left;
   font-size: 0.95em;
   height: 580px;
+  margin: 0 1% 40px 1%;
   min-width: 320px;
-  margin-left: 2%;
-  margin-bottom: 40px;
-  padding-left: 25px;
   width: 20%;
 
   div {
 
     p {
       font-size: 1.5em;
-      margin-right: 8%;
       margin-top: 11%;
     }
 
@@ -24,8 +20,6 @@
     }
 
     div {
-      margin-right: 1.6em;
-      margin-left: -2%;
       padding-top: 5%;
     }
   }
@@ -33,7 +27,7 @@
   .dataInfo {
     font-size: 0.85em;
     font-weight: $semiBold;
-    margin: 60px 30px 20px 0px;
+    margin: 60px 25px 20px 25px;
     text-align: justify;
 
     span {
@@ -44,11 +38,10 @@
   .apiInfo {
     font-size: 0.85em;
     font-weight: $semiBold;
-    margin: 58px 30px 10px 0px;
+    margin: 58px 30px 10px 30px;
   }
 
   .apiIcon {
-    margin-left: -30px;
     margin-top: 33px;
   }
 }
