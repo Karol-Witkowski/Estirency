@@ -1,7 +1,7 @@
 <template>
   <div class="rate">
     <div>
-      <p>Description</p>
+      <h3>Description</h3>
       <div>The rate of transaction is <span class="numbers">{{ setRate }}</span></div>
       <div>
         <span class="numbers">{{ $store.state.amountValue }}</span>
@@ -10,15 +10,12 @@
         <span> {{ $store.state.targetCurrency.cc }} ({{ $store.state.targetCurrency.name }})</span>
       </div>
     </div>
-    <div  class="dataInfo">
+    <p>
       The data is provided by the European Central Bank placed in Frankfurt am Main and
       base on The reference rates that are updated usually around
-      <span>16:00</span>
-      CET on every working day.
-    </div>
-    <div class="apiInfo">
-      This app was created thanks to the API service provided by:
-    </div>
+      <span>16:00</span>CET on every working day.
+    </p>
+    <h5 class="apiInfo">This app was created thanks to the API service provided by:</h5>
     <div class="apiIcon">
        <a target="_blank" href="https://exchangeratesapi.io/">
         <img src="@/assets/api.svg" alt="api provider logo">

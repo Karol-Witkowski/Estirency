@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import { mount, shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
 import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
@@ -41,7 +40,7 @@ describe('SelectMenu.vue test', () => {
   });
 
   it('Check if currencyRestrictions allows only letters', () => {
-    const wrapper = mount(SelectMenu, {
+    const wrapper2 = mount(SelectMenu, {
       mocks: {
         $store: {
           state: {
@@ -51,12 +50,12 @@ describe('SelectMenu.vue test', () => {
         },
       },
     });
-    expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('');
-    expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('');
+    expect(wrapper2.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('');
+    expect(wrapper2.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('');
   });
 
   it('Check if amountRestrictions allows only numbers', () => {
-    const wrapper = shallowMount(SelectMenu, {
+    const wrapper3 = shallowMount(SelectMenu, {
       mocks: {
         $store: {
           state: {
@@ -65,6 +64,6 @@ describe('SelectMenu.vue test', () => {
         },
       },
     });
-    expect(wrapper.findAll('input').at(0).text()).toMatch('');
+    expect(wrapper3.findAll('input').at(0).text()).toMatch('');
   });
 });

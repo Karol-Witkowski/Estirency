@@ -1,9 +1,9 @@
 <template>
     <div class="chart">
-      <p>
-        <span>{{ this.$store.state.baseCurrency.cc }}/</span>
-        <span>{{ this.$store.state.targetCurrency.cc }} timeseries from last year</span>
-      </p>
+      <h3>
+        {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
+        timeseries from last year
+      </h3>
       <span v-if="this.$store.state.loaded">
         <datachart class="dataChart" :chartdata="chartData" :options="options"/>
       </span>
@@ -78,7 +78,6 @@ export default {
   },
 
   methods: {
-
     dataLoop() {
       // Dummy placeholder for github-pages
       // Restore previous version from repository

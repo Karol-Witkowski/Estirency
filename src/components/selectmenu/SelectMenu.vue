@@ -1,8 +1,8 @@
 <template>
     <div class="select">
-      <p class="menu">menu</p>
-      <p class="instruction">Select currencies and fill input to show data</p>
-      <p class="base">select base currency</p>
+      <h3>menu</h3>
+      <h4>Select currencies and fill input to show data</h4>
+      <h4>select base currency</h4>
       <v-select :options="$store.state.currency" label="name" :value="$store.state.baseCurrency"
       @input="setBaseCurrency" placeholder="base currency">
         <template #search="{attributes, events}">
@@ -10,8 +10,10 @@
           @keypress="currencyRestrictions"/>
         </template>
       </v-select>
-      <img src="@/assets/swap-vertical.png" alt="swap currency icon" v-on:click="this.swapValues">
-      <p class="currency">select target currency</p>
+      <figure>
+        <img src="@/assets/swap-vertical.png" alt="swap currency icon" v-on:click="this.swapValues">
+      </figure>
+      <h4>select target currency</h4>
       <v-select :options="$store.state.currency" label="name" :value="$store.state.targetCurrency"
       @input="setTargetCurrency" placeholder="target currency">
         <template #search="{attributes, events}">
@@ -19,7 +21,7 @@
           @keypress="currencyRestrictions"/>
         </template>
       </v-select>
-      <p class="amount">type amount</p>
+      <h4>type amount</h4>
       <input class="amountInput" @keypress="amountRestrictions" :value="$store.state.amountValue"
       @input="setAmountValue" placeholder="amount of currency"/>
     </div>

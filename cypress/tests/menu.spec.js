@@ -8,26 +8,23 @@ describe('Menu test', () => {
       .find('span')
       .contains('100');
     cy.get('.amountInput')
-      .type('a200.123');
+      .type('a262.123');
     cy.get('.rate')
       .find('span')
-      .contains('200.12');
+      .contains('262.12');
   });
 
   it('Check that the selected currencies are displayed in the description and chart panels', () => {
     cy.get('div>span')
-      .eq(7)
+      .eq(6)
       .contains('PLN (Polish zloty)');
     cy.get('div>span')
-      .eq(9)
+      .eq(8)
       .contains('EUR (European Euro)');
-    cy.get('p>span')
-      .eq(0)
-      .contains('PLN');
-    cy.get('p>span')
-      .eq(1)
-      .contains('EUR');
-    cy.get('div>input')
+    cy.get('h3')
+      .eq(2)
+      .contains('PLN/EUR');
+    cy.get('input')
       .eq(0)
       .click();
     cy.get('.select')
@@ -40,81 +37,66 @@ describe('Menu test', () => {
       .contains('British pound')
       .click();
     cy.get('div>span')
-      .eq(7)
+      .eq(6)
       .contains('HRK (Croatian kuna)');
     cy.get('div>span')
-      .eq(9)
+      .eq(8)
       .contains('GBP (British pound)');
-    cy.get('p>span')
-      .eq(0)
-      .contains('HRK');
-    cy.get('p>span')
-      .eq(1)
-      .contains('GBP');
+    cy.get('h3')
+      .eq(2)
+      .contains('HRK/GBP');
   });
 
   it('Check that the typed currencies are displayed in the description and chart panels', () => {
     cy.get('div>span')
-      .eq(7)
+      .eq(6)
       .contains('PLN (Polish zloty)');
     cy.get('div>span')
-      .eq(9)
+      .eq(8)
       .contains('EUR (European Euro)');
-    cy.get('p>span')
-      .eq(0)
-      .contains('PLN');
-    cy.get('p>span')
-      .eq(1)
-      .contains('EUR');
-    cy.get('div>input')
+    cy.get('h3')
+      .eq(2)
+      .contains('PLN/EUR');
+    cy.get('input')
       .eq(0)
       .click()
       .type('croatian {enter}');
-    cy.get('div>input')
+    cy.get('input')
       .eq(1)
       .click()
       .type('british {enter}');
     cy.get('div>span')
-      .eq(7)
+      .eq(6)
       .contains('HRK (Croatian kuna)');
     cy.get('div>span')
-      .eq(9)
+      .eq(8)
       .contains('GBP (British pound)');
-    cy.get('p>span')
-      .eq(0)
-      .contains('HRK');
-    cy.get('p>span')
-      .eq(1)
-      .contains('GBP');
+    cy.get('h3')
+      .eq(2)
+      .contains('HRK/GBP');
   });
 
   it('Check swapping currencies', () => {
     cy.get('div>span')
-      .eq(7)
+      .eq(6)
       .contains('PLN (Polish zloty)');
     cy.get('div>span')
-      .eq(9)
+      .eq(8)
       .contains('EUR (European Euro)');
-    cy.get('p>span')
-      .eq(0)
-      .contains('PLN');
-    cy.get('p>span')
-      .eq(1)
-      .contains('EUR');
+    cy.get('h3')
+      .eq(2)
+      .contains('PLN/EUR');
     cy.get('.select')
       .find('img')
       .click();
     cy.get('div>span')
-      .eq(7)
+      .eq(6)
       .contains('EUR (European Euro)');
     cy.get('div>span')
-      .eq(9)
+      .eq(8)
       .contains('PLN (Polish zloty)');
-    cy.get('p>span')
-      .eq(0)
-      .contains('EUR');
-    cy.get('p>span')
-      .eq(1)
-      .contains('PLN');
+    cy.get('h3')
+      .eq(2)
+      .contains('EUR/PLN');
   });
 });
