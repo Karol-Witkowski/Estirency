@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import Vue from 'vue';
 import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
 
@@ -8,7 +8,7 @@ const currencies = [
 ];
 
 describe('SelectMenu.vue test', () => {
-  const wrapper = mount(SelectMenu, {
+  let wrapper = mount(SelectMenu, {
     mocks: {
       $store: {
         state: {
@@ -39,31 +39,20 @@ describe('SelectMenu.vue test', () => {
     });
   });
 
-  it('Check if currencyRestrictions allows only letters', () => {
-    const wrapper2 = mount(SelectMenu, {
+  it('Check if currencyRestrictions allows only letters and amountRestions allows only numbers', () => {
+    wrapper = mount(SelectMenu, {
       mocks: {
         $store: {
           state: {
             baseCurrency: 1,
             targetCurrency: 2,
-          },
-        },
-      },
-    });
-    expect(wrapper2.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('');
-    expect(wrapper2.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('');
-  });
-
-  it('Check if amountRestrictions allows only numbers', () => {
-    const wrapper3 = shallowMount(SelectMenu, {
-      mocks: {
-        $store: {
-          state: {
             amountValue: 'should not display',
           },
         },
       },
     });
-    expect(wrapper3.findAll('input').at(0).text()).toMatch('');
+    expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toMatch('');
+    expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toMatch('');
+    expect(wrapper.findAll('input').at(0).text()).toMatch('');
   });
 });

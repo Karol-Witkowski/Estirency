@@ -19,7 +19,7 @@ const currencies = [
 ];
 
 describe('ChartComponent.vue test', () => {
-  const wrapper = shallowMount(ChartComponent, {
+  let wrapper = shallowMount(ChartComponent, {
     mocks: {
       $store: {
         state: {
@@ -50,7 +50,7 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check that datachart exists when state.loaded = true', async () => {
-    const datachart = shallowMount(ChartComponent, {
+    wrapper = shallowMount(ChartComponent, {
       mocks: {
         $store: {
           state: {
@@ -62,7 +62,7 @@ describe('ChartComponent.vue test', () => {
         },
       },
     });
-    expect(datachart.find('span').exists()).toBeTruthy();
+    expect(wrapper.find('span').exists()).toBeTruthy();
   });
 
   it('Check dataLoop method - loop, slice and push received data to chart component', () => {
@@ -71,17 +71,6 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check that datachart not exist when state.loaded = false', async () => {
-    const chart = shallowMount(ChartComponent, {
-      mocks: {
-        $store: {
-          state: {
-            currency: currencies,
-            baseCurrency: currencies[0],
-            targetCurrency: currencies[1],
-          },
-        },
-      },
-    });
-    expect(chart.find('span:nth-of-type(3)').exists()).toBeFalsy();
+    expect(wrapper.find('span:nth-of-type(3)').exists()).toBeFalsy();
   });
 });

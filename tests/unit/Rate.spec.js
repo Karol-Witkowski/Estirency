@@ -28,17 +28,6 @@ describe('Rate.vue test', () => {
           targetCurrency: currencies[1],
           amountValue: 2,
         },
-        mutations: {
-          setBaseCurrency(state, base) {
-            state.baseCurrency = base;
-          },
-          setTargetCurrency(state, wanted) {
-            state.targetCurrency = wanted;
-          },
-          setAmountValue(state, amount) {
-            state.amountValue = amount;
-          },
-        },
       },
     },
   });

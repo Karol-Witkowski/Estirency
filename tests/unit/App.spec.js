@@ -1,4 +1,4 @@
-import { shallowMount, mount, createLocalVue } from '@vue/test-utils';
+import { mount, createLocalVue } from '@vue/test-utils';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from '@/App.vue';
@@ -11,27 +11,25 @@ localVue.use(VueRouter);
 Vue.use(VueRouter);
 
 describe('App', () => {
-  it('Check that 2 of the 3 child components are rendered', () => {
-    const wrapper = shallowMount(App);
+  let router = new VueRouter({
+    routes: [
+      { path: '/home', name: 'Home', component: Home },
+      { path: '/about', name: 'About', component: { render: (h) => h } },
+    ],
+  });
+  let wrapper = mount(App, {
+    localVue,
+    router,
+    store,
+  });
 
+  it('Check that 2 of the 3 child components are rendered', () => {
     expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBe(true);
     expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBe(true);
     expect(wrapper.findComponent({ name: 'Home' }).exists()).toBe(false);
   });
 
   it('Renders a child component via routing', async () => {
-    const router = new VueRouter({
-      routes: [
-        { path: '/home', name: 'Home', component: Home },
-        { path: '/about', name: 'About', component: { render: (h) => h } },
-      ],
-    });
-    const wrapper = mount(App, {
-      localVue,
-      router,
-      store,
-    });
-
     router.push('/home');
     await wrapper.vm.$nextTick();
 
@@ -39,14 +37,10 @@ describe('App', () => {
   });
 
   it('Should have a different route than /home', async () => {
-    const router = new VueRouter({
-      routes: [
-        { path: '/home', name: 'Home', component: Home },
-        { path: '/about', name: 'About', component: { render: (h) => h } },
-      ],
+    router = new VueRouter({
       mode: 'abstract',
     });
-    const wrapper = mount(App, {
+    wrapper = mount(App, {
       localVue,
       router,
     });
