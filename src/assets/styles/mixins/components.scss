@@ -1,0 +1,9 @@
+@mixin card {
+    border: $panelStyle;
+    border-radius: 10px;
+    box-shadow: $primaryShadow;
+    height: 580px;
+    margin: 0 15px 40px 15px;
+    min-width: 320px;
+    width: 20%;
+}
