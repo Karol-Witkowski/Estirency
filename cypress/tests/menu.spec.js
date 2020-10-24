@@ -8,7 +8,7 @@ describe('Menu test', () => {
       .find('span')
       .contains('100');
     cy.get('.amountInput')
-      .type('a262.123');
+      .type('a262..123');
     cy.get('.rate')
       .find('span')
       .contains('262.12');

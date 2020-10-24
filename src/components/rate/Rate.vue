@@ -39,7 +39,6 @@ export default {
   },
 
   computed: {
-
     setAmount() {
       return Math.round((this.$store.state.amountValue * this.setRate) * 100) / 100;
     },
@@ -58,7 +57,6 @@ export default {
   },
 
   methods: {
-
     async getRates() {
       axios.get(`${currencyRate}${this.setBaseCurrency}`)
         .then((response) => {

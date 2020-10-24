@@ -67,7 +67,6 @@ export default {
   },
 
   computed: {
-
     setBaseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },

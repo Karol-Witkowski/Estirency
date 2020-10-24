@@ -53,8 +53,16 @@ export default {
         $event.preventDefault();
       }
 
-      // allow only two decimal places
-      if (this.$store.state.amountValue != null && this.$store.state.amountValue.indexOf('.')
+      if ((keyCode === 46) && (this.$store.state.amountValue.toString().split('.').length === 2)) {
+        $event.preventDefault();
+      }
+
+      if (this.$store.state.amountValue != null && this.$store.state.amountValue.toString().indexOf('.')
+       > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
+        $event.preventDefault();
+      }
+
+      if (this.$store.state.amountValue != null && this.$store.state.amountValue.toString().indexOf('.')
        > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
         $event.preventDefault();
       }
