@@ -2,18 +2,18 @@
   @include card;
   font-size: 0.95em;
 
-  div {
-    h3 {
-      margin-top: 11%;
-    }
+  h3 {
+    margin-top: 11%;
+  }
 
-    .numbers {
-      font-size: 1.18em;
-    }
+  p:first-of-type {
+    font-size: 1em;
+    margin: 37px 0 20px 0;
+    text-align: center;
+  }
 
-    div {
-      padding-top: 5%;
-    }
+  .numbers {
+    font-size: 1.18em;
   }
 
   p {

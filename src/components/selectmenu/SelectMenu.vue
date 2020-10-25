@@ -98,4 +98,7 @@ export default {
 };
 </script>
 
-<style src="./SelectMenu.scss" lang="scss"/>
+<style lang="scss">
+@import './SelectMenu.scss';
+@import './vSelect.scss';
+</style>

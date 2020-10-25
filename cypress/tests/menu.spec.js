@@ -8,18 +8,18 @@ describe('Menu test', () => {
       .find('span')
       .contains('100');
     cy.get('.amountInput')
-      .type('a262..123');
+      .type('a252..123');
     cy.get('.rate')
       .find('span')
-      .contains('262.12');
+      .contains('252.12');
   });
 
   it('Check that the selected currencies are displayed in the description and chart panels', () => {
     cy.get('div>span')
-      .eq(6)
+      .eq(5)
       .contains('PLN (Polish zloty)');
     cy.get('div>span')
-      .eq(8)
+      .eq(7)
       .contains('EUR (European Euro)');
     cy.get('h3')
       .eq(2)
@@ -37,10 +37,10 @@ describe('Menu test', () => {
       .contains('British pound')
       .click();
     cy.get('div>span')
-      .eq(6)
+      .eq(5)
       .contains('HRK (Croatian kuna)');
     cy.get('div>span')
-      .eq(8)
+      .eq(7)
       .contains('GBP (British pound)');
     cy.get('h3')
       .eq(2)
@@ -49,10 +49,10 @@ describe('Menu test', () => {
 
   it('Check that the typed currencies are displayed in the description and chart panels', () => {
     cy.get('div>span')
-      .eq(6)
+      .eq(5)
       .contains('PLN (Polish zloty)');
     cy.get('div>span')
-      .eq(8)
+      .eq(7)
       .contains('EUR (European Euro)');
     cy.get('h3')
       .eq(2)
@@ -66,10 +66,10 @@ describe('Menu test', () => {
       .click()
       .type('british {enter}');
     cy.get('div>span')
-      .eq(6)
+      .eq(5)
       .contains('HRK (Croatian kuna)');
     cy.get('div>span')
-      .eq(8)
+      .eq(7)
       .contains('GBP (British pound)');
     cy.get('h3')
       .eq(2)
@@ -78,10 +78,10 @@ describe('Menu test', () => {
 
   it('Check swapping currencies', () => {
     cy.get('div>span')
-      .eq(6)
+      .eq(5)
       .contains('PLN (Polish zloty)');
     cy.get('div>span')
-      .eq(8)
+      .eq(7)
       .contains('EUR (European Euro)');
     cy.get('h3')
       .eq(2)
@@ -90,10 +90,10 @@ describe('Menu test', () => {
       .find('img')
       .click();
     cy.get('div>span')
-      .eq(6)
+      .eq(5)
       .contains('EUR (European Euro)');
     cy.get('div>span')
-      .eq(8)
+      .eq(7)
       .contains('PLN (Polish zloty)');
     cy.get('h3')
       .eq(2)

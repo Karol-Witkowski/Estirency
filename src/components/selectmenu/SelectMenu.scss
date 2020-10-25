@@ -28,25 +28,6 @@
     width: 50px;
   }
 
-  .v-select {
-    border: 1px solid $primaryColor;
-    box-shadow: (2px 8px 15px -10px $primaryColor);
-    color: $secondaryColor;
-    font-variant: small-caps;
-    height: 6%;
-    margin: auto 9.5% auto;
-    padding-left: 8%;
-    width: 80%;
-
-    ::placeholder {
-      color: $primaryColor;
-      font-family: 'Josefin Sans', sans-serif;
-      font-variant: small-caps;
-      font-weight: $bold;
-      text-transform: lowercase;
-    }
-  }
-
   .amountInput {
     background-color: transparent;
     border: $panelStyle;
@@ -58,7 +39,6 @@
     font-weight: $bold;
     font-variant: small-caps;
     text-align: center;
-    text-transform: lowercase;
     width: 79%;
   }
 
@@ -66,70 +46,4 @@
     font-size: 0.71em;
     transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
   }
-}
-
-.vs--searchable .vs__dropdown-toggle,
-.v-select .vs__clear,
-.v-select .vs__open-indicator,
-.v-select .vs__dropdown-menu .vs__search,
-.vs__search:focus {
-  border: 0px;
-  color: $secondaryColor;
-  cursor: pointer;
-  fill: $secondaryColor;
-  font-weight: $bold;
-  text-align: center;
-  text-transform: unset;
-}
-
-.v-select .vs__dropdown-menu {
-  background-color: $backgroundColor;
-  border: $panelStyle;
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 0.7em;
-}
-
-.v-select .vs__dropdown-option {
-  color: $primaryColor;
-}
-
-.v-select .vs__selected {
-  color:$secondaryColor;
-  font-size: 0.74em;
-  margin-left: -11%;
-}
-
-.select .v-select {
-  font-size: 1em;
-}
-
-.v-select .vs__clear {
-  padding-bottom: 10%;
-  transform: scale(1.15);
-}
-
-.v-select .vs__dropdown-menu {
-  max-height: 535%;
-  min-height: auto;
-
-  @media only screen and (max-width: 1520px) {
-    max-height: 535%;
-  }
-}
-
-.vs-search {
-  color: $secondaryColor;
-}
-
-.vs__search:focus {
-  font-weight: $bold;
-  font-size: 0.75em;
-  padding-top: 0.9%;
-  transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
-}
-
-
-.v-select .vs__dropdown-menu .vs__dropdown-option--highlight {
-    background: rgb(39, 34, 34);
 }

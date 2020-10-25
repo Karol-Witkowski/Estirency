@@ -34,10 +34,8 @@ describe('Rate.vue test', () => {
 
   it('Check mocked store', async () => {
     expect(wrapper.findAll('span').at(1).text()).toMatch('2');
-    expect(wrapper.findAll('div').at(1).text()).toContain('PLN');
-    expect(wrapper.findAll('div').at(1).text()).toContain('Polish zloty');
-    expect(wrapper.findAll('div').at(1).text()).toContain('EUR');
-    expect(wrapper.findAll('div').at(1).text()).toContain('European Euro');
+    expect(wrapper.findAll('span').at(2).text()).toContain('PLN (Polish zloty)');
+    expect(wrapper.findAll('span').at(4).text()).toContain('EUR (European Euro)');
   });
 
   it('Check axios call', async () => {

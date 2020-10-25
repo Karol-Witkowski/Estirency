@@ -1,0 +1,71 @@
+.v-select {
+  border: 1px solid $primaryColor;
+  box-shadow: (2px 8px 15px -10px $primaryColor);
+  color: $secondaryColor;
+  font-variant: small-caps;
+  height: 6%;
+  margin: auto 9.5% auto;
+  padding-left: 8%;
+  width: 80%;
+
+  ::placeholder {
+    color: $primaryColor;
+    font-family: 'Josefin Sans', sans-serif;
+    font-variant: small-caps;
+    font-weight: $bold;
+    text-align: center;
+  }
+
+  .vs__clear {
+    fill: $secondaryColor;
+    padding-bottom: 10%;
+    transform: scale(1.15);
+  }
+
+  .vs__dropdown-menu {
+    background-color: $backgroundColor;
+    border: $panelStyle;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7em;
+    max-height: 535%;
+    text-align: center;
+
+    .vs__dropdown-option {
+      color: $primaryColor;
+    }
+
+    .vs__dropdown-option--highlight {
+      background: rgb(39, 34, 34);
+    }
+  }
+
+  .vs__dropdown-toggle {
+    font-weight: $bold;
+  }
+
+  .vs__open-indicator {
+    border: 0px;
+    fill: $secondaryColor;
+  }
+
+  .vs__search:focus {
+    color: $secondaryColor;
+    fill: $secondaryColor;
+    font-weight: $bold;
+    font-size: 0.75em;
+    padding-top: 0.9%;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+    text-align: center;
+    text-transform: unset;
+  }
+
+  .v-select {
+    font-size: 1em;
+  }
+
+  .vs__selected {
+    color: $secondaryColor;
+    font-size: 0.74em;
+    margin-left: -11%;
+  }
+}

@@ -77,7 +77,7 @@ export default {
   },
 
   methods: {
-    dataLoop() {
+    dataPush() {
       // Dummy placeholder for github-pages
       // Restore previous version from repository
       this.chartData.labels.push('Dummy1', 'Dummy2', 'Dummy3', 'Dummy4', 'Dummy5', 'Dummy6', 'Dummy7', 'Dummy8', 'Dummy9', 'Dummy10', 'Dummy11', 'Dummy12', 'Dummy13');
@@ -91,7 +91,7 @@ export default {
         axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3<DELETETHIS>`)
           .then((response) => {
             this.history = response.data.response;
-            this.dataLoop();
+            this.dataPush();
             this.$store.state.loaded = true;
           })
           .catch((error) => error);
