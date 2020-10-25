@@ -8,18 +8,8 @@
   padding-left: 8%;
   width: 80%;
 
-  ::placeholder {
-    color: $primaryColor;
-    font-family: 'Josefin Sans', sans-serif;
-    font-variant: small-caps;
-    font-weight: $bold;
-    text-align: center;
-  }
-
   .vs__clear {
-    fill: $secondaryColor;
-    padding-bottom: 10%;
-    transform: scale(1.15);
+    display: none;
   }
 
   .vs__dropdown-menu {

@@ -7,7 +7,7 @@
     <p class="invite">Fell free to check my Github repository</p>
     <a href="https://github.com/Karol-Witkowski">
       <figure>
-        <img src="@/assets/github.png" width="320px">
+        <img src="@/assets/github.png" alt="GitHub logo" width="320px">
       </figure>
     </a>
   </div>

@@ -3,19 +3,19 @@
       <h3>menu</h3>
       <h4>Select currencies and fill input to show data</h4>
       <h4>select base currency</h4>
-      <v-select :options="$store.state.currency" label="name" :value="$store.state.baseCurrency"
-      @input="setBaseCurrency" placeholder="base currency">
+      <v-select :options="$store.state.currency"
+      label="name" :value="$store.state.baseCurrency" @input="setBaseCurrency">
         <template #search="{attributes, events}">
           <input class="vs__search" v-bind="attributes" v-on="events"
           @keypress="currencyRestrictions"/>
         </template>
       </v-select>
       <figure>
-        <img src="@/assets/swap-vertical.png" alt="swap currency icon" v-on:click="this.swapValues">
+        <img src="@/assets/swap-vertical.png" alt="arrays icon" v-on:click="this.swapValues">
       </figure>
       <h4>select target currency</h4>
       <v-select :options="$store.state.currency" label="name" :value="$store.state.targetCurrency"
-      @input="setTargetCurrency" placeholder="target currency">
+      @input="setTargetCurrency">
         <template #search="{attributes, events}">
           <input class="vs__search" v-bind="attributes" v-on="events"
           @keypress="currencyRestrictions"/>
@@ -53,7 +53,7 @@ export default {
         $event.preventDefault();
       }
 
-      if ((keyCode === 46) && (this.$store.state.amountValue.toString().split('.').length === 2)) {
+      if (keyCode === 46 && (this.$store.state.amountValue.toString().split('.').length === 2)) {
         $event.preventDefault();
       }
 
@@ -100,5 +100,5 @@ export default {
 
 <style lang="scss">
 @import './SelectMenu.scss';
-@import './vSelect.scss';
+@import './vSelect/vSelect.scss';
 </style>

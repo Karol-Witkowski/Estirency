@@ -15,7 +15,7 @@
     <div class="apiIcon">
        <a target="_blank" href="https://exchangeratesapi.io/">
         <figure>
-          <img src="@/assets/api.svg" alt="api provider logo">
+          <img src="@/assets/api.svg" alt="API provider logo">
         </figure>
       </a>
     </div>
