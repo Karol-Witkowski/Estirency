@@ -1,13 +1,13 @@
 <template>
   <div class="about">
     <h3>created by karol witkowski</h3>
-    <h4>The main functionality of this app is to track currency exchange rate</h4>
-    <h4>To add some functionalities the app also shows the currency exchange rate history chart</h4>
+    <h5>The main functionality of this app is to track currency exchange rate</h5>
+    <h5>To add some functionalities the app also shows the currency exchange rate history chart</h5>
     <hr>
-    <p class="invite">Fell free to check my Github repository</p>
+    <p>Fell free to check my Github repository</p>
     <a href="https://github.com/Karol-Witkowski">
       <figure>
-        <img src="@/assets/github.png" alt="GitHub logo" width="320px">
+        <img src="@/assets/github.png" alt="GitHub logo" width="50%">
       </figure>
     </a>
   </div>

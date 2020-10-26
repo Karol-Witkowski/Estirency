@@ -3,20 +3,8 @@
   width: 735px;
 
   @media only screen and (max-width: 1520px) {
-    width: 90%
-  }
-
-  @media only screen and (max-width: 750px) {
-    height: 500px;
-
-  }
-
-  @media only screen and (max-width: 550px) {
-    height: 400px;
-  }
-
-  @media only screen and (max-width: 430px) {
-    height: 330px;
+    width: 90%;
+    height: 45%;
   }
 
   h3 {
@@ -24,24 +12,15 @@
     text-align: center;
 
     @media only screen and (max-width: 1520px) {
-      margin-top: 1%;
-    }
-
-    @media only screen and (max-width: 1300px) {
-      margin-top: 4%;
-    }
-
-    @media only screen and (max-width: 650px) {
-      font-size: 0.9em;
+      font-size: 1em;
+      margin-top: 2%;
+      padding-left: 4%;
+      padding-right: 4%;
     }
   }
 
   .dataChart {
     height: 81%;
     margin: 1% 1% 3% 1%;
-
-    @media only screen and (max-width: 950px) {
-      margin-top: 4%;
-    }
   }
 }
