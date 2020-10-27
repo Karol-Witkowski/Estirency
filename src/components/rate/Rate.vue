@@ -3,9 +3,9 @@
     <h3>Description</h3>
     <p>The rate of transaction is <span class="numbers">{{ setRate }}</span></p>
     <span class="numbers">{{ $store.state.amountValue }}</span>
-    <span> {{ $store.state.baseCurrency.cc }} ({{ $store.state.baseCurrency.name }}) is </span>
+    <span> {{ $store.state.baseCurrency.symbol }} ({{ $store.state.baseCurrency.name }}) is </span>
     <span class="numbers">{{ setAmount }}</span>
-    <span> {{ $store.state.targetCurrency.cc }} ({{ $store.state.targetCurrency.name }})</span>
+    <span> {{ $store.state.targetCurrency.symbol }} ({{ $store.state.targetCurrency.name }})</span>
     <p>
       The data is provided by the European Central Bank placed in Frankfurt am Main and
       base on The reference rates that are updated usually around
