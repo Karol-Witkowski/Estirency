@@ -1,7 +1,7 @@
 {
   "projectId": "jc7qvw",
   "screenshotOnRunFailure": false,
-  "integrationFolder": "cypress/tests",
+  "integrationFolder": "tests/cypress",
   "pluginsFile": false,
   "fixturesFolder": false,
   "supportFile": false,
