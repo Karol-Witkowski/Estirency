@@ -1,5 +1,4 @@
 describe('Links test', () => {
-  // Work only in chrome - Electron will throw an error due to GitHub policy issues
   beforeEach(() => {
     cy.visit('/');
   });
@@ -10,8 +9,9 @@ describe('Links test', () => {
     cy.get('.about')
       .find('a')
       .click();
-    cy.get('#sub-frame-error-details')
-      .contains('github.com');
+    cy.location()
+      .its('href')
+      .should('include', 'github.com/Karol-Witkowski');
   });
 
   it('Check if API logo navigate to API provider homepage', () => {
