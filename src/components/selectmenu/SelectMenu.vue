@@ -61,11 +61,6 @@ export default {
        > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
         $event.preventDefault();
       }
-
-      if (this.$store.state.amountValue != null && this.$store.state.amountValue.toString().indexOf('.')
-       > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
-        $event.preventDefault();
-      }
     },
 
     currencyRestrictions($event) {
