@@ -30,7 +30,7 @@ describe('Menu test', () => {
     cy.get('.select')
       .contains('Croatian kuna')
       .click();
-    cy.get('div>input')
+    cy.get('input')
       .eq(1)
       .click();
     cy.get('.select')
