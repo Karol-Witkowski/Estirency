@@ -1,12 +1,12 @@
 {
-  "projectId": "jc7qvw",
-  "screenshotOnRunFailure": false,
+  "baseUrl": "http://localhost:8080/Estirency/",
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 10000,
+  "fixturesFolder": false,
   "integrationFolder": "tests/cypress",
   "pluginsFile": false,
-  "fixturesFolder": false,
+  "projectId": "jc7qvw",
+  "screenshotOnRunFailure": false,
   "supportFile": false,
-  "video": false,
-  "defaultCommandTimeout": 10000,
-  "baseUrl": "http://localhost:8080/Estirency/",
-  "chromeWebSecurity": false
+  "video": false
 }
