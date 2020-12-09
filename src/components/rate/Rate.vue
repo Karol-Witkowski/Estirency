@@ -25,8 +25,6 @@
 <script>
 import axios from 'axios';
 
-const currencyRate = 'https://api.exchangeratesapi.io/latest?base=';
-
 export default {
   name: 'Rate',
 
@@ -56,6 +54,7 @@ export default {
 
   methods: {
     async getRates() {
+      const currencyRate = 'https://api.exchangeratesapi.io/latest?base=';
       axios.get(`${currencyRate}${this.setBaseCurrency}`)
         .then((response) => {
           this.rate = response.data.rates[this.setTargetCurrency];
