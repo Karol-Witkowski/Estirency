@@ -35,7 +35,7 @@ describe('Menu test', () => {
       .click();
     cy.get('.select')
       .contains('British pound')
-      .click();
+      .click({ force: true });
     cy.get('div>span')
       .eq(5)
       .contains('kn (Croatian kuna)');

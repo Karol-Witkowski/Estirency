@@ -87,7 +87,7 @@ export default {
         this.chartDescription = true;
         this.currencyError = false;
 
-        axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9kDELETEt`)
+        axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
           .then((response) => {
             this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
             this.dataPush();
