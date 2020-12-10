@@ -1,10 +1,11 @@
 <template>
     <div class="chart">
-      <h3>
-        {{ this.setBaseCurrency }}/{{ this.setTargetCurrency }}
+      <h3 v-if="chartDescription">
+        {{ baseCurrency }}/{{ targetCurrency }}
         timeseries from last year
       </h3>
-      <span v-if="this.$store.state.loaded">
+      <h3 v-if="currencyError">There is no data for same currency</h3>
+      <span v-if="$store.state.loaded">
         <datachart class="dataChart" :chartdata="chartData" :options="options"/>
       </span>
     </div>
@@ -42,7 +43,9 @@ export default {
 
   data() {
     return {
-      history: [],
+      chartDescription: true,
+      currencyError: false,
+      historyData: [],
       chartData: {
         labels: [],
         datasets: [{
@@ -63,11 +66,11 @@ export default {
   },
 
   computed: {
-    setBaseCurrency() {
+    baseCurrency() {
       return this.$store.state.baseCurrency.cc;
     },
 
-    setTargetCurrency() {
+    targetCurrency() {
       return this.$store.state.targetCurrency.cc;
     },
   },
@@ -75,10 +78,18 @@ export default {
   methods: {
     getData() {
       const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
-      if (this.$store.state.loaded === false) {
-        axios.get(`${historicalRate}${this.setBaseCurrency}/${this.setTargetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=6SEwraW2s3dD6zluAtbqAKr2KoQmJBaUNsosz1D4IlkX3<DELETE></DELETE>`)
+
+      if (this.targetCurrency === this.baseCurrency) {
+        this.chartDescription = false;
+        this.currencyError = true;
+        this.$store.state.loaded = true;
+      } else if (this.$store.state.loaded === false) {
+        this.chartDescription = true;
+        this.currencyError = false;
+
+        axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9kDELETEt`)
           .then((response) => {
-            this.history = response.data.response;
+            this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
             this.dataPush();
             this.$store.state.loaded = true;
           })
@@ -87,10 +98,8 @@ export default {
     },
 
     dataPush() {
-      for (let i = 0; i < this.history.length; i += 20) {
-        this.chartData.labels.push(this.history[i].tm.slice(0, 10));
-        this.chartData.datasets[0].data.push(parseFloat(this.history[i].c));
-      }
+      this.chartData.labels = this.historyData.map((date) => date.tm.slice(0, 10));
+      this.chartData.datasets[0].data = this.historyData.map((rate) => Number(rate.c));
     },
   },
 
@@ -100,8 +109,8 @@ export default {
   },
 
   updated() {
-    this.chartData.labels = [];
-    this.chartData.datasets[0].data = [];
+    this.chartData.labels.length = 0;
+    this.chartData.datasets[0].data.length = 0;
     this.getData();
   },
 };
