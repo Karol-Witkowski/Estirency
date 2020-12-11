@@ -87,7 +87,7 @@ export default {
     },
 
     dataPush() {
-      this.chartData.labels = this.historyData.map((date) => date.tm.slice(0, 10));
+      this.chartData.labels = this.historyData.map((date) => date.tm.slice(0, 10).split('-').reverse().join('-'));
       this.chartData.datasets[0].data = this.historyData.map((rate) => Number(rate.c));
     },
   },

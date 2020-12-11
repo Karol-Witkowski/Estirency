@@ -1,29 +1,56 @@
+/* eslint-disable no-undef */
 <template>
     <div class="select">
       <h3>menu</h3>
       <h4>Select currencies and fill input to show data</h4>
       <h4>select base currency</h4>
-      <v-select :options="$store.state.currency"
-      label="name" :value="$store.state.baseCurrency" @input="setBaseCurrency">
+      <v-select
+        :options="$store.state.currency
+        .filter(currencies => currencies !== $store.state.targetCurrency)"
+        label="name"
+        :value="$store.state.baseCurrency"
+        @input="setBaseCurrency"
+      >
         <template #search="{attributes, events}">
-          <input class="vs__search" v-bind="attributes" v-on="events"
-          @keypress="currencyRestrictions"/>
+          <input
+            class="vs__search"
+            v-bind="attributes"
+            v-on="events"
+            @keypress="currencyRestrictions"
+          />
         </template>
       </v-select>
       <figure>
-        <img src="@/assets/swap-vertical.png" alt="arrays icon" v-on:click="this.swapValues">
+        <img
+          src="@/assets/swap-vertical.png"
+          alt="arrays icon"
+          v-on:click="this.swapValues"
+        >
       </figure>
       <h4>select target currency</h4>
-      <v-select :options="$store.state.currency" label="name" :value="$store.state.targetCurrency"
-      @input="setTargetCurrency">
+     <v-select
+      :options="$store.state.currency
+      .filter(currencies => currencies !== $store.state.baseCurrency)"
+        label="name"
+        :value="$store.state.targetCurrency"
+        @input="setTargetCurrency"
+      >
         <template #search="{attributes, events}">
-          <input class="vs__search" v-bind="attributes" v-on="events"
-          @keypress="currencyRestrictions"/>
+          <input
+            class="vs__search"
+            v-bind="attributes"
+            v-on="events"
+            @keypress="currencyRestrictions"
+          />
         </template>
       </v-select>
       <h4>type amount</h4>
-      <input class="amountInput" @keypress="amountRestrictions" :value="$store.state.amountValue"
-      @input="setAmountValue" placeholder="amount of currency"/>
+      <input
+        class="amountInput"
+        @keypress="amountRestrictions"
+        :value="$store.state.amountValue"
+        @input="setAmountValue" placeholder="amount of currency"
+      />
     </div>
 </template>
 
@@ -47,20 +74,22 @@ export default {
   },
 
   methods: {
-    amountRestrictions($event) {
-      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
-      if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
-        $event.preventDefault();
+    setBaseCurrency(val) {
+      if (val !== null) {
+        this.$store.commit('setBaseCurrency', val);
+        this.$store.state.loaded = false;
       }
+    },
 
-      if (keyCode === 46 && (this.$store.state.amountValue.toString().split('.').length === 2)) {
-        $event.preventDefault();
+    setTargetCurrency(val) {
+      if (val !== null) {
+        this.$store.commit('setTargetCurrency', val);
+        this.$store.state.loaded = false;
       }
+    },
 
-      if (this.$store.state.amountValue != null && this.$store.state.amountValue.toString().indexOf('.')
-       > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
-        $event.preventDefault();
-      }
+    setAmountValue(e) {
+      this.$store.commit('setAmountValue', e.target.value);
     },
 
     currencyRestrictions($event) {
@@ -76,18 +105,20 @@ export default {
       this.$store.state.loaded = false;
     },
 
-    setAmountValue(e) {
-      this.$store.commit('setAmountValue', e.target.value);
-    },
+    amountRestrictions($event) {
+      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
+      if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
+        $event.preventDefault();
+      }
 
-    setBaseCurrency(val) {
-      this.$store.commit('setBaseCurrency', val);
-      this.$store.state.loaded = false;
-    },
+      if (keyCode === 46 && (this.$store.state.amountValue.toString().split('.').length === 2)) {
+        $event.preventDefault();
+      }
 
-    setTargetCurrency(val) {
-      this.$store.commit('setTargetCurrency', val);
-      this.$store.state.loaded = false;
+      if (this.$store.state.amountValue != null && this.$store.state.amountValue.toString().indexOf('.')
+       > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
+        $event.preventDefault();
+      }
     },
   },
 };
