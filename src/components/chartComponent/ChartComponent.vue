@@ -1,10 +1,9 @@
 <template>
     <div class="chart">
-      <h3 v-if="chartDescription">
+      <h3>
         {{ baseCurrency }}/{{ targetCurrency }}
         timeseries from last year
       </h3>
-      <h3 v-if="currencyError">There is no data for same currency</h3>
       <span v-if="$store.state.loaded">
         <datachart class="dataChart" :chartdata="chartData" :options="options"/>
       </span>
@@ -43,8 +42,6 @@ export default {
 
   data() {
     return {
-      chartDescription: true,
-      currencyError: false,
       historyData: [],
       chartData: {
         labels: [],
@@ -78,15 +75,7 @@ export default {
   methods: {
     getData() {
       const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
-
-      if (this.targetCurrency === this.baseCurrency) {
-        this.chartDescription = false;
-        this.currencyError = true;
-        this.$store.state.loaded = true;
-      } else if (this.$store.state.loaded === false) {
-        this.chartDescription = true;
-        this.currencyError = false;
-
+      if (this.$store.state.loaded === false) {
         axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
           .then((response) => {
             this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
@@ -111,6 +100,7 @@ export default {
   updated() {
     this.chartData.labels.length = 0;
     this.chartData.datasets[0].data.length = 0;
+    this.dataPush();
     this.getData();
   },
 };
