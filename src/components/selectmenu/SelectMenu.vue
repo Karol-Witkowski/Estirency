@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 <template>
     <div class="select">
       <h3>menu</h3>
@@ -6,7 +5,7 @@
       <h4>select base currency</h4>
       <v-select
         :options="$store.state.currency
-        .filter(currencies => currencies !== $store.state.targetCurrency)"
+          .filter(currencies => currencies !== $store.state.targetCurrency)"
         label="name"
         :value="$store.state.baseCurrency"
         @input="setBaseCurrency"
@@ -24,16 +23,16 @@
         <img
           src="@/assets/swap-vertical.png"
           alt="arrays icon"
-          v-on:click="this.swapValues"
+          v-on:click="swapValues"
         >
       </figure>
       <h4>select target currency</h4>
      <v-select
       :options="$store.state.currency
-      .filter(currencies => currencies !== $store.state.baseCurrency)"
-        label="name"
-        :value="$store.state.targetCurrency"
-        @input="setTargetCurrency"
+        .filter(currencies => currencies !== $store.state.baseCurrency)"
+      label="name"
+      :value="$store.state.targetCurrency"
+      @input="setTargetCurrency"
       >
         <template #search="{attributes, events}">
           <input

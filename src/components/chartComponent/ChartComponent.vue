@@ -76,18 +76,22 @@ export default {
     getData() {
       const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
       if (this.$store.state.loaded === false) {
-        axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
+        axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9kDELETE`)
           .then((response) => {
             this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
-            this.dataPush();
+            this.setData();
             this.$store.state.loaded = true;
           })
           .catch((error) => error);
       }
     },
 
-    dataPush() {
-      this.chartData.labels = this.historyData.map((date) => date.tm.slice(0, 10).split('-').reverse().join('-'));
+    setData() {
+      this.chartData.labels = this.historyData.map((date) => date.tm
+        .slice(0, 10)
+        .split('-')
+        .reverse()
+        .join('-'));
       this.chartData.datasets[0].data = this.historyData.map((rate) => Number(rate.c));
     },
   },
@@ -100,7 +104,7 @@ export default {
   updated() {
     this.chartData.labels.length = 0;
     this.chartData.datasets[0].data.length = 0;
-    this.dataPush();
+    this.setData();
     this.getData();
   },
 };

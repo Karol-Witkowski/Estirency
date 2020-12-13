@@ -17,9 +17,8 @@ describe('Navigation test', () => {
   it('Check if logo navigate to homepage', () => {
     cy.contains('about')
       .click();
-    cy.url()
-      .should('contain', 'about');
-    cy.contains('estirency')
+    cy.get('.logo')
+      .contains('estirency')
       .click({ force: true });
     cy.url()
       .should('contain', 'home');
