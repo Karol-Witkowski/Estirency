@@ -45,8 +45,8 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check axios call', async () => {
-    expect(axios.get).toBeCalledWith('https://fcsapi.com/api-v2/forex/history?symbol=PLN/EUR&period=1d&from=2019-12-11T12:00&to=2020-12-11T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9kDELETE');
     expect(wrapper.vm.historyData).toEqual([{ c: '0.2307', tm: '2019-09-15 00:00:00' }], [{ c: '0.2432', tm: '2019-09-17 00:00:00' }]);
+    expect(axios.get).toBeCalledWith('https://fcsapi.com/api-v2/forex/history?symbol=PLN/EUR&period=1d&from=T12:00&to=T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k');
   });
 
   it('Check that datachart exists when state.loaded = true', async () => {
@@ -66,7 +66,7 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check setData method - map and set history data', () => {
-    expect(wrapper.vm.chartData.labels).toEqual(['15-09-2019']);
+    expect(wrapper.vm.chartData.labels).toEqual(['15.09.2019']);
     expect(wrapper.vm.chartData.datasets[0].data).toEqual([0.2307]);
   });
 

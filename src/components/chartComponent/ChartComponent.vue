@@ -1,38 +1,22 @@
 <template>
-    <div class="chart">
+    <section class="chart">
       <h3>
-        {{ baseCurrency }}/{{ targetCurrency }}
+        {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         timeseries from last year
       </h3>
       <span v-if="$store.state.loaded">
-        <datachart class="dataChart" :chartdata="chartData" :options="options"/>
+        <datachart
+          class="dataChart"
+          :chartdata="chartData"
+          :options="options"
+        />
       </span>
-    </div>
+    </section>
 </template>
 
 <script>
 import axios from 'axios';
 import datachart from '@/components/chartComponent/chart/Chart.vue';
-
-let actualDate;
-let pastDate;
-const year = new Date().getFullYear();
-const month = new Date().getMonth() + 1;
-const day = new Date().getDate() - 1;
-
-if (month < 10 && day < 10) {
-  actualDate = `${year}-0${month}-0${day}`;
-  pastDate = `${year - 1}-0${month}-0${day}`;
-} else if (month > 9 && day < 10) {
-  actualDate = `${year}-${month}-0${day}`;
-  pastDate = `${year - 1}-${month}-0${day}`;
-} else if (month < 10 && day > 9) {
-  actualDate = `${year}-0${month}-${day}`;
-  pastDate = `${year - 1}-0${month}-${day}`;
-} else {
-  actualDate = `${year}-${month}-${day}`;
-  pastDate = `${year - 1}-${month}-${day}`;
-}
 
 export default {
   name: 'ChartComponent',
@@ -42,6 +26,8 @@ export default {
 
   data() {
     return {
+      actualDate: '',
+      pastDate: '',
       historyData: [],
       chartData: {
         labels: [],
@@ -62,21 +48,42 @@ export default {
     };
   },
 
-  computed: {
-    baseCurrency() {
-      return this.$store.state.baseCurrency.cc;
-    },
-
-    targetCurrency() {
-      return this.$store.state.targetCurrency.cc;
-    },
-  },
-
   methods: {
+    getDatePeriod() {
+      const year = new Date().getFullYear();
+      const month = new Date().getMonth() + 1;
+      const day = new Date().getDate() - 1;
+
+      if (month < 10 && day < 10) {
+        this.actualDate = `${year}-0${month}-0${day}`;
+        this.pastDate = `${year - 1}-0${month}-0${day}`;
+      } else if (month > 9 && day < 10) {
+        this.actualDate = `${year}-${month}-0${day}`;
+        this.pastDate = `${year - 1}-${month}-0${day}`;
+      } else if (month < 10 && day > 9) {
+        this.actualDate = `${year}-0${month}-${day}`;
+        this.pastDate = `${year - 1}-0${month}-${day}`;
+      } else {
+        this.actualDate = `${year}-${month}-${day}`;
+        this.pastDate = `${year - 1}-${month}-${day}`;
+      }
+    },
+
+    setData() {
+      this.chartData.datasets[0].data = this.historyData.map((rate) => Number(rate.c));
+      this.chartData.labels = this.historyData.map((date) => date.tm
+        .slice(0, 10)
+        .split('-')
+        .reverse()
+        .join('.'));
+    },
+
     getData() {
       const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
+
       if (this.$store.state.loaded === false) {
-        axios.get(`${historicalRate}${this.baseCurrency}/${this.targetCurrency}&period=1d&from=${pastDate}T12:00&to=${actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9kDELETE`)
+        axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
+
           .then((response) => {
             this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
             this.setData();
@@ -84,15 +91,6 @@ export default {
           })
           .catch((error) => error);
       }
-    },
-
-    setData() {
-      this.chartData.labels = this.historyData.map((date) => date.tm
-        .slice(0, 10)
-        .split('-')
-        .reverse()
-        .join('-'));
-      this.chartData.datasets[0].data = this.historyData.map((rate) => Number(rate.c));
     },
   },
 
@@ -102,9 +100,6 @@ export default {
   },
 
   updated() {
-    this.chartData.labels.length = 0;
-    this.chartData.datasets[0].data.length = 0;
-    this.setData();
     this.getData();
   },
 };
