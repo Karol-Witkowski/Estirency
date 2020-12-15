@@ -60,11 +60,11 @@ describe('Menu test', () => {
     cy.get('input')
       .eq(0)
       .click()
-      .type('croatian {enter}');
+      .type('croatian{enter}');
     cy.get('input')
       .eq(1)
       .click()
-      .type('british {enter}');
+      .type('british{enter}');
     cy.get('div>span')
       .eq(5)
       .contains('kn (Croatian kuna)');
