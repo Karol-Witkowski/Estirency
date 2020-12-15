@@ -4,51 +4,52 @@
       <h4>Select currencies and fill input to show data</h4>
       <h4>select base currency</h4>
       <v-select
+        @input="setBaseCurrency"
+        label="name"
         :options="$store.state.currency
           .filter(currencies => currencies !== $store.state.targetCurrency)"
-        label="name"
         :value="$store.state.baseCurrency"
-        @input="setBaseCurrency"
       >
         <template #search="{attributes, events}">
           <input
             class="vs__search"
+            @keypress="currencyRestrictions"
             v-bind="attributes"
             v-on="events"
-            @keypress="currencyRestrictions"
           />
         </template>
       </v-select>
       <figure>
         <img
-          src="@/assets/swap-vertical.png"
           alt="arrays icon"
+          src="@/assets/swap-vertical.png"
           v-on:click="swapValues"
         >
       </figure>
       <h4>select target currency</h4>
      <v-select
+      @input="setTargetCurrency"
+      label="name"
       :options="$store.state.currency
         .filter(currencies => currencies !== $store.state.baseCurrency)"
-      label="name"
       :value="$store.state.targetCurrency"
-      @input="setTargetCurrency"
       >
         <template #search="{attributes, events}">
           <input
             class="vs__search"
+            @keypress="currencyRestrictions"
             v-bind="attributes"
             v-on="events"
-            @keypress="currencyRestrictions"
           />
         </template>
       </v-select>
       <h4>type amount</h4>
       <input
         class="amountInput"
+        @input="setAmountValue"
         @keypress="amountRestrictions"
+         placeholder="amount of currency"
         :value="$store.state.amountValue"
-        @input="setAmountValue" placeholder="amount of currency"
       />
     </div>
 </template>

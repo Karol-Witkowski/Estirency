@@ -6,8 +6,8 @@
       </h3>
       <span v-if="$store.state.loaded">
         <datachart
-          class="dataChart"
           :chartdata="chartData"
+          class="dataChart"
           :options="options"
         />
       </span>

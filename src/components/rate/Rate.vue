@@ -8,14 +8,20 @@
     <span> {{ $store.state.targetCurrency.symbol }} ({{ $store.state.targetCurrency.name }})</span>
     <p>
       The data is provided by the European Central Bank placed in Frankfurt am Main and
-      base on The reference rates that are updated usually around
-      <span>16:00</span>CET on every working day.
+      base on The reference rates that are updated usually around<span>16:00</span>CET
+      on every working day.
     </p>
     <h5 class="apiInfo">This app was created thanks to the API service provided by:</h5>
     <div class="apiIcon">
-       <a target="_blank" href="https://exchangeratesapi.io/">
+       <a
+         href="https://exchangeratesapi.io/"
+         target="_blank"
+       >
         <figure>
-          <img src="@/assets/api.svg" alt="API provider logo">
+          <img
+            alt="API provider logo"
+            src="@/assets/api.svg"
+          >
         </figure>
       </a>
     </div>
