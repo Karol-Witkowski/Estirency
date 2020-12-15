@@ -9,9 +9,9 @@ module.exports = {
     cy: 'writable',
   },
   extends: [
+    'plugin:cypress/recommended',
     'plugin:vue/essential',
     '@vue/airbnb',
-    'plugin:cypress/recommended',
   ],
   parserOptions: {
     parser: 'babel-eslint',
