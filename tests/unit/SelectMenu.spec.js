@@ -21,9 +21,8 @@ describe('SelectMenu.vue test', () => {
     },
   });
 
-  it('Check that 1 of the 2 child components are rendered', () => {
+  it('Should show <v-select /> component', () => {
     expect(wrapper.findComponent({ name: 'v-select' }).exists()).toBe(true);
-    expect(wrapper.findComponent({ name: 'Home' }).exists()).toBe(false);
   });
 
   it('Renders values using a mock getter', () => {

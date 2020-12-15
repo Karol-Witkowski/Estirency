@@ -5,6 +5,9 @@ module.exports = {
     jest: true,
     'cypress/globals': true,
   },
+  globals: {
+    cy: 'writable',
+  },
   extends: [
     'plugin:vue/essential',
     '@vue/airbnb',

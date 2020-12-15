@@ -15,6 +15,7 @@
     <div class="apiIcon">
        <a
          href="https://exchangeratesapi.io/"
+         rel="noopener noreferrer"
          target="_blank"
        >
         <figure>
@@ -45,28 +46,20 @@ export default {
       return Math.round((this.$store.state.amountValue * this.setRate) * 100) / 100;
     },
 
-    setBaseCurrency() {
-      return this.$store.state.baseCurrency.cc;
-    },
-
-    setTargetCurrency() {
-      return this.$store.state.targetCurrency.cc;
-    },
-
     setRate() {
       return Math.round(this.rate * 1000) / 1000;
     },
   },
 
   methods: {
-    async getRates() {
+    getRates() {
       const currencyRate = 'https://api.exchangeratesapi.io/latest?base=';
-      axios.get(`${currencyRate}${this.setBaseCurrency}`)
+
+      axios.get(`${currencyRate}${this.$store.state.baseCurrency.cc}`)
         .then((response) => {
-          this.rate = response.data.rates[this.setTargetCurrency];
+          this.rate = response.data.rates[this.$store.state.targetCurrency.cc];
         })
         .catch((error) => error);
-      return this.rate;
     },
   },
 

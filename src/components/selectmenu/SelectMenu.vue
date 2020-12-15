@@ -48,7 +48,7 @@
         class="amountInput"
         @input="setAmountValue"
         @keypress="amountRestrictions"
-         placeholder="amount of currency"
+        placeholder="amount of currency"
         :value="$store.state.amountValue"
       />
     </div>

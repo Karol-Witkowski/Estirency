@@ -12,8 +12,8 @@
     margin-top: 20px;
 
     @media only screen and (max-width: 600px) {
-     font-size: 1.4em;
-     margin-top: 16px;
+      font-size: 1.4em;
+      margin-top: 16px;
     }
 
     img {
@@ -21,7 +21,7 @@
       width: 1em;
     }
 
-    span:nth-of-type(2){
+    span:nth-of-type(2) {
       font-weight: $light;
     }
   }

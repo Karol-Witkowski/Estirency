@@ -23,10 +23,12 @@ describe('App', () => {
     store,
   });
 
-  it('Check that 2 of the 3 child components are rendered', () => {
+  it('Should show <Theme /> component', () => {
     expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBe(true);
+  });
+
+  it('Should show <Navbar /> component', () => {
     expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBe(true);
-    expect(wrapper.findComponent({ name: 'Home' }).exists()).toBe(false);
   });
 
   it('Renders a child component via routing', async () => {

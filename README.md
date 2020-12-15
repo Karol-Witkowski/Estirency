@@ -17,7 +17,6 @@
 <p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="400" src="src\assets\usageexample.gif" alt="usage example"></a></code></p>
 
 ## Project setup
-To install project type:
 ```
 npm install
 ```

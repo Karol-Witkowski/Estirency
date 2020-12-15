@@ -12,7 +12,8 @@
     }
   }
 
-  h5, p {
+  h5,
+  p {
     @media only screen and (max-width: 900px) {
       font-size: 0.7em;
     }
@@ -20,7 +21,7 @@
 
   hr {
     background-color: $primaryColor;
-    box-shadow: (2px 1px 10px 0px $primaryColor);
+    box-shadow: (2px 1px 10px 0 $primaryColor);
     margin-bottom: 30px;
     margin-top: 20px;
     max-width: 1050px;
