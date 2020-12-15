@@ -82,7 +82,7 @@ export default {
       const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
 
       if (this.$store.state.loaded === false) {
-        axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9kDELETE`)
+        axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
 
           .then((response) => {
             this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
