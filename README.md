@@ -1,4 +1,5 @@
 # Estirency
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a69d8a67990d49b7a984508f8a9c7acf)](https://app.codacy.com/gh/Karol-Witkowski/Estirency?utm_source=github.com&utm_medium=referral&utm_content=Karol-Witkowski/Estirency&utm_campaign=Badge_Grade)
 [![ESTIRENCY](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/jc7qvw/master&style=for-the-badge&logo=cypress)](https://dashboard.cypress.io/projects/jc7qvw/runs)
 
 <p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="90" title="Estirency logo" src="public\logo.png" alt="Estirency logo"></a></code></p>
