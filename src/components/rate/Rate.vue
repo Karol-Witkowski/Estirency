@@ -1,32 +1,38 @@
 <template>
-  <div class="rate">
-    <h3>Description</h3>
-    <p>The rate of transaction is <span class="numbers">{{ setRate }}</span></p>
-    <span class="numbers">{{ $store.state.amountValue }}</span>
-    <span> {{ $store.state.baseCurrency.symbol }} ({{ $store.state.baseCurrency.name }}) is </span>
-    <span class="numbers">{{ setAmount }}</span>
-    <span> {{ $store.state.targetCurrency.symbol }} ({{ $store.state.targetCurrency.name }})</span>
-    <p>
-      The data is provided by the European Central Bank placed in Frankfurt am Main and
-      base on The reference rates that are updated usually around<span>16:00</span>CET
-      on every working day.
-    </p>
-    <h5 class="apiInfo">This app was created thanks to the API service provided by:</h5>
-    <div class="apiIcon">
-       <a
-         href="https://exchangeratesapi.io/"
-         rel="noopener noreferrer"
-         target="_blank"
-       >
-        <figure>
-          <img
-            alt="API provider logo"
-            src="@/assets/api.svg"
-          >
-        </figure>
-      </a>
-    </div>
-  </div>
+  <section class="rate">
+      <header>
+        <h3>Description</h3>
+      </header>
+      <p>The rate of transaction is <span class="numbers">{{ setRate }}</span></p>
+      <span class="numbers">{{ $store.state.amountValue }}</span>
+      <span>
+        {{ $store.state.baseCurrency.symbol }} ({{ $store.state.baseCurrency.name }}) is
+      </span>
+      <span class="numbers">{{ setAmount }}</span>
+      <span>
+        {{ $store.state.targetCurrency.symbol }} ({{ $store.state.targetCurrency.name }})
+      </span>
+      <p>
+        The data is provided by the European Central Bank placed in Frankfurt am Main and
+        base on The reference rates that are updated usually around<span>16:00</span>CET
+        on every working day.
+      </p>
+      <h5 class="apiInfo">This app was created thanks to the API service provided by:</h5>
+      <div class="apiIcon">
+        <a
+          href="https://exchangeratesapi.io/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <figure>
+            <img
+              alt="API provider logo"
+              src="@/assets/api.svg"
+            >
+          </figure>
+        </a>
+      </div>
+  </section>
 </template>
 
 <script>
@@ -42,12 +48,12 @@ export default {
   },
 
   computed: {
-    setAmount() {
-      return Math.round((this.$store.state.amountValue * this.setRate) * 100) / 100;
+    setRate() {
+      return Number(parseFloat(this.rate).toFixed(3));
     },
 
-    setRate() {
-      return Math.round(this.rate * 1000) / 1000;
+    setAmount() {
+      return Number((this.$store.state.amountValue * this.setRate).toFixed(2));
     },
   },
 

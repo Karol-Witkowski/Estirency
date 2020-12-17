@@ -1,13 +1,15 @@
 <template>
-    <div class="select">
-      <h3>menu</h3>
+    <section class="select">
+      <header>
+        <h3>menu</h3>
+      </header>
       <h4>Select currencies and fill input to show data</h4>
       <h4>select base currency</h4>
       <v-select
         @input="setBaseCurrency"
         label="name"
-        :options="$store.state.currency
-          .filter(currencies => currencies !== $store.state.targetCurrency)"
+        :options="this.$store.state.currency
+           .filter((currencies) => currencies !== this.$store.state.targetCurrency)"
         :value="$store.state.baseCurrency"
       >
         <template #search="{attributes, events}">
@@ -30,8 +32,8 @@
      <v-select
       @input="setTargetCurrency"
       label="name"
-      :options="$store.state.currency
-        .filter(currencies => currencies !== $store.state.baseCurrency)"
+      :options="this.$store.state.currency
+        .filter((currencies) => currencies !== this.$store.state.baseCurrency)"
       :value="$store.state.targetCurrency"
       >
         <template #search="{attributes, events}">
@@ -51,7 +53,7 @@
         placeholder="amount of currency"
         :value="$store.state.amountValue"
       />
-    </div>
+    </section>
 </template>
 
 <script>
@@ -68,6 +70,8 @@ export default {
 
   data() {
     return {
+      baseCurrency: String,
+      targetCurrency: String,
       cur1: 'PLN',
       cur2: 'EUR',
     };

@@ -1,9 +1,11 @@
 <template>
     <section class="chart">
-      <h3>
-        {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
-        timeseries from last year
-      </h3>
+      <header>
+        <h3>
+          {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
+          timeseries from last year
+        </h3>
+      </header>
       <span v-if="$store.state.loaded">
         <datachart
           :chartdata="chartData"
@@ -70,12 +72,14 @@ export default {
     },
 
     setData() {
-      this.chartData.datasets[0].data = this.historyData.map((rate) => Number(rate.c));
-      this.chartData.labels = this.historyData.map((date) => date.tm
-        .slice(0, 10)
-        .split('-')
-        .reverse()
-        .join('.'));
+      this.chartData.datasets[0].data = this.historyData
+        .map((rate) => Number(rate.c));
+      this.chartData.labels = this.historyData
+        .map((date) => date.tm
+          .slice(0, 10)
+          .split('-')
+          .reverse()
+          .join('.'));
     },
 
     getData() {
@@ -85,7 +89,8 @@ export default {
         axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
 
           .then((response) => {
-            this.historyData = response.data.response.filter((e, i) => i % 20 === 0);
+            this.historyData = response.data.response
+              .filter((e, i) => i % 20 === 0);
             this.setData();
             this.$store.state.loaded = true;
           })
