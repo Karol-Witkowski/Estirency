@@ -14,11 +14,10 @@
       </span>
       <p>
         The data is provided by the European Central Bank placed in Frankfurt am Main and
-        base on The reference rates that are updated usually around<span>16:00</span>CET
+        base on The reference rates that are updated usually around <span>16:00</span>CET
         on every working day.
       </p>
-      <h5 class="apiInfo">This app was created thanks to the API service provided by:</h5>
-      <div class="apiIcon">
+      <h5>This app was created thanks to the API service provided by:</h5>
         <a
           href="https://exchangeratesapi.io/"
           rel="noopener noreferrer"
@@ -31,7 +30,6 @@
             >
           </figure>
         </a>
-      </div>
   </section>
 </template>
 

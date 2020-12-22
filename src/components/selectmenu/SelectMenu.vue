@@ -96,10 +96,10 @@ export default {
       this.$store.commit('setAmountValue', e.target.value);
     },
 
-    currencyRestrictions($event) {
-      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
+    currencyRestrictions(e) {
+      const keyCode = e.key.charCodeAt(0);
       if (keyCode > 47 && keyCode < 58) {
-        $event.preventDefault();
+        e.preventDefault();
       }
     },
 
@@ -109,19 +109,19 @@ export default {
       this.$store.state.loaded = false;
     },
 
-    amountRestrictions($event) {
-      const keyCode = ($event.keyCode ? $event.keyCode : $event.which);
+    amountRestrictions(e) {
+      const keyCode = e.key.charCodeAt(0);
       if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
-        $event.preventDefault();
+        e.preventDefault();
       }
 
       if (keyCode === 46 && (this.$store.state.amountValue.toString().split('.').length === 2)) {
-        $event.preventDefault();
+        e.preventDefault();
       }
 
       if (this.$store.state.amountValue != null && this.$store.state.amountValue.toString().indexOf('.')
        > -1 && (this.$store.state.amountValue.split('.')[1].length > 1)) {
-        $event.preventDefault();
+        e.preventDefault();
       }
     },
   },
