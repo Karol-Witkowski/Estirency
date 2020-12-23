@@ -1,5 +1,5 @@
 <template>
-  <main class="about">
+  <main>
     <header>
       <h3>created by karol witkowski</h3>
     </header>
@@ -25,4 +25,4 @@ export default {
 };
 </script>
 
-<style src="./About.scss" lang="scss"/>
+<style src="./About.scss" scoped lang="scss"/>

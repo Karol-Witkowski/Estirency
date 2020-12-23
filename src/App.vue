@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
+  <main>
     <Theme />
     <Navbar />
     <router-view />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -19,4 +19,4 @@ export default {
 };
 </script>
 
-<style src="./App.scss" lang="scss"/>
+<style src="./App.scss" scoped lang="scss"/>

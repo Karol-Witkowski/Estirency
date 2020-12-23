@@ -1,5 +1,5 @@
 <template>
-  <main class="home">
+  <main>
     <SelectMenu class="selectMenu"/>
     <Rate class="rate"/>
     <ChartComponent class="chart"/>
@@ -21,4 +21,4 @@ export default {
 };
 </script>
 
-<style src="./Home.scss" lang="scss"/>
+<style src="./Home.scss" scoped lang="scss"/>

@@ -1,5 +1,5 @@
 <template>
-    <section class="chart">
+    <section>
       <header>
         <h3>
           {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
@@ -111,4 +111,4 @@ export default {
 };
 </script>
 
-<style src="./ChartComponent.scss" lang="scss"/>
+<style src="./ChartComponent.scss" scoped lang="scss"/>

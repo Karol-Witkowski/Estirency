@@ -1,5 +1,5 @@
 <template>
-    <section class="select">
+    <section>
       <header>
         <h3>menu</h3>
       </header>

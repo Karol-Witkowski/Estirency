@@ -1,5 +1,5 @@
 <template>
-  <section class="rate">
+  <section>
       <header>
         <h3>Description</h3>
       </header>
@@ -77,4 +77,4 @@ export default {
 };
 </script>
 
-<style src="./Rate.scss" lang="scss"/>
+<style src="./Rate.scss" scoped lang="scss"/>
