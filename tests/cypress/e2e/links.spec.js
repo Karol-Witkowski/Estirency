@@ -6,8 +6,8 @@ describe('Links test', () => {
   it('Check that link in about navigate to GitHub', () => {
     cy.contains('about')
       .click();
-    cy.get('.about')
-      .find('a')
+    cy.get('main')
+      .find('a figure')
       .click();
     cy.location()
       .its('href')

@@ -24,6 +24,7 @@
       <figure>
         <img
           alt="arrays icon"
+          data-cy='swapIcon'
           src="@/assets/swap-vertical.png"
           v-on:click="swapValues"
         >

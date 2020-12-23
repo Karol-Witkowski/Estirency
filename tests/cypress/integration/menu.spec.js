@@ -27,13 +27,13 @@ describe('Menu test', () => {
     cy.get('input')
       .eq(0)
       .click();
-    cy.get('.select')
+    cy.get('section')
       .contains('Croatian kuna')
       .click();
     cy.get('input')
       .eq(1)
       .click();
-    cy.get('.select')
+    cy.get('section')
       .contains('British pound')
       .click({ force: true });
     cy.get('section>span')
@@ -86,8 +86,7 @@ describe('Menu test', () => {
     cy.get('h3')
       .eq(2)
       .contains('PLN/EUR');
-    cy.get('.select')
-      .find('img')
+    cy.get('[data-cy=swapIcon]')
       .click();
     cy.get('section>span')
       .eq(1)
