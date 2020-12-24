@@ -111,4 +111,4 @@ export default {
 };
 </script>
 
-<style src="./ChartComponent.scss" scoped lang="scss"/>
+<style src="./ChartComponent.scss" lang="scss" scoped />

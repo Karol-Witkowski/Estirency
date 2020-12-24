@@ -19,4 +19,4 @@ export default {
 };
 </script>
 
-<style src="./App.scss" scoped lang="scss"/>
+<style src="./App.scss" lang="scss" scoped />

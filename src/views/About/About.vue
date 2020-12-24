@@ -25,4 +25,4 @@ export default {
 };
 </script>
 
-<style src="./About.scss" scoped lang="scss"/>
+<style src="./About.scss" lang="scss" scoped />
