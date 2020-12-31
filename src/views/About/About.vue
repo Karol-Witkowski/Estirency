@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <header>
       <h3>created by karol witkowski</h3>
     </header>
@@ -16,7 +16,7 @@
         >
       </figure>
     </a>
-  </main>
+  </div>
 </template>
 
 <script>

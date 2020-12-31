@@ -1,9 +1,9 @@
 <template>
-  <main>
-    <SelectMenu class="selectMenu" />
-    <Rate class="rate" />
-    <ChartComponent class="chart" />
-  </main>
+  <div>
+    <SelectMenu />
+    <rate data-cy="rate" />
+    <ChartComponent />
+  </div>
 </template>
 
 <script>

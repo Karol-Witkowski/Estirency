@@ -4,12 +4,12 @@ describe('Menu test', () => {
   });
 
   it('Check that the typed amount of currency is displayed in the description panel and restrictions works', () => {
-    cy.get('.rate')
+    cy.get('[data-cy=rate]')
       .find('span')
       .contains('100');
     cy.get('.amountInput')
       .type('a252..123');
-    cy.get('.rate')
+    cy.get('[data-cy=rate]')
       .find('span')
       .contains('252.12');
   });
