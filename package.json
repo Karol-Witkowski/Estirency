@@ -21,6 +21,7 @@
     "chart.js": "^2.9.4",
     "core-js": "^3.8.0",
     "css-loader": "^4.3.0",
+    "dotenv": "^8.2.0",
     "execa": "^4.1.0",
     "http-proxy": "^1.18.1",
     "node-forge": "^0.10.0",

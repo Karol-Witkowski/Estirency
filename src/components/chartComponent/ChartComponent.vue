@@ -20,6 +20,8 @@
 import axios from 'axios';
 import datachart from '@/components/chartComponent/chart/Chart.vue';
 
+require('dotenv').config();
+
 export default {
   name: 'ChartComponent',
   components: {
@@ -86,7 +88,7 @@ export default {
       const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
 
       if (this.$store.state.loaded === false) {
-        axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=WOR4I12d7qPWzV0A3yw1KRHeApKaB8ZjCtpsy9ZTzCnOeNUu9k`)
+        axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=${process.env.VUE_APP_CURRENCY_API_KEY}`)
 
           .then((response) => {
             this.historyData = response.data.response
