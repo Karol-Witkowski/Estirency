@@ -93,8 +93,8 @@ export default {
       }
     },
 
-    setAmountValue(e) {
-      this.$store.commit('setAmountValue', e.target.value);
+    setAmountValue(val) {
+      this.$store.commit('setAmountValue', val.target.value);
     },
 
     currencyRestrictions(e) {
