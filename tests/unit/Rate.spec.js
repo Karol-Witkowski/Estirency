@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Rate from '@/components/rate/Rate.vue';
+import Rate from '@/components/Rate.vue';
 import axios from 'axios';
 
 jest.mock('axios', () => ({

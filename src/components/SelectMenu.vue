@@ -130,6 +130,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import './SelectMenu.scss';
-@import './vSelect/vSelect.scss';
+@import '@/stylesheets/SelectMenu.scss';
+@import '@/stylesheets/vSelect.scss';
 </style>

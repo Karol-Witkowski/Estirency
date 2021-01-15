@@ -18,7 +18,7 @@
 
 <script>
 import axios from 'axios';
-import datachart from '@/components/chartComponent/chart/Chart.vue';
+import datachart from '@/components/Chart.vue';
 
 require('dotenv').config();
 
@@ -113,4 +113,4 @@ export default {
 };
 </script>
 
-<style src="./ChartComponent.scss" lang="scss" scoped />
+<style src="@/stylesheets/ChartComponent.scss" lang="scss" scoped />

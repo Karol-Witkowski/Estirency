@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Navbar from './components/navbar/Navbar.vue';
+import Navbar from './components/Navbar.vue';
 import Theme from './components/Theme.vue';
 
 export default {
@@ -19,4 +19,4 @@ export default {
 };
 </script>
 
-<style src="./App.scss" lang="scss" scoped />
+<style src="@/stylesheets/App.scss" lang="scss" scoped />

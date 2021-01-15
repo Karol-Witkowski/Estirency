@@ -2,7 +2,7 @@ import { mount, createLocalVue } from '@vue/test-utils';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from '@/App.vue';
-import Home from '@/views/Home/Home.vue';
+import Home from '@/views/Home.vue';
 import store from '@/store';
 
 const localVue = createLocalVue();

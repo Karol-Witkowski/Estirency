@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import ChartComponent from '@/components/chartComponent/ChartComponent.vue';
+import ChartComponent from '@/components/ChartComponent.vue';
 import axios from 'axios';
 
 jest.mock('axios', () => ({

@@ -36,4 +36,4 @@ export default {
 };
 </script>
 
-<style src="./Navbar.scss" lang="scss" scoped />
+<style src="@/stylesheets/Navbar.scss" lang="scss" scoped />

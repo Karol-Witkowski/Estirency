@@ -1,6 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
-import SelectMenu from '@/components/selectmenu/SelectMenu.vue';
+import SelectMenu from '@/components/SelectMenu.vue';
 
 const currencies = [
   { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },

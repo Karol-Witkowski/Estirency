@@ -77,4 +77,4 @@ export default {
 };
 </script>
 
-<style src="./Rate.scss" lang="scss" scoped />
+<style src="@/stylesheets/Rate.scss" lang="scss" scoped />

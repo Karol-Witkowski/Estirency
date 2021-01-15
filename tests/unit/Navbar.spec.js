@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Navbar from '@/components/navbar/Navbar.vue';
+import Navbar from '@/components/Navbar.vue';
 
 const RouterLink = {
   name: 'router-link',
