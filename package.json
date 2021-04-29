@@ -17,7 +17,7 @@
     "axios": "^0.21.1",
     "canvas": "^2.6.1",
     "chart.js": "^2.9.4",
-    "core-js": "^3.10.0",
+    "core-js": "^3.10.1",
     "css-loader": "^5.2.0",
     "http-proxy": "^1.18.1",
     "node-forge": "^0.10.0",
