@@ -23,7 +23,7 @@
     "dotenv": "^8.2.0",
     "http-proxy": "^1.18.1",
     "node-forge": "^0.10.0",
-    "sass-resources-loader": "^2.1.1",
+    "sass-resources-loader": "^2.2.1",
     "serialize-javascript": "^4.0.0",
     "vue": "^2.6.12",
     "vue-chartjs": "^3.5.1",
