@@ -22,12 +22,6 @@
 <<<<<<< HEAD
     "core-js": "^3.10.1",
     "css-loader": "^5.2.4",
-=======
-=======
->>>>>>> snyk-upgrade-c412a28c40c0cae2065493aa3835f296
-    "core-js": "^3.10.2",
-    "css-loader": "^5.2.2",
->>>>>>> snyk-upgrade-c412a28c40c0cae2065493aa3835f296
     "dotenv": "^8.2.0",
     "http-proxy": "^1.18.1",
     "node-forge": "^0.10.0",
