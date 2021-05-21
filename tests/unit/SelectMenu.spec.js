@@ -39,7 +39,7 @@ describe('SelectMenu.vue test', () => {
     });
   });
 
-  it('Check if currencyRestrictions allows only letters and ashallowMountRestions allows only numbers', () => {
+  it('Check if input allows only letters and numbers', () => {
     wrapper = shallowMount(SelectMenu, {
       mocks: {
         $store: {
