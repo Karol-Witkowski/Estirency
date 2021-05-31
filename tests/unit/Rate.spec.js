@@ -39,7 +39,7 @@ describe('Rate.vue test', () => {
   });
 
   it('Check axios call', async () => {
-    expect(axios.get).toBeCalledWith('https://api.exchangeratesapi.io/latest?base=PLN');
+    expect(axios.get).toHaveBeenCalled();
   });
 
   it('Check setRate computed', async () => {

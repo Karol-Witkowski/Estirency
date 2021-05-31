@@ -57,9 +57,9 @@ export default {
 
   methods: {
     getRates() {
-      const currencyRate = 'https://api.exchangeratesapi.io/latest?base=';
+      const currencyRate = 'https://api.exchangerate.host/latest';
 
-      axios.get(`${currencyRate}${this.$store.state.baseCurrency.cc}`)
+      axios.get(`${currencyRate}?base=${this.$store.state.baseCurrency.cc}`)
         .then((response) => {
           this.rate = response.data.rates[this.$store.state.targetCurrency.cc];
         })
