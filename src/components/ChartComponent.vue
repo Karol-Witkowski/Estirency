@@ -1,19 +1,19 @@
 <template>
-    <section>
-      <header>
-        <h3>
-          {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
-          data from last year
-        </h3>
-      </header>
-      <span v-if="$store.state.loaded">
-        <datachart
-          :chartdata="chartData"
-          class="dataChart"
-          :options="options"
-        />
-      </span>
-    </section>
+  <section>
+    <header>
+      <h3>
+        {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
+        data from last year
+      </h3>
+    </header>
+    <span v-if="$store.state.loaded">
+      <datachart
+        :chartdata="chartData"
+        class="dataChart"
+        :options="options"
+      />
+    </span>
+  </section>
 </template>
 
 <script>

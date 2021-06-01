@@ -1,5 +1,4 @@
 <script>
-
 import { Line } from 'vue-chartjs';
 
 export default {
@@ -19,5 +18,4 @@ export default {
     this.renderChart(this.chartdata, this.options);
   },
 };
-
 </script>

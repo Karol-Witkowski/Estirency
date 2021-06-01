@@ -1,60 +1,60 @@
 <template>
-    <section>
-      <header>
-        <h3>menu</h3>
-      </header>
-      <h4>Select currencies and fill input to show data</h4>
-      <h4>select base currency</h4>
-      <v-select
-        @input="setBaseCurrency"
-        label="name"
-        :options="this.$store.state.currency
-           .filter((currencies) => currencies !== this.$store.state.targetCurrency)"
-        :value="$store.state.baseCurrency"
+  <section>
+    <header>
+      <h3>menu</h3>
+    </header>
+    <h4>Select currencies and fill input to show data</h4>
+    <h4>select base currency</h4>
+    <v-select
+      @input="setBaseCurrency"
+      label="name"
+      :options="this.$store.state.currency
+        .filter((currencies) => currencies !== this.$store.state.targetCurrency)"
+      :value="$store.state.baseCurrency"
+    >
+      <template #search="{attributes, events}">
+        <input
+          class="vs__search"
+          @keypress="currencyRestrictions"
+          v-bind="attributes"
+          v-on="events"
+        />
+      </template>
+    </v-select>
+    <figure>
+      <img
+        alt="arrays icon"
+        data-cy='swapIcon'
+        src="@/assets/swap-vertical.png"
+        v-on:click="swapValues"
       >
-        <template #search="{attributes, events}">
-          <input
-            class="vs__search"
-            @keypress="currencyRestrictions"
-            v-bind="attributes"
-            v-on="events"
-          />
-        </template>
-      </v-select>
-      <figure>
-        <img
-          alt="arrays icon"
-          data-cy='swapIcon'
-          src="@/assets/swap-vertical.png"
-          v-on:click="swapValues"
-        >
-      </figure>
-      <h4>select target currency</h4>
-     <v-select
+    </figure>
+    <h4>select target currency</h4>
+    <v-select
       @input="setTargetCurrency"
       label="name"
       :options="this.$store.state.currency
         .filter((currencies) => currencies !== this.$store.state.baseCurrency)"
       :value="$store.state.targetCurrency"
-      >
-        <template #search="{attributes, events}">
-          <input
-            class="vs__search"
-            @keypress="currencyRestrictions"
-            v-bind="attributes"
-            v-on="events"
-          />
-        </template>
-      </v-select>
-      <h4>type amount</h4>
-      <input
-        class="amountInput"
-        @input="setAmountValue"
-        @keypress="amountRestrictions"
-        placeholder="amount of currency"
-        :value="$store.state.amountValue"
-      />
-    </section>
+    >
+      <template #search="{attributes, events}">
+        <input
+          class="vs__search"
+          @keypress="currencyRestrictions"
+          v-bind="attributes"
+          v-on="events"
+        />
+      </template>
+    </v-select>
+    <h4>type amount</h4>
+    <input
+      class="amountInput"
+      @input="setAmountValue"
+      @keypress="amountRestrictions"
+      placeholder="amount of currency"
+      :value="$store.state.amountValue"
+    />
+  </section>
 </template>
 
 <script>
