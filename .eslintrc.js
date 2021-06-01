@@ -13,6 +13,9 @@ module.exports = {
     'plugin:vue/essential',
     '@vue/airbnb',
   ],
+  plugins: [
+    'cypress',
+  ],
   parserOptions: {
     parser: 'babel-eslint',
   },
