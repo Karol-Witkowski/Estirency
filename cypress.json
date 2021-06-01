@@ -3,7 +3,7 @@
   "chromeWebSecurity": false,
   "defaultCommandTimeout": 10000,
   "fixturesFolder": false,
-  "integrationFolder": "tests/cypress",
+  "integrationFolder": "tests/e2e",
   "pluginsFile": false,
   "projectId": "jc7qvw",
   "screenshotOnRunFailure": false,

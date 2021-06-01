@@ -26,12 +26,14 @@ describe('Menu test', () => {
       .contains('PLN/EUR');
     cy.get('input')
       .eq(0)
+      .type('croatian')
       .click();
     cy.get('section')
       .contains('Croatian kuna')
       .click();
     cy.get('input')
       .eq(1)
+      .type('british')
       .click();
     cy.get('section')
       .contains('British pound')
