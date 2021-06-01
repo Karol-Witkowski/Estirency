@@ -74,25 +74,18 @@ export default {
     },
 
     setData() {
-      this.chartData.datasets[0].data = this.historyData
-        .map((rate) => Number(rate.c));
-      this.chartData.labels = this.historyData
-        .map((date) => date.tm
-          .slice(0, 10)
-          .split('-')
-          .reverse()
-          .join('.'));
+      this.chartData.datasets[0].data = Object.keys(this.historyData)
+        .map((k) => this.historyData[k].EUR);
+      this.chartData.labels = Object.keys(this.historyData);
     },
 
     getData() {
-      const historicalRate = 'https://fcsapi.com/api-v2/forex/history?symbol=';
+      const historicalRate = 'https://api.exchangerate.host/timeseries?start_date=';
 
       if (this.$store.state.loaded === false) {
-        axios.get(`${historicalRate}${this.$store.state.baseCurrency.cc}/${this.$store.state.targetCurrency.cc}&period=1d&from=${this.pastDate}T12:00&to=${this.actualDate}T12:00&access_key=${process.env.VUE_APP_CURRENCY_API_KEY}`)
-
+        axios.get(`${historicalRate}${this.pastDate}&end_date=${this.actualDate}&base=${this.$store.state.baseCurrency.cc}&symbols=${this.$store.state.targetCurrency.cc}`)
           .then((response) => {
-            this.historyData = response.data.response
-              .filter((e, i) => i % 20 === 0);
+            this.historyData = response.data.rates;
             this.setData();
             this.$store.state.loaded = true;
           })
