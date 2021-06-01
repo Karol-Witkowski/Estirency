@@ -5,10 +5,10 @@ import axios from 'axios';
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({
     data: {
-      response: [
-        { c: '0.2307', tm: '2019-09-15 00:00:00' },
-        { c: '0.2432', tm: '2019-09-17 00:00:00' },
-      ],
+      response: {
+        '2019-09-15': { cc: '0.2307' },
+        '2019-09-17': { cc: '0.2432' },
+      },
     },
   })),
 }));
@@ -37,7 +37,7 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check axios call', async () => {
-    expect(wrapper.vm.historyData).toEqual([{ c: '0.2307', tm: '2019-09-15 00:00:00' }], [{ c: '0.2432', tm: '2019-09-17 00:00:00' }]);
+    expect(wrapper.vm.historyData).toEqual({ '2019-09-15': '0.2307' }, { '2019-09-17': '0.2432' });
     expect(axios.get).toHaveBeenCalled();
   });
 

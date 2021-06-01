@@ -75,8 +75,8 @@ export default {
 
     setData() {
       this.chartData.datasets[0].data = Object.keys(this.historyData)
-        // eslint-disable-next-line max-len
-        .map((k) => this.historyData[k][this.$store.state.targetCurrency.cc]).filter((e, i) => i % 20 === 0);
+        .map((k) => this.historyData[k][this.$store.state.targetCurrency.cc])
+        .filter((e, i) => i % 20 === 0);
       this.chartData.labels = Object.keys(this.historyData).filter((e, i) => i % 20 === 0);
     },
 
