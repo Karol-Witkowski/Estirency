@@ -4,6 +4,10 @@ import Home from '@/views/Home.vue';
 describe('Home.vue test', () => {
   const wrapper = shallowMount(Home);
 
+  it('Render correctly', () => {
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it('Should show <SelectMenu /> component', () => {
     expect(wrapper.findComponent({ name: 'SelectMenu' }).exists()).toBe(true);
   });

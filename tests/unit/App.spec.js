@@ -5,22 +5,28 @@ import App from '@/App.vue';
 import Home from '@/views/Home.vue';
 import store from '@/store';
 
+let wrapper;
+const router = new VueRouter({
+  routes: [
+    { path: '/home', name: 'Home', component: Home },
+    { path: '/about', name: 'About', component: { render: (h) => h } },
+  ],
+});
+
 const localVue = createLocalVue();
 localVue.use(VueRouter);
 
 Vue.use(VueRouter);
 
-describe('App', () => {
-  let router = new VueRouter({
-    routes: [
-      { path: '/home', name: 'Home', component: Home },
-      { path: '/about', name: 'About', component: { render: (h) => h } },
-    ],
-  });
-  let wrapper = mount(App, {
+describe('App.vue test', () => {
+  wrapper = mount(App, {
     localVue,
     router,
     store,
+  });
+
+  it('Render correctly', () => {
+    expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('Should show <Theme /> component', () => {
@@ -32,21 +38,9 @@ describe('App', () => {
   });
 
   it('Renders a child component via routing', async () => {
-    router.push('/home');
+    await router.push('/home');
     await wrapper.vm.$nextTick();
 
     expect(wrapper.findComponent(Home).exists()).toEqual(true);
-  });
-
-  it('Should have a different route than /home', async () => {
-    router = new VueRouter({
-      mode: 'abstract',
-    });
-    wrapper = mount(App, {
-      localVue,
-      router,
-    });
-
-    expect(wrapper.findComponent(Home).exists()).toEqual(false);
   });
 });

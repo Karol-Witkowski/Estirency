@@ -2,6 +2,8 @@ import { shallowMount } from '@vue/test-utils';
 import ChartComponent from '@/components/ChartComponent.vue';
 import axios from 'axios';
 
+let wrapper;
+
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({
     data: {
@@ -19,7 +21,7 @@ const currencies = [
 ];
 
 describe('ChartComponent.vue test', () => {
-  let wrapper = shallowMount(ChartComponent, {
+  wrapper = shallowMount(ChartComponent, {
     mocks: {
       $store: {
         state: {
@@ -31,14 +33,18 @@ describe('ChartComponent.vue test', () => {
     },
   });
 
-  it('Check mocked store', async () => {
-    expect(wrapper.findAll('h3').at(0).text()).toContain('PLN');
-    expect(wrapper.findAll('h3').at(0).text()).toContain('EUR');
+  it('Render correctly', () => {
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('Check mocked store', () => {
+    expect(wrapper.find('h3').text()).toContain('PLN/EUR');
   });
 
   it('Check axios call', async () => {
     expect(wrapper.vm.historyData).toEqual({ '2019-09-15': '0.2307' }, { '2019-09-17': '0.2432' });
     expect(axios.get).toHaveBeenCalled();
+    expect(axios.get).toHaveReturnedTimes(1);
   });
 
   it('Check that datachart exists when state.loaded = true', async () => {
@@ -54,6 +60,7 @@ describe('ChartComponent.vue test', () => {
         },
       },
     });
+
     expect(wrapper.find('span').exists()).toBeTruthy();
   });
 

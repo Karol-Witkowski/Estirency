@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.vue test Render correctly 1`] = `
+<div>
+  <selectmenu-stub></selectmenu-stub>
+  <rate-stub data-cy="rate"></rate-stub>
+  <chartcomponent-stub></chartcomponent-stub>
+</div>
+`;

@@ -21,6 +21,10 @@ describe('SelectMenu.vue test', () => {
     },
   });
 
+  it('Render correctly', () => {
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it('Should show <v-select /> component', () => {
     expect(wrapper.findComponent({ name: 'v-select' }).exists()).toBe(true);
   });

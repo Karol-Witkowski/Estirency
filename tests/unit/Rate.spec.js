@@ -32,6 +32,10 @@ describe('Rate.vue test', () => {
     },
   });
 
+  it('Render correctly', () => {
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it('Check mocked store', async () => {
     expect(wrapper.findAll('span').at(1).text()).toMatch('2');
     expect(wrapper.findAll('span').at(2).text()).toContain('zł (Polish zloty)');

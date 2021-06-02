@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartComponent.vue test Render correctly 1`] = `
+<section>
+  <header>
+    <h3>
+      PLN/EUR
+      data from last year
+    </h3>
+  </header>
+  <!---->
+</section>
+`;

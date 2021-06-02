@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rate.vue test Render correctly 1`] = `
+<section>
+  <header>
+    <h3>Description</h3>
+  </header>
+  <p>The rate of transaction is <span class="numbers">2.123</span></p> <span class="numbers">2</span> <span>
+    zł (Polish zloty) is
+  </span> <span class="numbers">4.25</span> <span>
+    € (European Euro)
+  </span>
+  <p>
+    The data is provided by the European Central Bank placed in Frankfurt am Main and
+    base on The reference rates that are updated usually around <span>16:00</span>CET
+    on every working day.
+  </p>
+  <h5>This app was created thanks to the API service provided by:</h5> <a href="https://exchangeratesapi.io/" rel="noopener noreferrer" target="_blank">
+    <figure><img alt="API provider logo" src="@/assets/api.svg"></figure>
+  </a>
+</section>
+`;
