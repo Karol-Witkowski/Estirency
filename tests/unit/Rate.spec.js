@@ -2,6 +2,12 @@ import { shallowMount } from '@vue/test-utils';
 import Rate from '@/components/Rate.vue';
 import axios from 'axios';
 
+let wrapper;
+const currencies = [
+  { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
+  { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
+];
+
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({
     data: {
@@ -13,13 +19,8 @@ jest.mock('axios', () => ({
   })),
 }));
 
-const currencies = [
-  { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
-  { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
-];
-
-describe('Rate.vue test', () => {
-  const wrapper = shallowMount(Rate, {
+beforeEach(() => {
+  wrapper = shallowMount(Rate, {
     mocks: {
       $store: {
         state: {
@@ -31,7 +32,13 @@ describe('Rate.vue test', () => {
       },
     },
   });
+});
 
+afterEach(() => {
+  wrapper.destroy();
+});
+
+describe('Rate.vue test', () => {
   it('Render correctly', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });

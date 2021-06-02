@@ -18,22 +18,29 @@ localVue.use(VueRouter);
 
 Vue.use(VueRouter);
 
-describe('App.vue test', () => {
+beforeEach(() => {
   wrapper = mount(App, {
     localVue,
     router,
     store,
   });
+});
 
+afterEach(() => {
+  jest.resetAllMocks();
+  wrapper.destroy();
+});
+
+describe('App.vue test', () => {
   it('Render correctly', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Should show <Theme /> component', () => {
+  it('Should show Theme component', () => {
     expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBe(true);
   });
 
-  it('Should show <Navbar /> component', () => {
+  it('Should show Navbar component', () => {
     expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBe(true);
   });
 

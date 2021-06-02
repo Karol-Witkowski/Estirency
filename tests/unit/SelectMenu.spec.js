@@ -2,13 +2,14 @@ import { mount, shallowMount } from '@vue/test-utils';
 import Vue from 'vue';
 import SelectMenu from '@/components/SelectMenu.vue';
 
+let wrapper;
 const currencies = [
   { cc: 'PLN', symbol: 'z\u0142', name: 'Polish zloty' },
   { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
 ];
 
-describe('SelectMenu.vue test', () => {
-  let wrapper = mount(SelectMenu, {
+beforeEach(() => {
+  wrapper = mount(SelectMenu, {
     mocks: {
       $store: {
         state: {
@@ -20,7 +21,13 @@ describe('SelectMenu.vue test', () => {
       },
     },
   });
+});
 
+afterEach(() => {
+  wrapper.destroy();
+});
+
+describe('SelectMenu.vue test', () => {
   it('Render correctly', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
