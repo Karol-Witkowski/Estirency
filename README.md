@@ -10,11 +10,11 @@
 
 <p align="center">You can try <a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a> by yourself. Here is a link to the website hosted by GitHub.</p>
 
-<p align="center" font-size="20px"><a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a></p>
+<p align="center" font-size="20px">:herb: <a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a> :herb:</p>
 
 ## Usage example
 <br/>
-<p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="400" src="src\assets\usageExample.gif" alt="usage example"></a></code></p>
+<p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="400" src="src\assets\usageexample.gif" alt="usage example"></a></code></p>
 
 ## Project setup
 ```
