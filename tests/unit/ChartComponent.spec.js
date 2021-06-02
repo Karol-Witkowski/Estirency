@@ -37,17 +37,21 @@ describe('ChartComponent.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Check mocked store', () => {
-    expect(wrapper.find('h3').text()).toContain('PLN/EUR');
+  it('Check chart header', () => {
+    expect(wrapper.find('h3[name=currencyHeader]').text()).toMatch('PLN/EUR');
   });
 
-  it('Check axios call', async () => {
+  it('Check that chart is not rendered', () => {
+    expect(wrapper.find('[name=chart]').exists()).toBeFalsy();
+  });
+
+  it('Check axios call', () => {
     expect(wrapper.vm.historyData).toEqual({ '2019-09-15': '0.2307' }, { '2019-09-17': '0.2432' });
     expect(axios.get).toHaveBeenCalled();
     expect(axios.get).toHaveReturnedTimes(1);
   });
 
-  it('Check that datachart exists when state.loaded = true', async () => {
+  it('Check that datachart exists when state.loaded = true', () => {
     wrapper = shallowMount(ChartComponent, {
       mocks: {
         $store: {
@@ -61,15 +65,11 @@ describe('ChartComponent.vue test', () => {
       },
     });
 
-    expect(wrapper.find('span').exists()).toBeTruthy();
+    expect(wrapper.find('[name=chart]').exists()).toBeTruthy();
   });
 
   it('Check setData method - map and set history data', () => {
     expect(wrapper.vm.chartData.labels).toEqual(['15.09.2019']);
     expect(wrapper.vm.chartData.datasets[0].data).toEqual([0.2307]);
-  });
-
-  it('Check that datachart not exist when state.loaded = false', async () => {
-    expect(wrapper.find('span:nth-of-type(3)').exists()).toBeFalsy();
   });
 });

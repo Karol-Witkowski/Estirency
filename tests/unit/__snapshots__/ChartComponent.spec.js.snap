@@ -3,7 +3,7 @@
 exports[`ChartComponent.vue test Render correctly 1`] = `
 <section>
   <header>
-    <h3>
+    <h3 name="currencyHeader">
       PLN/EUR
       data from last year
     </h3>

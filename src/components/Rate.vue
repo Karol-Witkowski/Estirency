@@ -3,13 +3,30 @@
     <header>
       <h3>Description</h3>
     </header>
-    <p>The rate of transaction is <span class="numbers">{{ setRate }}</span></p>
-    <span class="numbers">{{ $store.state.amountValue }}</span>
-    <span>
+    <p>The rate of transaction is
+      <span
+        class="numbers"
+        name="rate"
+      >
+        {{ setRate }}
+      </span>
+    </p>
+    <span
+      class="numbers"
+      name="baseAmount"
+      >
+        {{ $store.state.amountValue }}
+      </span>
+    <span name="base">
       {{ $store.state.baseCurrency.symbol }} ({{ $store.state.baseCurrency.name }}) is
     </span>
-    <span class="numbers">{{ setAmount }}</span>
-    <span>
+    <span
+      class="numbers"
+      name="targetAmount"
+    >
+      {{ setAmount }}
+    </span>
+    <span name="target">
       {{ $store.state.targetCurrency.symbol }} ({{ $store.state.targetCurrency.name }})
     </span>
     <p>

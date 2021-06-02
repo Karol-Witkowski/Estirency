@@ -5,9 +5,17 @@ exports[`Rate.vue test Render correctly 1`] = `
   <header>
     <h3>Description</h3>
   </header>
-  <p>The rate of transaction is <span class="numbers">2.123</span></p> <span class="numbers">2</span> <span>
+  <p>The rate of transaction is
+    <span name="rate" class="numbers">
+      2.123
+    </span>
+  </p> <span name="baseAmount" class="numbers">
+      2
+    </span> <span name="base">
     zł (Polish zloty) is
-  </span> <span class="numbers">4.25</span> <span>
+  </span> <span name="targetAmount" class="numbers">
+    4.25
+  </span> <span name="target">
     € (European Euro)
   </span>
   <p>

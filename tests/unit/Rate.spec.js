@@ -43,21 +43,21 @@ describe('Rate.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Check mocked store', async () => {
-    expect(wrapper.findAll('span').at(1).text()).toMatch('2');
-    expect(wrapper.findAll('span').at(2).text()).toContain('zł (Polish zloty)');
-    expect(wrapper.findAll('span').at(4).text()).toContain('€ (European Euro)');
+  it('Check mocked store', () => {
+    expect(wrapper.find('span[name=baseAmount]').text()).toMatch('2');
+    expect(wrapper.find('span[name=base]').text()).toMatch('zł (Polish zloty)');
+    expect(wrapper.find('span[name=target]').text()).toMatch('€ (European Euro)');
   });
 
-  it('Check axios call', async () => {
+  it('Check axios call', () => {
     expect(axios.get).toHaveBeenCalled();
   });
 
-  it('Check setRate computed', async () => {
+  it('Check setRate computed', () => {
     expect(wrapper.vm.setRate).toEqual(2.123);
   });
 
-  it('Check setAmount computed', async () => {
+  it('Check setAmount computed', () => {
     expect(wrapper.vm.setAmount).toEqual(4.25);
   });
 });

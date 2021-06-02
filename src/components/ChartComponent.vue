@@ -1,15 +1,16 @@
 <template>
   <section>
     <header>
-      <h3>
+      <h3 name="currencyHeader">
         {{ this.$store.state.baseCurrency.cc }}/{{ this.$store.state.targetCurrency.cc }}
         data from last year
       </h3>
     </header>
     <span v-if="$store.state.loaded">
-      <datachart
+      <Datachart
         :chartdata="chartData"
         class="dataChart"
+        name="chart"
         :options="options"
       />
     </span>
@@ -18,14 +19,14 @@
 
 <script>
 import axios from 'axios';
-import datachart from '@/components/Chart.vue';
+import Datachart from '@/components/Chart.vue';
 
 require('dotenv').config();
 
 export default {
   name: 'ChartComponent',
   components: {
-    datachart,
+    Datachart,
   },
 
   data() {

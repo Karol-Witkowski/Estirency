@@ -16,6 +16,7 @@
         <input
           class="vs__search"
           @keypress="currencyRestrictions"
+          name="baseCurrency"
           v-bind="attributes"
           v-on="events"
         />
@@ -41,6 +42,7 @@
         <input
           class="vs__search"
           @keypress="currencyRestrictions"
+          name="targetCurrency"
           v-bind="attributes"
           v-on="events"
         />
@@ -51,6 +53,7 @@
       class="amountInput"
       @input="setAmountValue"
       @keypress="amountRestrictions"
+      name="amount"
       placeholder="amount of currency"
       :value="$store.state.amountValue"
     />

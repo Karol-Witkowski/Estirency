@@ -27,7 +27,6 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  jest.resetAllMocks();
   wrapper.destroy();
 });
 
@@ -37,17 +36,17 @@ describe('App.vue test', () => {
   });
 
   it('Should show Theme component', () => {
-    expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBe(true);
+    expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBeTruthy();
   });
 
   it('Should show Navbar component', () => {
-    expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBe(true);
+    expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBeTruthy();
   });
 
   it('Renders a child component via routing', async () => {
     await router.push('/home');
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.findComponent(Home).exists()).toEqual(true);
+    expect(wrapper.findComponent(Home).exists()).toBeTruthy();
   });
 });
