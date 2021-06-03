@@ -43,21 +43,13 @@ describe('Rate.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Check mocked store', () => {
+  it('Store data', () => {
     expect(wrapper.find('span[name=baseAmount]').text()).toMatch('2');
     expect(wrapper.find('span[name=base]').text()).toMatch('zł (Polish zloty)');
     expect(wrapper.find('span[name=target]').text()).toMatch('€ (European Euro)');
   });
 
-  it('Check axios call', () => {
+  it('Get data on mount', () => {
     expect(axios.get).toHaveBeenCalled();
-  });
-
-  it('Check setRate computed', () => {
-    expect(wrapper.vm.setRate).toEqual(2.123);
-  });
-
-  it('Check setAmount computed', () => {
-    expect(wrapper.vm.setAmount).toEqual(4.25);
   });
 });

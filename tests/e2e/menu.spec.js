@@ -3,7 +3,7 @@ describe('Menu test', () => {
     cy.visit('/');
   });
 
-  it('Check that the typed amount of currency is displayed in the description panel and restrictions works', () => {
+  it('Prevent entering letters', () => {
     cy.get('[data-cy=rate]')
       .find('span')
       .contains('100');
@@ -14,7 +14,7 @@ describe('Menu test', () => {
       .contains('252.12');
   });
 
-  it('Check that the selected currencies are displayed in the description and chart panels', () => {
+  it('Display selected currencies in the description and chart panels', () => {
     cy.get('span[name=base]')
       .contains('zł (Polish zloty)');
     cy.get('span[name=target]')
@@ -41,7 +41,7 @@ describe('Menu test', () => {
       .contains('HRK/GBP');
   });
 
-  it('Check that the typed currencies are displayed in the description and chart panels', () => {
+  it('Display typed currencies in the description and chart panels', () => {
     cy.get('span[name=base]')
       .contains('zł (Polish zloty)');
     cy.get('span[name=target]')
@@ -62,7 +62,7 @@ describe('Menu test', () => {
       .contains('HRK/GBP');
   });
 
-  it('Check swapping currencies', () => {
+  it('Swap currencies', () => {
     cy.get('span[name=base]')
       .contains('zł (Polish zloty)');
     cy.get('span[name=target')

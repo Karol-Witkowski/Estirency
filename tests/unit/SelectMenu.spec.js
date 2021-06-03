@@ -33,17 +33,17 @@ describe('SelectMenu.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Should show <v-select /> component', () => {
+  it('Show v-select component', () => {
     expect(wrapper.findComponent({ name: 'v-select' }).exists()).toBeTruthy();
   });
 
-  it('Renders values using a mock getter', () => {
+  it('Renders currency values', () => {
     expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toContain('Polish zloty');
     expect(wrapper.findAllComponents({ name: 'v-select' }).at(1).text()).toContain('European Euro');
     expect(wrapper.find('input[name=amount]').text()).toMatch('');
   });
 
-  it('Check if swapValues function swap stored values', () => {
+  it('Swap currencies', () => {
     wrapper.find('img').trigger('click');
     Vue.nextTick(() => {
       expect(wrapper.findAllComponents({ name: 'v-select' }).at(0).text()).toContain('European Euro');
@@ -51,7 +51,7 @@ describe('SelectMenu.vue test', () => {
     });
   });
 
-  it('Check if input allows only letters and numbers', () => {
+  it('Prevent entering letters', () => {
     wrapper = shallowMount(SelectMenu, {
       mocks: {
         $store: {
