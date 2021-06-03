@@ -7,9 +7,9 @@ let wrapper;
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({
     data: {
-      response: {
-        '2019-09-15': { cc: '0.2307' },
-        '2019-09-17': { cc: '0.2432' },
+      rates: {
+        '2019-09-17': { EUR: '0.2432' },
+        '2019-09-15': { EUR: '0.2307' },
       },
     },
   })),
@@ -20,7 +20,7 @@ const currencies = [
   { cc: 'EUR', symbol: '\u20ac', name: 'European Euro' },
 ];
 
-describe('ChartComponent.vue test', () => {
+beforeEach(() => {
   wrapper = shallowMount(ChartComponent, {
     mocks: {
       $store: {
@@ -32,7 +32,14 @@ describe('ChartComponent.vue test', () => {
       },
     },
   });
+});
 
+afterEach(() => {
+  jest.clearAllMocks();
+  wrapper.destroy();
+});
+
+describe('ChartComponent.vue test', () => {
   it('Render correctly', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
@@ -45,10 +52,10 @@ describe('ChartComponent.vue test', () => {
     expect(wrapper.find('[name=chart]').exists()).toBeFalsy();
   });
 
-  it('Check axios call', () => {
-    expect(wrapper.vm.historyData).toEqual({ '2019-09-15': '0.2307' }, { '2019-09-17': '0.2432' });
+  it('Check stored data', () => {
     expect(axios.get).toHaveBeenCalled();
     expect(axios.get).toHaveReturnedTimes(1);
+    expect(wrapper.vm.historyData).toEqual({ '2019-09-15': { EUR: '0.2307' }, '2019-09-17': { EUR: '0.2432' } });
   });
 
   it('Check that datachart exists when state.loaded = true', () => {
@@ -69,7 +76,7 @@ describe('ChartComponent.vue test', () => {
   });
 
   it('Check setData method - map and set history data', () => {
-    expect(wrapper.vm.chartData.labels).toEqual(['15.09.2019']);
-    expect(wrapper.vm.chartData.datasets[0].data).toEqual([0.2307]);
+    expect(wrapper.vm.chartData.labels).toEqual(['2019-09-17']);
+    expect(wrapper.vm.chartData.datasets[0].data).toEqual(['0.2432']);
   });
 });
