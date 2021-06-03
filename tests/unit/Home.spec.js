@@ -17,15 +17,15 @@ describe('Home.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Show SelectMenu component', () => {
+  it('Render SelectMenu component', () => {
     expect(wrapper.findComponent({ name: 'SelectMenu' }).exists()).toBeTruthy();
   });
 
-  it('Show Rate component', () => {
+  it('Render Rate component', () => {
     expect(wrapper.findComponent({ name: 'Rate' }).exists()).toBeTruthy();
   });
 
-  it('Show ChartComponent component', () => {
+  it('Render ChartComponent component', () => {
     expect(wrapper.findComponent({ name: 'ChartComponent' }).exists()).toBeTruthy();
   });
 });

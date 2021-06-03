@@ -33,7 +33,7 @@ describe('SelectMenu.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Show v-select component', () => {
+  it('Render v-select component', () => {
     expect(wrapper.findComponent({ name: 'v-select' }).exists()).toBeTruthy();
   });
 

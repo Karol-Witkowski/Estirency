@@ -35,11 +35,11 @@ describe('App.vue test', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('Show Theme component', () => {
+  it('Render Theme component', () => {
     expect(wrapper.findComponent({ name: 'Theme' }).exists()).toBeTruthy();
   });
 
-  it('Show Navbar component', () => {
+  it('Render Navbar component', () => {
     expect(wrapper.findComponent({ name: 'Navbar' }).exists()).toBeTruthy();
   });
 
