@@ -19,7 +19,6 @@
     "chart.js": "^2.9.4",
     "core-js": "^3.11.3",
     "css-loader": "^5.2.4",
-    "dotenv": "^8.6.0",
     "http-proxy": "^1.18.1",
     "node-forge": "^0.10.0",
     "sass-resources-loader": "^2.2.1",
