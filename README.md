@@ -26,7 +26,7 @@
 
 <p align="center">You can try <a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a> by yourself. Here is a link to the website hosted by GitHub.</p>
 
-<p align="center"><a href="https://karol-witkowski.github.io/Estirency/#/home"><b>-> Estirency demo <-</b></a></p>
+<p align="center"><a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency demo<-</b></a></p>
 
 
 <p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="400" src="src\assets\usageexample.gif" alt="usage example"></a></code></p>
