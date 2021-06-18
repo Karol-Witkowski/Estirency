@@ -18,7 +18,6 @@
   - [Unit](#unit-tests)
   - [E2E](#e2e-tests)
 - [Available scripts](#available-scripts)
-
 <hr>
 <br>
 
@@ -27,7 +26,6 @@
 <p align="center">You can try <a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency</b></a> by yourself. Here is a link to the website hosted by GitHub.</p>
 
 <p align="center"><a href="https://karol-witkowski.github.io/Estirency/#/home"><b>Estirency demo</b></a></p>
-
 
 <p align="center"><code><a href="https://karol-witkowski.github.io/Estirency/#/home"><img height="400" src="src\assets\usageexample.gif" alt="usage example"></a></code></p>
 <hr>
@@ -69,7 +67,6 @@
 
 ```console
 git clone git@github.com:Karol-Witkowski/Estirency.git
-cd Gemverse
 ```
 
 2. Install dependencies
@@ -169,24 +166,4 @@ Produce a client production-ready bundle in the dist/ directory:
 
 ```console
 npm run build
-```
-
-### Server scripts
-
-Start and reload the application automatically:
-
-```console
-npm run dev:watch
-```
-
-Run and reload server tests with Jest Start automatically:
-
-```console
-npm run test:watch
-```
-
-Insert initial data into a database:
-
-```console
-npm run db:seed
 ```
